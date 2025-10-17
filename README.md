@@ -90,8 +90,26 @@ Traditional spreadsheet tools choke on multi‑million row CSVs, leak data to re
 - **TypeScript (`tsconfig.json`):** This file contains the TypeScript compiler options. It enforces strict type checking and defines path aliases (e.g., `@/*` for `src/*`) to simplify import statements across the project.
 
 ## Requirements
-- **Node.js:** Version 18 or higher.
-- **npm:** Version 8 or higher (usually bundled with Node.js).
+
+### Core Dependencies
+| Library | Version |
+| --- | --- |
+| react | ^18.2.0 |
+| react-dom | ^18.2.0 |
+| react-router-dom | ^6.8.0 |
+| zustand | ^4.4.0 |
+| immer | ^10.0.0 |
+| i18next | ^25.6.0 |
+| react-i18next | ^16.0.1 |
+| i18next-browser-languagedetector | ^8.2.0 |
+
+### Development Dependencies
+| Library | Version |
+| --- | --- |
+| vite | ^7.1.2 |
+| typescript | ^5.9.2 |
+| eslint | ^8.57.0 |
+| @vitejs/plugin-react | ^4.0.0 |
 
 ## Getting Started
 ### Installation
