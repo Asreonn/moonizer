@@ -7,11 +7,13 @@ Moonizer is a local-first CSV exploration, transformation, and visualization stu
 - [Feature Highlights](#feature-highlights)
 - [Data Workflow](#data-workflow)
 - [Architecture](#architecture)
+- [Requirements](#requirements)
 - [Getting Started](#getting-started)
-- [Using Moonizer](#using-moonizer)
+- [Usage](#usage)
+- [Keyboard Shortcut Guide](#keyboard-shortcut-guide)
+- [Advanced Guide: Using the Rule Engine](#advanced-guide-using-the-rule-engine)
 - [Extending the Platform](#extending-the-platform)
 - [Localization](#localization)
-- [Keyboard Shortcuts & Accessibility](#keyboard-shortcuts--accessibility)
 - [Tooling & Scripts](#tooling--scripts)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
@@ -77,49 +79,79 @@ Traditional spreadsheet tools choke on multi‑million row CSVs, leak data to re
 - **Styling:** CSS Modules with design tokens ensure theme consistency and scoped styles.
 - **Routing:** React Router 6 powers navigation between workspace surfaces.
 
-## Getting Started
-### Prerequisites
-- Node.js 18+
-- npm (bundled with Node) or your preferred package manager
+## Requirements
+- **Node.js:** Version 18 or higher.
+- **npm:** Version 8 or higher (usually bundled with Node.js).
 
+## Getting Started
 ### Installation
+Clone the repository and install the dependencies:
 ```bash
+git clone https://github.com/Asreonn/moonizer.git
+cd moonizer
 npm install
 ```
 
+## Usage
+
 ### Development Server
+To start the local development server:
 ```bash
 npm run dev
 ```
-Visit `http://localhost:5173` (default Vite port) to start exploring datasets.
+Visit `http://localhost:5173` (the default Vite port) in your browser to start exploring datasets. The application will automatically reload when you make changes to the source code.
 
 ### Production Build
+To create a production-ready build of the application:
 ```bash
 npm run build
-npm run preview # optional: serve the production build locally
 ```
-The optimized output lives in `dist/` and can be deployed to any static host or embedded inside an internal portal.
+The optimized and minified files will be generated in the `dist/` directory.
 
-## Using Moonizer
-### Load Data
-- Drag a CSV file onto the workspace or choose it via the upload dialog.
-- Toggle header detection and encoding options if automatic inference needs adjustment.
-- Reopen previous datasets from the session list without re-uploading.
+### Preview Production Build
+To preview the production build locally:
+```bash
+npm run preview
+```
+This command starts a local web server that serves the files from the `dist/` directory.
 
-### Explore & Profile
-- Switch between datasets from the sidebar to compare multiple sources.
-- Review the profiling summary panel to inspect distributions, null ratios, and inferred types.
-- Override detected column types when domain knowledge differs from the heuristic.
+## Keyboard Shortcut Guide
 
-### Transform & Audit
-- Use the column inspector to apply transformations (rounding, math ops, regex cleanup, type casting, etc.).
-- Monitor the transform history timeline; branch workflows by undoing to a previous snapshot and creating a new path.
-- Catch errors quickly—Moonizer surfaces validation messages and prevents destructive operations like divide-by-zero.
+| Action | Shortcut (Windows/Linux) | Shortcut (macOS) |
+| --- | --- | --- |
+| Undo | `Ctrl + Z` | `Cmd + Z` |
+| Redo | `Ctrl + Y` or `Ctrl + Shift + Z` | `Cmd + Shift + Z` |
 
-### Visualize & Share
-- Configure charts from the visualization panel, customizing axes, aggregations, and color palettes.
-- Activate dual-view mode to compare two visuals; adjustments reflect instantly.
-- Export curated datasets or rendered charts for reports, pipelines, and dashboards.
+## Advanced Guide: Using the Rule Engine
+
+Moonizer includes a powerful rule engine that allows you to create complex, custom data transformations using a set of logical conditions. This is particularly useful for creating new columns based on the values of other columns, or for advanced data cleaning and feature engineering.
+
+The rule engine is located in `src/core/dataset/ruleEngine.ts`. You can define a `RuleSet` that consists of `RuleGroup`s and `RuleCondition`s to perform transformations.
+
+### Example: Creating a "High_Value_Customer" Column
+
+Let's say you have a dataset with `order_count` and `total_spent` columns. You can create a new boolean column named `High_Value_Customer` for customers who have placed more than 10 orders AND spent over $500.
+
+Here's how you could define a `RuleSet` for this scenario:
+
+```typescript
+import { createRuleSet, createRuleGroup, createCondition } from './src/core/dataset/ruleEngine.ts';
+
+// Define the conditions for a high-value customer
+const highValueCustomerRule = createRuleSet(
+  'High Value Customer Rule',
+  createRuleGroup('AND', [
+    createCondition('order_count', '>', 10),
+    createCondition('total_spent', '>', 500),
+  ]),
+  {
+    description: 'Flags customers with more than 10 orders and over $500 total spent.',
+    resultType: 'boolean', // The output will be true or false
+  }
+);
+```
+
+You can then apply this `RuleSet` to your dataset to generate the new column. This functionality can be integrated into a new transformation in the "Column Inspector" panel.
 
 ## Extending the Platform
 Moonizer is built to be extended without forking core logic.
@@ -134,12 +166,6 @@ Moonizer ships with i18next, i18next-browser-languagedetector, and react-i18next
 - Generate compiled locale bundles with `npm run build:locales`.
 - Validate translation completeness via `npm run validate:locales`.
 - `npm run watch:locales` keeps bundles fresh during development.
-
-## Keyboard Shortcuts & Accessibility
-- Undo: `Ctrl/Cmd + Z`
-- Redo: `Ctrl/Cmd + Shift + Z` (or `Ctrl + Y`)
-- Toast notifications confirm state changes and provide quick reverse actions.
-- Interactive elements follow focus management best practices, and tooltip copy is localized by default.
 
 ## Tooling & Scripts
 | Command | Description |
