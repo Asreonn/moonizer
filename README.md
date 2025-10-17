@@ -4,9 +4,11 @@
 Moonizer is a local-first CSV exploration, transformation, and visualization studio that runs entirely in your browser. Every byte stays on your machine, enabling teams to inspect sensitive datasets with the speed of a native tool and the simplicity of a web app.
 
 ## Table of Contents
+- [Quick Start](#quick-start)
 - [Why Moonizer](#why-moonizer)
 - [Feature Highlights](#feature-highlights)
 - [Data Workflow](#data-workflow)
+- [Security & Approvals](#security--approvals)
 - [Architecture](#architecture)
 - [Configuration](#configuration)
 - [Requirements](#requirements)
@@ -19,7 +21,17 @@ Moonizer is a local-first CSV exploration, transformation, and visualization stu
 - [Tooling & Scripts](#tooling--scripts)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
+- [FAQ](#faq)
 - [License](#license)
+
+## Quick Start
+| Adım | Komut / Eylem | Not |
+| --- | --- | --- |
+| 1 | `npm install` | Bağımlılıkları kur; yalnızca Node.js gerekir. |
+| 2 | `npm run dev` | Vite geliştirme sunucusunu başlat, tarayıcıyı aç. |
+| 3 | CSV içe aktar | Dosyayı sürükle-bırak yap veya dosya seçiciyi kullan. |
+| 4 | Profil + dönüştür | Profil panelini incele, gerekli dönüşümleri uygula. |
+| 5 | Dışa aktar / paylaş | Sonuçları CSV/JSON olarak indir ya da görselleri PNG olarak kaydet. |
 
 ## Why Moonizer
 Traditional spreadsheet tools choke on multi‑million row CSVs, leak data to remote services, or bury critical profiling insight behind add-ons. Moonizer delivers a focused analysis environment designed for analysts, data scientists, and less-technical stakeholders who need trustworthy answers fast:
@@ -71,6 +83,19 @@ Traditional spreadsheet tools choke on multi‑million row CSVs, leak data to re
 4. **Inspect** results in the grid with filters, sorting, and delta highlights.
 5. **Visualize** insights via charts, comparing multiple views simultaneously when needed.
 6. **Export** cleaned datasets or generated visuals without leaving the browser.
+
+### Example Scenario: Rapid QA Pipeline
+1. Finans ekibinden gelen 1M satırlık CSV’yi içe aktar.
+2. Profil panelinde hatalı tarih biçimlerini ve beklenmedik null oranlarını tespit et.
+3. Kolon editöründe tarihleri normalize eden ve 0 değerleri null’a dönüştüren dönüşümleri uygula.
+4. Filtreleyip "Risk" kolonunu görselleştir; grafiği PNG olarak dışa aktar.
+5. Temizlenmiş veri setini CSV olarak indir ve ilgili ekiple paylaş.
+
+## Security & Approvals
+- **Veri yerelde kalır:** Tüm parsing, profil çıkarma ve görselleştirme işlemleri tarayıcı içinde çalışır; ağ trafiği yoktur.
+- **Offline çalışma:** Uygulama statik olarak servis edildiği için internet bağlantısı olmadan çalıştırılabilir.
+- **İç onay süreci:** Moonizer’ı kurum içine alırken güvenlik ekibine; kullanılan bağımlılık listesi (`package-lock.json`), çalışma zamanı gereksinimleri ve build sürecini iletin.
+- **Yapılandırılabilir izinler:** Paylaşılan makinelerde tarayıcı izinlerini (dosya erişimi, clipboard) kısıtlayarak veri sızıntısı riskini azaltın.
 
 ## Architecture
 - **Stack:** React 18 + TypeScript + Vite for a fast, typed SPA foundation.
@@ -243,6 +268,19 @@ Issues, feature requests, and pull requests are all welcome. If you plan a subst
 2. Keep transformations pure and state updates immutable—Immer handles mutation ergonomics under the hood.
 3. Add or update localization strings when introducing user-facing text.
 4. Run linting and type checks before submitting to ensure a smooth review.
+
+### Contributor Checklist
+- `npm run lint` ve `npm run type-check` komutlarının temiz geçtiğini doğrula.
+- Yeni özellikler için örnek veri veya test senaryoları ekle (varsa `src/core` altına doküman notu bırak).
+- Kullanıcıya görünür değişikliklerde ilgili i18n anahtarlarını güncelle.
+- PR açıklamasında veri gizliliği veya performans etkilerini kısaca belirt.
+- İncelemenin kolaylaşması için ilgili ekran görüntüsü veya kısa kullanım adımlarını ekle.
+
+## FAQ
+- **CSV boyut sınırı nedir?** Belleğe sığan her dosyayla çalışır; 1–2 GB üzerindeki dosyalar için tarayıcı belleğini izleyip gerektiğinde dataset’i parçalara böl.
+- **Hangi tarayıcılar desteklenir?** Chromium tabanlı tarayıcıların en güncel sürümleri + Firefox ESR testten geçmiştir. Safari’de büyük dosyalarda performans düşebilir.
+- **Çevrimdışı kullanabilir miyim?** Evet. `npm run build` ardından çıkan statik çıktıyı herhangi bir statik sunucuyla dağıtabilirsin.
+- **Ekip içinde paylaşım nasıl yapılır?** Build çıktısını kurum içi sunucuya yükle veya Git tabanlı artefaktlarla paylaş; hassas veri dosyalarını depo dışına tut.
 
 ## License
 Moonizer is released under the [ISC License](./LICENSE) and is free for commercial and open-source use.
