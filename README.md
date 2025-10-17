@@ -1,3 +1,4 @@
+
 # Moonizer
 
 Moonizer is a local-first CSV exploration, transformation, and visualization studio that runs entirely in your browser. Every byte stays on your machine, enabling teams to inspect sensitive datasets with the speed of a native tool and the simplicity of a web app.
@@ -7,6 +8,7 @@ Moonizer is a local-first CSV exploration, transformation, and visualization stu
 - [Feature Highlights](#feature-highlights)
 - [Data Workflow](#data-workflow)
 - [Architecture](#architecture)
+- [Configuration](#configuration)
 - [Requirements](#requirements)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
@@ -72,12 +74,20 @@ Traditional spreadsheet tools choke on multi‑million row CSVs, leak data to re
 
 ## Architecture
 - **Stack:** React 18 + TypeScript + Vite for a fast, typed SPA foundation.
-- **State Management:** Zustand + Immer stores (see `src/state/`) coordinate datasets, layout, data views, and the column editor.
+- **State Management:** Zustand + Immer for efficient and predictable state management. The state is divided into several stores:
+    - `useDatasetStore`: Manages the list of datasets, the active dataset, and performs dataset-level operations like adding, removing, and transforming data.
+    - `useDataViewStore`: Manages the state of the data grid, including cell coloring modes and selections.
+    - `useLayoutStore`: Manages the visibility of the side panels.
+    - `useColumnEditorStore`: Manages the state of the column editor, including the active column and the undo/redo history for transformations. It uses a snapshot-based approach for reliable undo/redo functionality.
 - **Dataset Engine:** `src/core/dataset` handles CSV parsing, sample loading, transformation pipelines, and export tooling.
 - **Profiling:** `src/core/profiling` surfaces type detection and statistic computation for every column.
 - **UI Composition:** Component modules under `src/components` and `src/ui` deliver reusable panels, inspectors, charts, and grid utilities.
-- **Styling:** CSS Modules with design tokens ensure theme consistency and scoped styles.
+- **Styling:** CSS Modules with a centralized design token system in `src/styles/tokens.css`. This approach ensures theme consistency, maintainability, and allows for easy customization of the application's appearance.
 - **Routing:** React Router 6 powers navigation between workspace surfaces.
+
+## Configuration
+- **Vite (`vite.config.ts`):** The build tool and development server are configured in this file. It includes settings for the React plugin, build output directory (`dist`), and path aliases.
+- **TypeScript (`tsconfig.json`):** This file contains the TypeScript compiler options. It enforces strict type checking and defines path aliases (e.g., `@/*` for `src/*`) to simplify import statements across the project.
 
 ## Requirements
 - **Node.js:** Version 18 or higher.
@@ -99,7 +109,7 @@ To start the local development server:
 ```bash
 npm run dev
 ```
-Visit `http://localhost:5173` (the default Vite port) in your browser to start exploring datasets. The application will automatically reload when you make changes to the source code.
+Visit `http://localhost:3000` in your browser to start exploring datasets. The application will automatically reload when you make changes to the source code.
 
 ### Production Build
 To create a production-ready build of the application:
@@ -155,7 +165,16 @@ You can then apply this `RuleSet` to your dataset to generate the new column. Th
 
 ## Extending the Platform
 Moonizer is built to be extended without forking core logic.
-- **Custom transforms:** Add a new helper to `src/core/dataset/transforms.ts`, returning a `TransformResult`. Then register it inside the column inspector configuration so it appears in the UI.
+- **Custom transforms:** Add a new helper to `src/core/dataset/transforms.ts`, returning a `TransformResult`. Then register it inside the column inspector configuration so it appears in the UI. For example, to add a "double value" transformation:
+
+  ```typescript
+  // in src/core/dataset/transforms.ts
+  export const doubleValue = (column: any[]): any[] => {
+    return column.map(value => value * 2);
+  }
+  ```
+  Then, you would call this transformation from a UI component and update the dataset using the `useDatasetStore`'s `updateDatasetData` action.
+
 - **Derived metrics:** Augment profiling logic in `src/core/profiling` to compute domain-specific KPIs (e.g., churn, conversion, risk scores).
 - **Visualization presets:** Extend chart definitions in `src/ui` to add templates, saved views, or organization-specific themes.
 - **Automation hooks:** The Zustand stores in `src/state` expose accessor methods (`applyDatasetTransform`, `updateDatasetData`, etc.) that you can call from new React components, services, or background workers.
