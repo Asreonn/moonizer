@@ -1,0 +1,849 @@
+{
+  "title": "Veri Gezgini",
+  "titleWithColumn": "Veri Gezgini - {{columnName}}",
+  "types": {
+    "numeric": "Sayısal",
+    "categorical": "Kategorik",
+    "boolean": "Boolean",
+    "datetime": "Tarih Saat",
+    "text": "Metin",
+    "id_unique": "Benzersiz",
+    "constant": "Sabit"
+  },
+  "states": {
+    "selectColumn": "Verilerini keşfetmek için bir sütun seçin",
+    "columnSelected": "Keşif için {{columnName}} sütunu seçildi",
+    "noData": "Keşif için veri mevcut değil",
+    "loading": "Sütun verileri yükleniyor..."
+  },
+  "actions": {
+    "toggle": "Veri Gezginini Değiştir",
+    "close": "Veri Gezginini Kapat",
+    "expand": "Veri Gezginini Genişlet",
+    "collapse": "Veri Gezginini Daralt",
+    "exportPNG": "Grafiği PNG olarak dışa aktar",
+    "exporting": "Dışa aktarılıyor..."
+  },
+  "tabs": {
+    "overview": "Genel Bakış",
+    "distribution": "Dağılım",
+    "trends": "Trendler",
+    "comparison": "Karşılaştırma"
+  },
+  "chart": {
+    "noData": "Grafik için veri mevcut değil",
+    "noValidData": "Geçerli veri mevcut değil",
+    "layout": {
+      "single": "Tek Grafik",
+      "sideBySide": "Yan Yana"
+    },
+    "configure": "Grafikleri Yapılandır"
+  },
+  "chartTypes": {
+    "histogram": "Histogram",
+    "line": "Çizgi",
+    "scatter": "Dağılım",
+    "bar": "Çubuk",
+    "pie": "Pasta",
+    "box": "Kutu Grafiği",
+    "area": "Alan Grafiği",
+    "heatmap": "Isı Haritası"
+  },
+  "config": {
+    "chart": "Grafik",
+    "leftChart": "Sol Grafik",
+    "rightChart": "Sağ Grafik",
+    "chartType": "Grafik Türü",
+    "color": "Renk",
+    "options": "Seçenekler",
+    "showGrid": "Izgarayı Göster",
+    "showLabels": "Etiketleri Göster",
+    "leftOption": "Sol: {{chart}}",
+    "rightOption": "Sağ: {{chart}}"
+  },
+  "export": {
+    "button": {
+      "label": "Dışa Aktar",
+      "exporting": "Dışa aktarılıyor…",
+      "tooltip": {
+        "single": "Mükemmel grafiği PNG olarak dışa aktar",
+        "dual": "Çift grafikleri yan yana PNG olarak dışa aktar"
+      }
+    },
+    "menu": {
+      "title": "PNG Dışa Aktarma",
+      "appearance": "Görünüm",
+      "close": "Dışa aktarma ayarlarını kapat"
+    },
+    "actions": {
+      "download": "PNG İndir"
+    },
+    "status": {
+      "preparing": "Hazırlanıyor…"
+    },
+    "appearance": {
+      "options": {
+        "transparent": "Şeffaf",
+        "light": "Açık",
+        "dark": "Koyu"
+      }
+    },
+    "controls": {
+      "grid": "Izgara",
+      "values": "Değerler",
+      "syncScales": "Ölçekleri senkronize et",
+      "leftValues": "Sol değerler",
+      "rightValues": "Sağ değerler"
+    },
+    "dual": {
+      "title": "{{columnName}} - Çift Görünüm ({{leftChart}} | {{rightChart}})",
+      "leftHeading": "Sol Grafik",
+      "rightHeading": "Sağ Grafik",
+      "panelTitle": "{{heading}} ({{chartType}})"
+    },
+    "barChart": {
+      "title": "{{columnName}} Dağılımı",
+      "subtitle": "{{categoryCount}} kategori · {{formattedTotal}} toplam kayıt",
+      "legend": {
+        "category": "Kategori",
+        "distribution": "Dağılım",
+        "count": "Sayı",
+        "percentage": "Yüzde"
+      }
+    }
+  },
+  "grid": {
+    "title": "Veri Izgarası",
+    "records": "kayıt",
+    "filtered": "filtrelenmiş",
+    "hideNull": "Boş değerleri gizle",
+    "perPage": "sayfa başına",
+    "previous": "Önceki",
+    "next": "Sonraki",
+    "page": "Sayfa",
+    "of": " / "
+  },
+  "titles": {
+    "overview": "Genel Bakış",
+    "distribution": "Dağılım",
+    "trends": "Trendler",
+    "comparison": "Karşılaştırma"
+  },
+  "analysis": {
+    "title": "Analiz",
+    "records": "kayıt",
+    "noData": "Analiz için veri mevcut değil",
+    "constant": {
+      "title": "Sabit Değer",
+      "description": "Bu sütun tüm kayıtlar için aynı değeri içerir.",
+      "value": "Değer",
+      "totalRecords": "Toplam Kayıt",
+      "nonNullRecords": "Boş Olmayan Kayıtlar",
+      "nullRecords": "Boş Kayıtlar"
+    },
+    "numeric": {
+      "title": "Sayısal Analiz",
+      "noValidData": "Geçerli sayısal veri bulunamadı",
+      "descriptive": "Tanımlayıcı İstatistikler",
+      "quartiles": "Çeyrek Analizi",
+      "composition": "Değer Kompozisyonu",
+      "count": "Sayı",
+      "mean": "Ortalama",
+      "median": "Medyan",
+      "stdDev": "Std Sapma",
+      "min": "Min",
+      "max": "Maks",
+      "q1": "Q1",
+      "q3": "Q3",
+      "iqr": "IQR",
+      "range": "Aralık",
+      "skewness": "Çarpıklık",
+      "outliers": "Aykırı Değerler",
+      "positive": "Pozitif",
+      "negative": "Negatif",
+      "zero": "Sıfır",
+      "distribution": {
+        "title": "Dağılım",
+        "shape": "Şekil",
+        "normal": "Normal",
+        "rightSkewed": "Sağa Çarpık",
+        "leftSkewed": "Sola Çarpık"
+      }
+    },
+    "categorical": {
+      "basic": "Temel İstatistikler",
+      "frequency": "Frekans Analizi",
+      "topCategories": "En İyi Kategoriler",
+      "totalRecords": "Toplam Kayıt",
+      "uniqueValues": "Benzersiz Değerler",
+      "uniqueRatio": "Benzersiz Oranı",
+      "diversityLevel": "Çeşitlilik Seviyesi",
+      "mostCommon": "En Yaygın",
+      "maxFreq": "Maks Frekans",
+      "minFreq": "Min Frekans",
+      "avgFreq": "Ort Frekans",
+      "diversity": {
+        "veryHigh": "Çok Yüksek",
+        "high": "Yüksek",
+        "medium": "Orta",
+        "low": "Düşük"
+      }
+    },
+    "idUnique": {
+      "basic": "ID/Benzersiz Analizi",
+      "noData": "ID/Benzersiz analizi mevcut değil",
+      "totalRecords": "Toplam Kayıt",
+      "uniqueValues": "Benzersiz Değerler",
+      "uniqueness": "Benzersizlik",
+      "fullyUnique": "%100 Benzersiz",
+      "unique": "Benzersiz",
+      "duplicates": "Yinelenenler",
+      "patternAnalysis": "Desen Analizi",
+      "detectedPattern": "Algılanan Desen",
+      "sampleValues": "Örnek Değerler",
+      "more": "daha fazla",
+      "dataQuality": "Veri Kalitesi",
+      "perfectUniqueness": "Mükemmel benzersizlik - birincil anahtar olarak uygun",
+      "duplicatesDetected": "{{count}} yinelenen değer algılandı",
+      "noNulls": "Boş değer yok",
+      "nullsPresent": "{{count}} boş değer mevcut",
+      "pattern": {
+        "numeric": "Sıralı Sayılar",
+        "uuid": "UUID Biçimi",
+        "alphanumeric": "Alfanümerik Kod",
+        "custom": "Özel Desen"
+      }
+    },
+    "text": {
+      "title": "Metin Analizi",
+      "noValidData": "Geçerli metin verisi bulunamadı",
+      "length": "Uzunluk İstatistikleri",
+      "words": "Kelime Analizi",
+      "characters": "Karakter Kompozisyonu",
+      "topWords": "En Yaygın Kelimeler",
+      "lengthDistribution": "Uzunluk Dağılımı",
+      "totalTexts": "Toplam Metinler",
+      "avgLength": "Ort Uzunluk",
+      "minLength": "Min Uzunluk",
+      "maxLength": "Maks Uzunluk",
+      "totalWords": "Toplam Kelimeler",
+      "avgWordsPerText": "Ort Kelime/Metin",
+      "vocabularySize": "Kelime Boyutu",
+      "vocabularyRichness": "Kelime Zenginliği",
+      "letters": "Harfler",
+      "digits": "Rakamlar",
+      "spaces": "Boşluklar",
+      "punctuation": "Noktalama İşaretleri"
+    },
+    "datetime": {
+      "title": "Tarih Saat Analizi",
+      "noValidData": "Geçerli tarih saat verisi bulunamadı",
+      "range": "Zaman Aralığı",
+      "frequency": "Frekans Analizi",
+      "topYears": "En Aktif Yıllar",
+      "topDays": "En Aktif Günler",
+      "timeline": "Zaman Çizelgesi Dağılımı",
+      "formatInfo": "Biçim Bilgisi",
+      "detectedFormat": "Algılanan Biçim",
+      "timezone": "Saat Dilimi",
+      "invalidDates": "Geçersiz Tarihler",
+      "records": "kayıt",
+      "totalRecords": "Toplam Kayıt",
+      "earliest": "En Erken",
+      "latest": "En Son",
+      "timeSpan": "Zaman Aralığı",
+      "recordsPerDay": "Kayıt/Gün",
+      "avgGap": "Ort Boşluk",
+      "maxGap": "Maks Boşluk",
+      "duplicates": "Yinelenenler",
+      "years": "yıl",
+      "months": "ay",
+      "days": "gün",
+      "yes": "Evet",
+      "no": "Hayır"
+    },
+    "boolean": {
+      "title": "Boolean Analizi",
+      "noData": "Boolean verisi bulunamadı",
+      "basic": "Temel İstatistikler",
+      "distribution": "Dağılım Analizi",
+      "valueDistribution": "Değer Dağılımı",
+      "insights": "İçgörüler",
+      "totalRecords": "Toplam Kayıt",
+      "trueValues": "Doğru Değerler",
+      "falseValues": "Yanlış Değerler",
+      "otherValues": "Diğer Değerler",
+      "ratio": "Doğru:Yanlış Oranı",
+      "balance": "Denge",
+      "dataQuality": "Veri Kalitesi",
+      "uniqueValues": "Benzersiz Değerler",
+      "mostCommon": "En Yaygın",
+      "leastCommon": "En Az Yaygın",
+      "recommendation": "Öneri",
+      "wellBalanced": "İyi Dengelenmiş",
+      "moderatelyBalanced": "Orta Derecede Dengeli",
+      "imbalanced": "Dengesiz",
+      "clean": "Temiz Boolean",
+      "mixed": "Karışık Değerler",
+      "considerCleaning": "Boolean olmayan değerleri temizlemeyi düşünün"
+    }
+  },
+  "advanced": {
+    "title": "Gelişmiş Analiz",
+    "tooltip": "İstatistiksel bilgiler ve desenlerle derinlemesine sütun analizi",
+    "basic": "Temel İstatistikler",
+    "records": "Kayıtlar",
+    "uniqueValues": "Benzersiz Değerler",
+    "nulls": "Boş Değerler",
+    "recordsInfo": "Bu sütundaki toplam kayıt sayısı",
+    "uniqueInfo": "Bulunan farklı değerlerin sayısı",
+    "nullsInfo": "Boş veya boş değerlerin sayısı",
+    "numeric": {
+      "noValidData": "Geçerli sayısal veri bulunamadı",
+      "enhancedStats": "Gelişmiş İstatistikler",
+      "enhancedStatsInfo": "Merkezi eğilim ve değişkenlik dahil olmak üzere kapsamlı istatistiksel ölçümler",
+      "distributionAnalysis": "Dağılım Analizi",
+      "distributionInfo": "Veri dağılım şekli ve özelliklerinin analizi",
+      "outlierDetection": "Aykırı Değer Tespiti",
+      "outlierInfo": "Birden çok istatistiksel yöntem kullanılarak olağandışı değerlerin tespiti",
+      "patternAnalysis": "Desen Analizi",
+      "patternInfo": "Zaman içindeki trendlerin, oynaklığın ve veri desenlerinin analizi",
+      "mean": "Ortalama",
+      "median": "Medyan",
+      "mode": "Mod",
+      "stdDev": "Std Sapma",
+      "variance": "Varyans",
+      "cv": "Değişim Katsayısı",
+      "skewness": "Çarpıklık",
+      "kurtosis": "Basıklık",
+      "shape": "Şekil",
+      "peakedness": "Sivrilik",
+      "iqrOutliers": "IQR Aykırı Değerleri",
+      "zScoreOutliers": "Z-Skoru Aykırı Değerleri",
+      "outlierPercentage": "Aykırı Değer %",
+      "extremeValues": "Aşırı Değerler",
+      "trend": "Trend",
+      "volatility": "Oynaklık",
+      "clustering": "Kümeleme",
+      "gaps": "Büyük Boşluklar",
+      "yes": "Evet",
+      "no": "Hayır",
+      "shapes": {
+        "normal": "Normal",
+        "rightSkewed": "Sağa Çarpık",
+        "leftSkewed": "Sola Çarpık",
+        "moderatelyRightSkewed": "Orta Derecede Sağa Çarpık",
+        "moderatelyLeftSkewed": "Orta Derecede Sola Çarpık"
+      },
+      "peakedness": {
+        "mesokurtic": "Normal",
+        "leptokurtic": "Ağır kuyruklu",
+        "platykurtic": "Hafif kuyruklu"
+      },
+      "trends": {
+        "stable": "Kararlı",
+        "increasing": "Artan",
+        "decreasing": "Azalan"
+      },
+      "volatility": {
+        "low": "Düşük",
+        "medium": "Orta",
+        "high": "Yüksek"
+      }
+    },
+    "categorical": {
+      "noValidData": "Geçerli kategorik veri bulunamadı",
+      "distributionAnalysis": "Dağılım Analizi",
+      "distributionInfo": "Kategori frekans dağılımı ve eşitsizlik ölçümlerinin analizi",
+      "diversityAnalysis": "Çeşitlilik Analizi",
+      "diversityInfo": "Bilgi teorisi kullanılarak kategori çeşitliliğinin ölçümü",
+      "patternAnalysis": "Desen Analizi",
+      "patternInfo": "Dağılım desenlerinin ve üs yasası özelliklerinin tespiti",
+      "dataQualityAssessment": "Veri Kalitesi Değerlendirmesi",
+      "qualityInfo": "Veri tutarlılığı ve standardizasyonunun değerlendirilmesi",
+      "totalCategories": "Toplam Kategoriler",
+      "mostFrequent": "En Sık",
+      "maxFrequency": "Maks Frekans",
+      "minFrequency": "Min Frekans",
+      "avgFrequency": "Ort Frekans",
+      "giniIndex": "Gini Endeksi",
+      "shannonEntropy": "Shannon Entropisi",
+      "simpsonIndex": "Simpson Endeksi",
+      "evenness": "Düzgünlük",
+      "dominance": "Baskınlık",
+      "diversityLevel": "Çeşitlilik Seviyesi",
+      "concentration": "Yoğunlaşma",
+      "singletons": "Tekiller",
+      "powerLaw": "Üs Yasası",
+      "topCategoriesShare": "En İyi Kategorilerin Payı",
+      "tailLength": "Kuyruk Uzunluğu",
+      "inconsistencies": "Tutarsızlıklar",
+      "potentialDuplicates": "Potansiyel Yinelenenler",
+      "averageLength": "Ortalama Uzunluk",
+      "standardization": "Standardizasyon",
+      "topCategories": "En İyi Kategoriler",
+      "yes": "Evet",
+      "no": "Hayır",
+      "diversity": {
+        "veryHigh": "Çok Yüksek",
+        "high": "Yüksek",
+        "medium": "Orta",
+        "low": "Düşük"
+      },
+      "concentration": {
+        "high": "Yüksek",
+        "medium": "Orta",
+        "low": "Düşük"
+      },
+      "standardization": {
+        "good": "İyi",
+        "fair": "Orta",
+        "poor": "Zayıf"
+      }
+    },
+    "text": {
+      "noValidData": "Geçerli metin verisi bulunamadı",
+      "lengthAnalysis": "Uzunluk Analizi",
+      "lengthInfo": "Metin uzunluğu dağılımının istatistiksel analizi",
+      "wordAnalysis": "Kelime Analizi",
+      "wordInfo": "Kelime zenginliği ve kelime kullanım desenlerinin analizi",
+      "characterAnalysis": "Karakter Analizi",
+      "characterInfo": "Karakter türlerinin ve kompozisyonunun dökümü",
+      "languageAnalysis": "Dil Analizi",
+      "languageInfo": "Okunabilirlik, resmiyet ve metin yapısının değerlendirilmesi",
+      "detectedPatterns": "Algılanan Desenler",
+      "mostCommonWords": "En Yaygın Kelimeler",
+      "avgLength": "Ort Uzunluk",
+      "medianLength": "Medyan Uzunluk",
+      "minLength": "Min Uzunluk",
+      "maxLength": "Maks Uzunluk",
+      "lengthVariability": "Uzunluk Değişkenliği",
+      "lengthStdDev": "Uzunluk Std Sapma",
+      "totalWords": "Toplam Kelimeler",
+      "vocabularySize": "Kelime Boyutu",
+      "avgWordsPerText": "Ort Kelime/Metin",
+      "avgWordLength": "Ort Kelime Uzunluğu",
+      "vocabularyRichness": "Kelime Zenginliği",
+      "lexicalDiversity": "Sözcüksel Çeşitlilik",
+      "alphabetic": "Alfabetik",
+      "numeric": "Sayısal",
+      "whitespace": "Boşluk",
+      "punctuation": "Noktalama İşaretleri",
+      "uppercase": "Büyük Harf",
+      "special": "Özel",
+      "readabilityScore": "Okunabilirlik Puanı",
+      "avgSentenceLength": "Ort Cümle Uzunluğu",
+      "avgSyllablesPerWord": "Ort Heceler/Kelime",
+      "formality": "Resmiyet",
+      "complexity": "Karmaşıklık",
+      "structure": "Yapı",
+      "variability": {
+        "low": "Düşük",
+        "medium": "Orta",
+        "high": "Yüksek"
+      },
+      "diversity": {
+        "veryHigh": "Çok Yüksek",
+        "high": "Yüksek",
+        "medium": "Orta",
+        "low": "Düşük"
+      },
+      "formality": {
+        "formal": "Resmi",
+        "neutral": "Nötr",
+        "informal": "Gayriresmi"
+      },
+      "complexity": {
+        "simple": "Basit",
+        "moderate": "Orta",
+        "complex": "Karmaşık"
+      },
+      "structure": {
+        "unstructured": "Yapılandırılmamış",
+        "semi_structured": "Yarı yapılandırılmış",
+        "highly_structured": "Yüksek düzeyde yapılandırılmış"
+      }
+    },
+    "boolean": {
+      "noValidData": "Geçerli boole verisi bulunamadı",
+      "distributionAnalysis": "Dağılım Analizi",
+      "distributionInfo": "Doğru/yanlış değer dağılımı ve denge analizi",
+      "patternAnalysis": "Desen Analizi",
+      "patternInfo": "Boole desenlerinin, serilerinin ve değişimlerinin analizi",
+      "dataQuality": "Veri Kalitesi",
+      "qualityInfo": "Boole veri saflığı ve tutarlılığının değerlendirilmesi",
+      "statisticalInsights": "İstatistiksel İçgörüler",
+      "insightsInfo": "Boole verileri için bilgi teorisi ve istatistiksel ölçümler",
+      "valueDistribution": "Değer Dağılımı",
+      "trueCount": "Doğru Sayısı",
+      "falseCount": "Yanlış Sayısı",
+      "truePercentage": "Doğru Yüzdesi",
+      "falsePercentage": "Yanlış Yüzdesi",
+      "ratio": "Oran",
+      "balance": "Denge",
+      "longestTrueStreak": "En Uzun Doğru Serisi",
+      "longestFalseStreak": "En Uzun Yanlış Serisi",
+      "alternations": "Değişimler",
+      "clustering": "Kümeleme",
+      "randomness": "Rastgelelik",
+      "predictability": "Öngörülebilirlik",
+      "purity": "Saflık",
+      "consistency": "Tutarlılık",
+      "uniqueValues": "Benzersiz Değerler",
+      "nonBooleanValues": "Boole Olmayan Değerler",
+      "dataType": "Veri Türü",
+      "recommendation": "Öneri",
+      "entropy": "Entropi",
+      "informationContent": "Bilgi İçeriği",
+      "biasMagnitude": "Önyargı Büyüklüğü",
+      "biasDirection": "Önyargı Yönü",
+      "variance": "Varyans",
+      "expectedValue": "Beklenen Değer",
+      "trueValues": "Doğru Değerler",
+      "falseValues": "Yanlış Değerler",
+      "balance": {
+        "balanced": "Dengeli",
+        "moderatelyImbalanced": "Orta Derecede Dengesiz",
+        "imbalanced": "Dengesiz",
+        "highlyImbalanced": "Yüksek Derecede Dengesiz"
+      },
+      "clustering": {
+        "none": "Yok",
+        "low": "Düşük",
+        "moderate": "Orta",
+        "high": "Yüksek"
+      },
+      "predictability": {
+        "random": "Rastgele",
+        "moderately_predictable": "Orta Derecede Öngörülebilir",
+        "highly_predictable": "Yüksek Derecede Öngörülebilir"
+      },
+      "consistency": {
+        "high": "Yüksek",
+        "medium": "Orta",
+        "low": "Düşük"
+      },
+      "dataType": {
+        "mixed": "Karışık",
+        "pure_boolean": "Saf Boolean",
+        "constant": "Sabit",
+        "boolean_variants": "Boolean Varyantları"
+      },
+      "recommendation": {
+        "good": "İyi",
+        "needs_cleaning": "Temizlenmesi Gerekiyor",
+        "consider_constant": "Sabit Olarak Değerlendir"
+      },
+      "informationContent": {
+        "maximum": "Maksimum",
+        "high": "Yüksek",
+        "medium": "Orta",
+        "low": "Düşük"
+      },
+      "biasDirection": {
+        "none": "Yok",
+        "toward_true": "Doğruya Doğru",
+        "toward_false": "Yanlışa Doğru"
+      }
+    },
+    "datetime": {
+      "noValidData": "Geçerli tarih saat verisi bulunamadı",
+      "timeRangeAnalysis": "Zaman Aralığı Analizi",
+      "timeRangeInfo": "Zamansal kapsam ve aralık özelliklerinin analizi",
+      "temporalPatterns": "Zamansal Desenler",
+      "patternsInfo": "Mevsimsel desenlerin ve zamansal trendlerin tespiti",
+      "frequencyDistribution": "Frekans Dağılımı",
+      "frequencyInfo": "Farklı zaman dilimlerindeki kayıt frekansının analizi",
+      "gapAnalysis": "Boşluk Analizi",
+      "gapInfo": "Zaman boşluklarının ve veri sürekliliğinin analizi",
+      "mostActivePeriods": "En Aktif Dönemler",
+      "earliest": "En Erken",
+      "latest": "En Son",
+      "spanYears": "Aralık (Yıl)",
+      "spanDays": "Aralık (Gün)",
+      "timeSpanCategory": "Zaman Aralığı Kategorisi",
+      "coverage": "Kapsam",
+      "seasonality": "Mevsimsellik",
+      "weekdayPattern": "Hafta İçi Deseni",
+      "monthlyTrend": "Aylık Trend",
+      "yearlyTrend": "Yıllık Trend",
+      "clustering": "Kümeleme",
+      "regularity": "Düzenlilik",
+      "recordsPerDay": "Kayıt/Gün",
+      "recordsPerWeek": "Kayıt/Hafta",
+      "recordsPerMonth": "Kayıt/Ay",
+      "uniqueDays": "Benzersiz Günler",
+      "peakDay": "Zirve Günü",
+      "maxDailyRecords": "Maks Günlük Kayıtlar",
+      "avgGapDays": "Ort Boşluk (Gün)",
+      "medianGapDays": "Medyan Boşluk (Gün)",
+      "maxGapDays": "Maks Boşluk (Gün)",
+      "significantGaps": "Önemli Boşluklar",
+      "continuity": "Süreklilik",
+      "gapVariability": "Boşluk Değişkenliği",
+      "topYears": "En İyi Yıllar",
+      "topMonths": "En İyi Aylar",
+      "topWeekdays": "En İyi Hafta İçi Günleri",
+      "timeSpan": {
+        "days": "Gün",
+        "weeks": "Hafta",
+        "months": "Ay",
+        "years": "Yıl",
+        "decades": "On Yıl"
+      },
+      "seasonality": {
+        "none": "Yok",
+        "weak": "Zayıf",
+        "moderate": "Orta",
+        "strong": "Güçlü"
+      },
+      "weekdayPattern": {
+        "uniform": "Tekdüze",
+        "moderate_weekday_bias": "Orta Hafta İçi Eğilimi",
+        "strong_weekday_bias": "Güçlü Hafta İçi Eğilimi"
+      },
+      "trend": {
+        "stable": "Kararlı",
+        "increasing": "Artan",
+        "decreasing": "Azalan"
+      },
+      "clustering": {
+        "scattered": "Dağınık",
+        "moderately_clustered": "Orta Derecede Kümelenmiş",
+        "highly_clustered": "Yüksek Derecede Kümelenmiş"
+      },
+      "regularity": {
+        "irregular": "Düzensiz",
+        "somewhat_regular": "Biraz Düzenli",
+        "regular": "Düzenli",
+        "very_regular": "Çok Düzenli"
+      },
+      "continuity": {
+        "continuous": "Sürekli",
+        "minor_breaks": "Küçük Kesintiler",
+        "some_breaks": "Bazı Kesintiler",
+        "major_breaks": "Büyük Kesintiler"
+      },
+      "variability": {
+        "consistent": "Tutarlı",
+        "somewhat_variable": "Biraz Değişken",
+        "moderately_variable": "Orta Derecede Değişken",
+        "highly_variable": "Yüksek Derecede Değişken"
+      }
+    },
+    "constant": {
+      "noValidData": "Geçerli sabit veri bulunamadı",
+      "valueAnalysis": "Değer Analizi",
+      "valueInfo": "Sabit değerin ve özelliklerinin analizi",
+      "dataQuality": "Veri Kalitesi",
+      "qualityInfo": "Veri tutarlılığı ve boş değer yönetiminin değerlendirilmesi",
+      "storageImplications": "Depolama Etkileri",
+      "storageInfo": "Depolama verimliliği ve optimizasyon fırsatlarının analizi",
+      "recommendations": "Öneriler",
+      "recommendationsInfo": "Sabit sütunların yönetimi için eyleme geçirilebilir öneriler",
+      "usageScenarios": "Kullanım Senaryoları",
+      "constantValue": "Sabit Değer",
+      "totalRecords": "Toplam Kayıt",
+      "constantRecords": "Sabit Kayıtlar",
+      "nullRecords": "Boş Kayıtlar",
+      "purity": "Saflık",
+      "consistency": "Tutarlılık",
+      "dataIntegrity": "Veri Bütünlüğü",
+      "redundancyLevel": "Yedeklilik Seviyesi",
+      "compressionPotential": "Sıkıştırma Potansiyeli",
+      "spaceSavings": "Alan Tasarrufu",
+      "memoryFootprint": "Bellek Ayak İzi",
+      "indexingBenefit": "Dizinleme Faydası",
+      "queryOptimization": "Sorgu Optimizasyonu",
+      "applicability": "Uygulanabilirlik",
+      "types": {
+        "null": "Boş",
+        "boolean": "Boolean",
+        "numeric": "Sayısal",
+        "empty_string": "Boş Dize",
+        "date": "Tarih",
+        "short_string": "Kısa Dize",
+        "long_string": "Uzun Dize",
+        "unknown": "Bilinmeyen"
+      },
+      "consistency": {
+        "perfect": "Mükemmel",
+        "with_nulls": "Boş Değerlerle",
+        "mixed": "Karışık"
+      },
+      "integrity": {
+        "high": "Yüksek",
+        "medium": "Orta",
+        "low": "Düşük"
+      },
+      "redundancy": {
+        "maximum": "Maksimum"
+      },
+      "compression": {
+        "excellent": "Mükemmel"
+      },
+      "indexing": {
+        "high": "Yüksek",
+        "low": "Düşük"
+      },
+      "optimization": {
+        "excellent": "Mükemmel",
+        "moderate": "Orta"
+      },
+      "priority": {
+        "high": "Yüksek",
+        "medium": "Orta",
+        "low": "Düşük"
+      },
+      "recommendationTexts": {
+        "remove_column": "Bu yedek sütunu kaldırmayı düşünün",
+        "move_to_metadata": "Sabit değeri tablo meta verilerine taşıyın",
+        "handle_nulls": "Daha iyi tutarlılık için boş değerleri ele alın",
+        "clarify_empty_string": "Boş dizenin kasıtlı olup olmadığını netleştirin",
+        "compression_opportunity": "Depolama optimizasyonu için yüksek sıkıştırma potansiyeli",
+        "document_purpose": "Bu sabit sütunun amacını belgeleyin"
+      },
+      "scenarios": {
+        "configuration_flag": {
+          "title": "Yapılandırma Bayrağı",
+          "description": "Bir sistem yapılandırma ayarı veya özellik bayrağı olarak kullanılır"
+        },
+        "version_identifier": {
+          "title": "Sürüm Tanımlayıcı",
+          "description": "Bu veri seti için veri sürümünü veya şema sürümünü tanımlar"
+        },
+        "default_value": {
+          "title": "Varsayılan Değer",
+          "description": "Gelecekteki kullanım veya varsayılan sistem ayarı için yer tutucu"
+        },
+        "placeholder_column": {
+          "title": "Yer Tutucu Sütun",
+          "description": "Gelecekteki işlevsellik genişlemesi için ayrılmış sütun"
+        },
+        "regulatory_requirement": {
+          "title": "Yasal Gereklilik",
+          "description": "Uyumluluk için gerekli alan ancak şu anda tek bir değere sahip"
+        }
+      },
+      "applicabilityLevels": {
+        "high": "Yüksek",
+        "medium": "Orta",
+        "low": "Düşük"
+      }
+    },
+    "idUnique": {
+      "noValidData": "Geçerli ID/benzersiz veri bulunamadı",
+      "uniquenessAnalysis": "Benzersizlik Analizi",
+      "uniquenessInfo": "ID benzersizliği ve yinelenen tespiti analizi",
+      "patternAnalysis": "Desen Analizi",
+      "patternInfo": "ID biçimlendirme desenlerinin ve tutarlılığının tespiti",
+      "structureAnalysis": "Yapı Analizi",
+      "structureInfo": "ID uzunluğu, karakter türleri ve karmaşıklık analizi",
+      "qualityAssessment": "Kalite Değerlendirmesi",
+      "qualityInfo": "ID güvenliği, öngörülebilirliği ve çakışma riski değerlendirmesi",
+      "detectedPatterns": "Algılanan Desenler",
+      "sampleIds": "Örnek ID'ler",
+      "totalRecords": "Toplam Kayıt",
+      "uniqueRecords": "Benzersiz Kayıtlar",
+      "duplicates": "Yinelenenler",
+      "uniquenessRatio": "Benzersizlik Oranı",
+      "idQuality": "ID Kalitesi",
+      "cardinality": "Kardinalite",
+      "detectedFormat": "Algılanan Biçim",
+      "consistency": "Tutarlılık",
+      "hasSequence": "Sıra Var",
+      "hasPrefixSuffix": "Önek/Sonek Var",
+      "formatVariations": "Biçim Varyasyonları",
+      "standardization": "Standardizasyon",
+      "avgLength": "Ort Uzunluk",
+      "minLength": "Min Uzunluk",
+      "maxLength": "Maks Uzunluk",
+      "lengthVariability": "Uzunluk Değişkenliği",
+      "characterTypes": "Karakter Türleri",
+      "complexity": "Karmaşıklık",
+      "collisionRisk": "Çakışma Riski",
+      "entropy": "Entropi",
+      "predictability": "Öngörülebilirlik",
+      "security": "Güvenlik",
+      "scalability": "Ölçeklenebilirlik",
+      "recommendation": "Öneri",
+      "yes": "Evet",
+      "no": "Hayır",
+      "quality": {
+        "perfect": "Mükemmel",
+        "excellent": "Mükemmel",
+        "good": "İyi",
+        "fair": "Orta",
+        "poor": "Zayıf"
+      },
+      "cardinality": {
+        "low": "Düşük",
+        "medium": "Orta",
+        "high": "Yüksek",
+        "very_high": "Çok Yüksek"
+      },
+      "formats": {
+        "uuid_v4": "UUID v4",
+        "uuid__any_version_": "UUID (Herhangi Bir Sürüm)",
+        "mongodb_objectid": "MongoDB ObjectId",
+        "sequential_number": "Sıralı Sayı",
+        "prefixed_sequential": "Önekli Sıralı",
+        "hash_like": "Hash Benzeri",
+        "base64_like": "Base64 Benzeri",
+        "alphanumeric": "Alfanümerik",
+        "custom_format": "Özel Biçim",
+        "mixed": "Karışık"
+      },
+      "consistency": {
+        "excellent": "Mükemmel",
+        "good": "İyi",
+        "fair": "Orta",
+        "poor": "Zayıf"
+      },
+      "standardization": {
+        "excellent": "Mükemmel",
+        "good": "İyi",
+        "fair": "Orta",
+        "poor": "Zayıf"
+      },
+      "variability": {
+        "consistent": "Tutarlı",
+        "slightly_variable": "Biraz Değişken",
+        "moderately_variable": "Orta Derecede Değişken",
+        "highly_variable": "Yüksek Derecede Değişken"
+      },
+      "complexity": {
+        "simple": "Basit",
+        "medium": "Orta",
+        "high": "Yüksek"
+      },
+      "risk": {
+        "very_low": "Çok Düşük",
+        "low": "Düşük",
+        "medium": "Orta",
+        "high": "Yüksek"
+      },
+      "predictability": {
+        "low": "Düşük",
+        "medium": "Orta",
+        "high": "Yüksek"
+      },
+      "security": {
+        "poor": "Zayıf",
+        "fair": "Orta",
+        "good": "İyi"
+      },
+      "scalability": {
+        "poor": "Zayıf",
+        "good": "İyi",
+        "excellent": "Mükemmel"
+      },
+      "recommendations": {
+        "excellent_ids": "Mükemmel ID'ler",
+        "increase_entropy": "Entropiyi Artır",
+        "reduce_predictability": "Öngörülebilirliği Azalt",
+        "review_format": "Biçimi Gözden Geçir"
+      }
+    }
+  }
+}

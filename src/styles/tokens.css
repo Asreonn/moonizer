@@ -1,0 +1,337 @@
+:root {
+  /* Space-Dark Colors */
+  --color-bg-primary: #0f0f1a;
+  --color-bg-secondary: #1a1a2e;
+  --color-bg-tertiary: #242347;
+  --color-bg-surface: #2a2d5a;
+  --color-border: #3c3f73;
+  --color-border-hover: #4a4d80;
+  
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #94a3b8;
+  
+  /* Vivid Solid Accents */
+  --color-accent-primary: #8b5cf6;
+  --color-accent-primary-hover: #a78bfa;
+  --color-accent-secondary: #06b6d4;
+  --color-accent-secondary-hover: #22d3ee;
+  --color-accent-auxiliary: #f59e0b;
+  --color-accent-auxiliary-hover: #fbbf24;
+  
+  /* Icon Colors */
+  --icon-color-weak: #64748b;
+  --icon-color-normal: #cbd5e1;
+  --icon-color-strong: #f8fafc;
+  --icon-color-hover: #f8fafc;
+  
+  /* Type Colors */
+  --type-numeric: #7C3AED;
+  --type-categorical: #06B6D4;
+  --type-boolean: #EAB308;
+  --type-datetime: #3B82F6;
+  --type-text: #EC4899;
+  --type-idUnique: #10B981;
+  --type-constant: #94A3B8;
+  
+  /* Sign Colors for Numeric Values */
+  --sign-positive: #10B981;
+  --sign-negative: #EF4444;
+  --sign-zero: #64748B;
+  
+  /* Delta Colors (Change Detection) */
+  --delta-increased: #22C55E;
+  --delta-decreased: #F87171;
+  --delta-unchanged: #9CA3AF;
+  --delta-first-row: #6B7280;
+  
+  /* Outlier Detection Colors */
+  --outlier-extreme: #DC2626;
+  --outlier-moderate: #F59E0B;
+  --outlier-normal: #10B981;
+  --outlier-background: #1F2937;
+  
+  /* Quartile Colors (Statistical Distribution) */
+  --quartile-q1: #3B82F6;
+  --quartile-q2: #10B981;
+  --quartile-q3: #F59E0B;
+  --quartile-q4: #EF4444;
+  
+  /* General coloring - dataset-relative colors */
+  --general-positive: #22C55E;
+  --general-negative: #EF4444;
+  --general-zero: #94A3B8;
+  --general-above-avg: #3B82F6;
+  --general-below-avg: #F59E0B;
+
+  /* Heatmap Colors (Intensity Gradient) */
+  --heatmap-cold: #1E3A8A;
+  --heatmap-cool: #3B82F6;
+  --heatmap-warm: #F59E0B;
+  --heatmap-hot: #DC2626;
+
+  /* Status Colors */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  
+  /* Muted Color for Non-matching Cells */
+  --muted-500: #64748b;
+  
+  /* Glow Effects */
+  --glow-primary: 0 0 20px rgba(139, 92, 246, 0.3);
+  --glow-primary-intense: 0 0 25px rgba(139, 92, 246, 0.5);
+  --glow-secondary: 0 0 20px rgba(6, 182, 212, 0.3);
+  --glow-auxiliary: 0 0 20px rgba(245, 158, 11, 0.3);
+  
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  
+  /* Typography - Enhanced Font System */
+  /* Primary Font Stacks */
+  --font-family-system: -apple-system, BlinkMacSystemFont, "Segoe UI", "SF Pro Display", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-mono: "JetBrains Mono", "Cascadia Code", "SF Mono", "Consolas", "Monaco", "Roboto Mono", "Ubuntu Mono", monospace;
+  --font-family-display: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-family: var(--font-family-system); /* Default */
+
+  /* Font Sizes - Comprehensive Scale */
+  --font-size-2xs: 10px;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 32px;
+  --font-size-4xl: 48px;
+
+  /* Font Weights - Complete Range */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+
+  /* Line Heights - Optimized for Readability */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.4;
+  --line-height-relaxed: 1.5;
+  --line-height-loose: 1.6;
+  --line-height-none: 1;
+
+  /* Letter Spacing - Refined Typography */
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
+
+  /* Typography Presets */
+  --typography-h1: var(--font-weight-extrabold) var(--font-size-4xl)/var(--line-height-tight) var(--font-family-display);
+  --typography-h2: var(--font-weight-bold) var(--font-size-3xl)/var(--line-height-tight) var(--font-family-display);
+  --typography-h3: var(--font-weight-semibold) var(--font-size-2xl)/var(--line-height-normal) var(--font-family);
+  --typography-h4: var(--font-weight-semibold) var(--font-size-xl)/var(--line-height-normal) var(--font-family);
+  --typography-body-lg: var(--font-weight-normal) var(--font-size-lg)/var(--line-height-relaxed) var(--font-family);
+  --typography-body: var(--font-weight-normal) var(--font-size-md)/var(--line-height-relaxed) var(--font-family);
+  --typography-body-sm: var(--font-weight-normal) var(--font-size-sm)/var(--line-height-normal) var(--font-family);
+  --typography-caption: var(--font-weight-medium) var(--font-size-xs)/var(--line-height-normal) var(--font-family);
+  --typography-overline: var(--font-weight-semibold) var(--font-size-2xs)/var(--line-height-none) var(--font-family);
+  --typography-mono: var(--font-weight-normal) var(--font-size-sm)/var(--line-height-normal) var(--font-family-mono);
+  --typography-mono-sm: var(--font-weight-normal) var(--font-size-xs)/var(--line-height-normal) var(--font-family-mono);
+  --typography-code: var(--font-weight-medium) var(--font-size-sm)/var(--line-height-normal) var(--font-family-mono);
+  
+  /* Layout */
+  --border-radius: 12px;
+  --border-radius-large: 16px;
+  --border-width: 1px;
+  --border-width-thick: 2px;
+  
+  /* Animation */
+  --transition-fast: 150ms ease-out;
+  --transition-medium: 200ms ease-out;
+  --transition-slow: 300ms ease-out;
+  
+  /* Panels */
+  --panel-width-left: 380px;
+  --panel-width-right: 480px;
+  --panel-width: 400px; /* fallback for compatibility */
+  --panel-gutter: 48px;
+  --panel-header-height: 52px;
+  
+  /* Scrollbars */
+  --scroll-track: rgba(60, 63, 115, 0.3);
+  --scroll-thumb: rgba(139, 92, 246, 0.4);
+  --scroll-thumb-hover: rgba(139, 92, 246, 0.6);
+  --scroll-width: 6px;
+  
+  /* Z-index */
+  --z-panel: 10;
+  --z-toggle: 20;
+  --z-header: 30;
+  --z-table-header: 40;
+  --z-dropdown: 50;
+  --z-popover: 1000;
+
+  /* Popover */
+  --popover-surface: rgba(30, 30, 50, 0.98);
+  --popover-border: rgba(139, 92, 246, 0.3);
+  --elevation-popover: 
+    0 16px 64px rgba(0, 0, 0, 0.4),
+    0 8px 32px rgba(139, 92, 246, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+  /* Table */
+  --table-header-bg: var(--color-bg-tertiary);
+  --table-header-border: var(--color-border);
+  --table-row-bg: var(--color-bg-primary);
+  --table-row-hover: var(--color-bg-secondary);
+  --table-row-selected: rgba(139, 92, 246, 0.1);
+  --table-row-zebra: rgba(255, 255, 255, 0.02);
+  --table-row-active-border: var(--color-accent-primary);
+  --table-border: var(--color-border);
+  --table-cell-padding: var(--space-sm) var(--space-md);
+  --table-header-height: 40px;
+  --table-row-height: 36px;
+  --table-sort-active: var(--color-accent-primary);
+  --table-header-accent: 0 2px 0 0 var(--color-accent-primary);
+  --table-focus-ring: 0 0 0 2px rgba(139, 92, 246, 0.5);
+  --table-resize-handle: var(--color-border-hover);
+  --table-resize-handle-active: var(--color-accent-primary);
+  
+  /* Table Highlighting */
+  --table-highlight-row: rgba(139, 92, 246, 0.08);
+  --table-highlight-col: rgba(139, 92, 246, 0.06);
+  --table-highlight-cell: rgba(139, 92, 246, 0.15);
+  
+  /* Focus Ring */
+  --focus-ring: 0 0 0 2px rgba(139, 92, 246, 0.5);
+  
+  /* Scroll Shadows */
+  --scroll-shadow-start: rgba(0, 0, 0, 0.3);
+  --scroll-shadow-end: rgba(0, 0, 0, 0.1);
+  
+  /* Badges */
+  --badge-bg: var(--color-bg-surface);
+  --badge-border: var(--color-border);
+  --badge-text: var(--color-text-primary);
+  --badge-numeric: var(--color-accent-secondary);
+  --badge-categorical: var(--color-accent-auxiliary);
+  --badge-boolean: #10b981;
+  --badge-datetime: #8b5cf6;
+  --badge-text-type: #06b6d4;
+  --badge-id-unique: #f59e0b;
+  --badge-constant: #64748b;
+  --badge-locked: #ef4444;
+  --badge-small-bg: rgba(139, 92, 246, 0.1);
+  --badge-small-text: var(--color-accent-primary);
+  --badge-height: 22px;
+  --badge-padding: var(--space-xs) var(--space-sm);
+  --badge-font-size: var(--font-size-xs);
+  
+  /* Chips */
+  --chip-bg: var(--color-bg-tertiary);
+  --chip-bg-hover: var(--color-bg-surface);
+  --chip-bg-active: rgba(139, 92, 246, 0.2);
+  --chip-border: var(--color-border);
+  --chip-border-active: var(--color-accent-primary);
+  --chip-text: var(--color-text-secondary);
+  --chip-text-active: var(--color-accent-primary);
+  --chip-height: 28px;
+  --chip-padding: var(--space-xs) var(--space-sm);
+  --chip-gap: var(--space-xs);
+  
+  /* Column Inspector */
+  --inspector-summary-bg: var(--color-bg-secondary);
+  --inspector-summary-border: var(--color-border);
+  --inspector-card-bg: var(--color-bg-secondary);
+  --inspector-card-border: var(--color-border);
+  --inspector-card-hover: var(--color-bg-tertiary);
+  --inspector-card-active: rgba(139, 92, 246, 0.1);
+  --inspector-card-radius: var(--border-radius-large);
+  --inspector-card-padding: var(--space-lg);
+  --inspector-card-gap: var(--space-md);
+  --inspector-stats-color: var(--color-text-muted);
+  --inspector-warning-bg: rgba(245, 158, 11, 0.1);
+  --inspector-warning-border: rgba(245, 158, 11, 0.3);
+  --inspector-warning-text: #fbbf24;
+  --inspector-danger-bg: rgba(239, 68, 68, 0.1);
+  --inspector-danger-border: rgba(239, 68, 68, 0.3);
+  --inspector-danger-text: #fca5a5;
+  
+  /* New Inspector UX Tokens */
+  --inspector-focus-ring: 0 0 0 2px rgba(139, 92, 246, 0.6);
+  --inspector-underline-accent: var(--color-accent-primary);
+  --inspector-scroll-shadow-top: linear-gradient(to bottom, var(--color-bg-primary) 0%, transparent 100%);
+  --inspector-scroll-shadow-bottom: linear-gradient(to top, var(--color-bg-primary) 0%, transparent 100%);
+  
+  /* Chip Active States */
+  --chip-active-bg: rgba(139, 92, 246, 0.15);
+  --chip-active-border: var(--color-accent-primary);
+  --chip-active-underline: 2px solid var(--color-accent-primary);
+  --chip-scale-active: 0.98;
+  
+  /* Badge Refresh */
+  --badge-accent-ring: rgba(139, 92, 246, 0.3);
+  --badge-pulse-from: rgba(139, 92, 246, 0.6);
+  --badge-pulse-to: rgba(139, 92, 246, 0.2);
+  
+  /* Progressive Disclosure */
+  --disclosure-bg: var(--color-bg-tertiary);
+  --disclosure-border: var(--color-border);
+  --disclosure-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --disclosure-expand-duration: 180ms;
+  --disclosure-expand-easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  /* Micro-interactions */
+  --micro-scale-hover: 1.02;
+  --micro-scale-active: 0.98;
+  --micro-translate-hover: -2px;
+  --micro-bounce-duration: 400ms;
+  --micro-bounce-easing: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* Rev-2 Visual Elements */
+  --chip-accent: var(--color-accent-primary);
+  --badge-accent: var(--color-accent-secondary);
+  --underline-accent: var(--color-accent-primary);
+  --mini-bar-bg: var(--color-bg-surface);
+  --mini-bar-fill: var(--color-accent-primary);
+  --sparkline-color: var(--color-accent-primary);
+  --sparkline-bg: var(--color-bg-tertiary);
+  --editor-slide-duration: 200ms;
+  --editor-slide-easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  /* Large Summary Chips */
+  --summary-chip-height: 48px;
+  --summary-chip-padding: var(--space-md) var(--space-lg);
+  --summary-chip-gap: var(--space-sm);
+  --summary-chip-font-size: var(--font-size-md);
+  --summary-area-padding: var(--space-lg) var(--space-md);
+
+  /* Elevated Edit Panel */
+  --panel-edit-bg: #1e1e2e;
+  --panel-edit-border: #4c4f8a;
+  --panel-edit-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(139, 92, 246, 0.1);
+  --panel-edit-header-bg: #252545;
+  --panel-edit-content-bg: var(--panel-edit-bg);
+  --panel-edit-content-bg-rgb: 30, 30, 46;
+  --panel-edit-section-border: #3a3d70;
+  
+  /* Edit Panel Animations */
+  --edit-accordion-duration: 200ms;
+  --edit-accordion-easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --edit-chip-scale-active: 0.98;
+  --edit-focus-ring: 0 0 0 2px rgba(139, 92, 246, 0.6);
+
+  /* Solid Vivid Accents */
+  --accent-primary: #7C3AED;
+  --accent-cyan: #06B6D4; 
+  --accent-amber: #F59E0B;
+  --accent-pink: #EC4899;
+}

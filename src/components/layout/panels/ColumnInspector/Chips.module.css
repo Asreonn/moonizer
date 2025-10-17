@@ -1,0 +1,547 @@
+/* Compact Modern Type Chips */
+.typeChip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: none;
+  position: relative;
+  min-width: auto;
+  min-height: 28px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.typeChip:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--color-text-primary);
+  transform: translateY(-1px);
+}
+
+.typeChip--active {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+.typeChip__label {
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+  line-height: 1;
+}
+
+.typeChip__count {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--color-text-primary);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-semibold);
+  min-width: 18px;
+  text-align: center;
+  line-height: 1;
+}
+
+/* Modern Type-specific Colors */
+.typeChip--numeric {
+  border-color: var(--type-numeric);
+}
+
+.typeChip--numeric.typeChip--active {
+  background: linear-gradient(145deg, var(--type-numeric), rgba(124, 58, 237, 0.8));
+  border-color: var(--type-numeric);
+  color: white;
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+}
+
+.typeChip--categorical {
+  border-color: var(--type-categorical);
+}
+
+.typeChip--categorical.typeChip--active {
+  background: linear-gradient(145deg, var(--type-categorical), rgba(6, 182, 212, 0.8));
+  border-color: var(--type-categorical);
+  color: white;
+  box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3);
+}
+
+.typeChip--boolean {
+  border-color: var(--type-boolean);
+}
+
+.typeChip--boolean.typeChip--active {
+  background: linear-gradient(145deg, var(--type-boolean), rgba(234, 179, 8, 0.8));
+  border-color: var(--type-boolean);
+  color: white;
+  box-shadow: 0 8px 25px rgba(234, 179, 8, 0.3);
+}
+
+.typeChip--datetime {
+  border-color: var(--type-datetime);
+}
+
+.typeChip--datetime.typeChip--active {
+  background: linear-gradient(145deg, var(--type-datetime), rgba(59, 130, 246, 0.8));
+  border-color: var(--type-datetime);
+  color: white;
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+.typeChip--text {
+  border-color: var(--type-text);
+}
+
+.typeChip--text.typeChip--active {
+  background: linear-gradient(145deg, var(--type-text), rgba(236, 72, 153, 0.8));
+  border-color: var(--type-text);
+  color: white;
+  box-shadow: 0 8px 25px rgba(236, 72, 153, 0.3);
+}
+
+.typeChip--id_unique {
+  border-color: var(--type-idUnique);
+}
+
+.typeChip--id_unique.typeChip--active {
+  background: linear-gradient(145deg, var(--type-idUnique), rgba(34, 211, 238, 0.8));
+  border-color: var(--type-idUnique);
+  color: white;
+  box-shadow: 0 8px 25px rgba(34, 211, 238, 0.3);
+}
+
+.typeChip--constant {
+  border-color: var(--type-constant);
+}
+
+.typeChip--constant.typeChip--active {
+  background: linear-gradient(145deg, var(--type-constant), rgba(148, 163, 184, 0.8));
+  border-color: var(--type-constant);
+  color: white;
+  box-shadow: 0 8px 25px rgba(148, 163, 184, 0.3);
+}
+
+/* Muted State for Zero Count */
+.typeChip--muted {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.typeChip--muted:hover {
+  transform: none;
+  box-shadow: none;
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Horizontal Compact Type Chips - 2x3 Grid Layout */
+.typeChipSquare {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xs);
+  height: 75px;
+  width: 100%;
+  padding: 0 8px;
+  background: var(--color-bg-tertiary);
+  border: 3px solid var(--color-border);
+  border-radius: 12px;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  position: relative;
+  text-align: left;
+  transform-origin: center;
+  overflow: hidden;
+}
+
+.typeChipSquare:hover:not(:disabled) {
+  background: var(--color-bg-surface);
+  border-color: var(--color-border-hover);
+  transform: translateY(-1px);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.typeChipSquare:active:not(:disabled) {
+  transform: translateY(0px);
+  transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.typeChipSquare__label {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  line-height: 1.2;
+  text-transform: capitalize;
+  letter-spacing: 0.3px;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--color-text-primary);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.typeChipSquare__count {
+  color: white;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  line-height: 1.1;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 4px 8px;
+  border-radius: 12px;
+  min-width: 24px;
+  flex-shrink: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Type-specific solid accent colors for square chips */
+.typeChipSquare--numeric {
+  border-color: var(--type-numeric);
+}
+
+.typeChipSquare--numeric.typeChipSquare--active {
+  background: var(--type-numeric);
+  border-color: var(--type-numeric);
+  color: white;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 12px 32px rgba(124, 58, 237, 0.5),
+    0 6px 16px rgba(124, 58, 237, 0.3);
+}
+
+.typeChipSquare--categorical {
+  border-color: var(--type-categorical);
+}
+
+.typeChipSquare--categorical.typeChipSquare--active {
+  background: var(--type-categorical);
+  border-color: var(--type-categorical);
+  color: white;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 12px 32px rgba(6, 182, 212, 0.5),
+    0 6px 16px rgba(6, 182, 212, 0.3);
+}
+
+.typeChipSquare--boolean {
+  border-color: var(--type-boolean);
+}
+
+.typeChipSquare--boolean.typeChipSquare--active {
+  background: var(--type-boolean);
+  border-color: var(--type-boolean);
+  color: white;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 12px 32px rgba(234, 179, 8, 0.5),
+    0 6px 16px rgba(234, 179, 8, 0.3);
+}
+
+.typeChipSquare--datetime {
+  border-color: var(--type-datetime);
+}
+
+.typeChipSquare--datetime.typeChipSquare--active {
+  background: var(--type-datetime);
+  border-color: var(--type-datetime);
+  color: white;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 12px 32px rgba(59, 130, 246, 0.5),
+    0 6px 16px rgba(59, 130, 246, 0.3);
+}
+
+.typeChipSquare--text {
+  border-color: var(--type-text);
+}
+
+.typeChipSquare--text.typeChipSquare--active {
+  background: var(--type-text);
+  border-color: var(--type-text);
+  color: white;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 12px 32px rgba(236, 72, 153, 0.5),
+    0 6px 16px rgba(236, 72, 153, 0.3);
+}
+
+.typeChipSquare--id_unique {
+  border-color: var(--type-idUnique);
+}
+
+.typeChipSquare--id_unique.typeChipSquare--active {
+  background: var(--type-idUnique);
+  border-color: var(--type-idUnique);
+  color: white;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 12px 32px rgba(16, 185, 129, 0.5),
+    0 6px 16px rgba(16, 185, 129, 0.3);
+}
+
+/* Muted state for square chips with zero count */
+.typeChipSquare--muted {
+  opacity: 0.35;
+  cursor: not-allowed;
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-border);
+}
+
+.typeChipSquare--muted:hover {
+  transform: none;
+  box-shadow: none;
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-border);
+}
+
+.typeChipSquare--muted .typeChipSquare__count {
+  color: var(--color-text-muted);
+}
+
+/* Active state count styling for square chips */
+.typeChipSquare--active .typeChipSquare__count {
+  color: white;
+  font-weight: var(--font-weight-bold);
+}
+
+/* Mini KPI Chips */
+.kpiChip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 4px var(--space-sm);
+  height: 24px;
+  background: var(--color-bg-tertiary);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 12px;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+
+.kpiChip:hover {
+  background: var(--color-bg-surface);
+  border-color: var(--color-border-hover);
+  color: var(--color-text-secondary);
+  transform: scale(1.02);
+}
+
+.kpiChip--active {
+  background: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+  color: white;
+}
+
+.kpiChip__label {
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-xs);
+}
+
+.kpiChip__value {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-xs);
+  opacity: 0.9;
+}
+
+.kpiChip--active .kpiChip__value {
+  opacity: 1;
+}
+
+/* Large Summary Type Chips */
+.summaryTypeChip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--summary-chip-padding);
+  height: var(--summary-chip-height);
+  background: var(--chip-bg);
+  border: var(--border-width) solid var(--chip-border);
+  border-radius: calc(var(--summary-chip-height) / 2);
+  color: var(--chip-text);
+  font-size: var(--summary-chip-font-size);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: none;
+  position: relative;
+}
+
+.summaryTypeChip:hover {
+  background: var(--chip-bg-hover);
+  border-color: var(--chip-border-active);
+  color: var(--chip-text-active);
+  transform: scale(1.02) translateY(-1px);
+}
+
+.summaryTypeChip:active {
+  transform: scale(var(--micro-scale-active));
+}
+
+.summaryTypeChip--active {
+  background: var(--chip-active-bg);
+  border-color: var(--chip-accent);
+  color: var(--color-accent-primary);
+  box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.2);
+}
+
+.summaryTypeChip__count {
+  background: rgba(139, 92, 246, 0.15);
+  color: var(--color-accent-primary);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 12px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  min-width: 24px;
+  text-align: center;
+}
+
+.summaryTypeChip__count::before {
+  content: '•';
+  margin-right: var(--space-xs);
+  opacity: 0.6;
+}
+
+/* Large Summary Quality Chips */
+.summaryQualityChip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--summary-chip-padding);
+  height: var(--summary-chip-height);
+  background: var(--chip-bg);
+  border: var(--border-width) solid var(--chip-border);
+  border-radius: calc(var(--summary-chip-height) / 2);
+  color: var(--chip-text);
+  font-size: var(--summary-chip-font-size);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+
+.summaryQualityChip:hover {
+  background: var(--chip-bg-hover);
+  border-color: var(--chip-border-active);
+  color: var(--chip-text-active);
+  transform: scale(1.02) translateY(-1px);
+}
+
+.summaryQualityChip:active {
+  transform: scale(var(--micro-scale-active));
+}
+
+.summaryQualityChip--active {
+  background: var(--chip-active-bg);
+  border-color: var(--chip-accent);
+  color: var(--color-accent-primary);
+  box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.2);
+}
+
+.summaryQualityChip__value {
+  color: var(--color-accent-primary);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
+}
+
+/* Summary Chip animations */
+@keyframes summaryChipPress {
+  0% { transform: scale(1); }
+  50% { transform: scale(var(--micro-scale-active)); }
+  100% { transform: scale(1); }
+}
+
+@keyframes summaryChipActivate {
+  0% { 
+    transform: scale(1);
+    box-shadow: 0 0 0 0 var(--badge-pulse-from);
+  }
+  50% { 
+    transform: scale(1.02);
+    box-shadow: 0 0 0 3px var(--badge-pulse-to);
+  }
+  100% { 
+    transform: scale(1);
+    box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.2);
+  }
+}
+
+.summaryTypeChip--toggling,
+.summaryQualityChip--toggling {
+  animation: summaryChipPress 150ms ease-out;
+}
+
+.summaryTypeChip--active,
+.summaryQualityChip--active {
+  animation: summaryChipActivate 200ms var(--editor-slide-easing);
+}
+
+/* Focus improvements */
+.summaryTypeChip:focus,
+.summaryQualityChip:focus {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  z-index: 1;
+}
+
+.summaryTypeChip:focus-visible,
+.summaryQualityChip:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+/* Batch apply button */
+.batchApply {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-md);
+  background: var(--color-accent-primary);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 2px 4px rgba(139, 92, 246, 0.2);
+}
+
+.batchApply:hover {
+  background: var(--color-accent-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(139, 92, 246, 0.3);
+}
+
+.batchApply:active {
+  transform: translateY(0);
+}
+
+.batchApply svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2;
+}

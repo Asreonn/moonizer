@@ -1,0 +1,544 @@
+.filterBar {
+  background: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  min-height: 48px;
+}
+
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex: 1;
+}
+
+.searchContainer {
+  position: relative;
+  max-width: 400px;
+  flex: 1;
+}
+
+.searchIcon {
+  position: absolute;
+  left: var(--space-md);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: var(--icon-color-weak);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.searchInput {
+  width: 100%;
+  height: 40px;
+  padding: var(--space-sm) var(--space-2xl) var(--space-sm) var(--space-2xl);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family);
+  transition: all var(--transition-fast);
+}
+
+.searchInput::placeholder {
+  color: var(--color-text-muted);
+}
+
+.searchInput:hover {
+  border-color: var(--color-border-hover);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--color-accent-primary);
+  box-shadow: var(--table-focus-ring);
+}
+
+.clearButton {
+  position: absolute;
+  right: var(--space-sm);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  color: var(--icon-color-weak);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clearButton:hover {
+  color: var(--icon-color-hover);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.clearButton:focus-visible {
+  outline: none;
+  box-shadow: var(--table-focus-ring);
+}
+
+.clearButton svg {
+  width: 14px;
+  height: 14px;
+}
+
+.clearHighlightButton {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.clearHighlightButton:hover {
+  background: var(--color-bg-surface);
+  border-color: var(--color-border-hover);
+  color: var(--color-text-primary);
+  transform: translateY(-1px);
+}
+
+.clearHighlightButton:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.clearHighlightButton svg {
+  width: 16px;
+  height: 16px;
+}
+
+.statusText {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  flex-shrink: 0;
+  order: 3;
+}
+
+.rangeAccent {
+  color: var(--color-accent-primary);
+  font-weight: var(--font-weight-semibold);
+  transition: all var(--transition-fast);
+  display: inline-block;
+  animation: fadeSlideIn var(--transition-medium) ease-out;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.rangeAccent:hover {
+  color: var(--color-accent-primary-hover);
+  transform: scale(1.05);
+}
+
+/* Right Section */
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-shrink: 0;
+}
+
+/* Dropdown Controls */
+.coloringDropdown,
+.filterDropdown {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.dropdownLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.dropdownIcon {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2;
+  opacity: 0.7;
+}
+
+.dropdownSelect {
+  min-width: 120px;
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23cbd5e1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right var(--space-xs) center;
+  background-size: 16px;
+  padding-right: 32px;
+}
+
+.dropdownSelect:hover {
+  border-color: var(--color-border-hover);
+  background-color: var(--color-bg-surface);
+}
+
+.dropdownSelect:focus {
+  outline: none;
+  border-color: var(--color-accent-primary);
+  box-shadow: var(--focus-ring);
+}
+
+.dropdownSelect:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* Simple option styling - consistent with site */
+.dropdownSelect option {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+  padding: var(--space-xs);
+}
+
+/* Filter Toggle Button */
+.filterToggleButton {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.filterToggleButton:hover {
+  background: var(--color-bg-surface);
+  border-color: var(--color-border-hover);
+  color: var(--color-text-primary);
+  transform: translateY(-1px);
+}
+
+.filterToggleButton:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.filterToggleButtonActive {
+  background: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+  color: var(--color-text-inverse);
+}
+
+.filterToggleButtonActive:hover {
+  background: var(--color-accent-primary-hover);
+  border-color: var(--color-accent-primary-hover);
+  transform: translateY(-1px);
+}
+
+.filterToggleButton svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Filter Panel */
+.filterPanel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-sm) var(--space-md);
+  background: linear-gradient(145deg, rgba(30, 30, 50, 0.95), rgba(20, 20, 40, 0.9));
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(10px);
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-shrink: 0;
+}
+
+.filterLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.filterIcon {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2;
+  opacity: 0.7;
+}
+
+.filterSelect {
+  min-width: 120px;
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23cbd5e1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right var(--space-xs) center;
+  background-size: 16px;
+  padding-right: 32px;
+}
+
+.filterSelect:hover {
+  border-color: var(--color-border-hover);
+  background-color: var(--color-bg-surface);
+}
+
+.filterSelect:focus {
+  outline: none;
+  border-color: var(--color-accent-primary);
+  box-shadow: var(--focus-ring);
+}
+
+.filterSelect option {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+  padding: var(--space-xs);
+}
+
+/* Filter Actions */
+.filterActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.clearFiltersButton {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.clearFiltersButton:hover {
+  background: var(--color-bg-surface);
+  border-color: var(--color-border-hover);
+  color: var(--color-text-primary);
+  transform: translateY(-1px);
+}
+
+.clearFiltersButton:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.clearFiltersButton svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Checkbox Group */
+.checkboxGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-left: var(--space-sm);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-fast);
+}
+
+.checkboxLabel:hover {
+  color: var(--color-text-primary);
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  appearance: none;
+  background: var(--color-bg-tertiary);
+  border: 2px solid var(--color-border);
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.checkbox:hover {
+  border-color: var(--color-border-hover);
+  background: var(--color-bg-surface);
+}
+
+.checkbox:focus {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.checkbox:checked {
+  background: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+}
+
+.checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: -1px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkboxText {
+  user-select: none;
+  line-height: 1.3;
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+  .rightSection {
+    gap: var(--space-sm);
+  }
+  
+  .filterSelect {
+    min-width: 100px;
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media (max-width: 768px) {
+  .topBar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-sm);
+  }
+  
+  .leftSection {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  
+  .rightSection {
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  
+  .filterPanel {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-sm);
+  }
+  
+  .filterGroup {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-xs);
+  }
+  
+  .filterActions {
+    margin-left: 0;
+    justify-content: center;
+  }
+  
+  .filterSelect {
+    width: 100%;
+    min-width: auto;
+  }
+}

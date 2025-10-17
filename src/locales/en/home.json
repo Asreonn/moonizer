@@ -1,0 +1,96 @@
+{
+  "brand": {
+    "name": "Moonizer",
+    "tagline": "Data workspace"
+  },
+  "hero": {
+    "title": "MOONIZER",
+    "subtitle": "Analyze & Transform Your CSV Data.",
+    "highlight": "Instantly. Locally."
+  },
+  "dropzone": {
+    "dragAndDrop": "Drag & drop a CSV file here",
+    "clickToSelect": "or click to select",
+    "noFile": "No file? Try with sample data:",
+    "sampleSales": "Sample Sales",
+    "sampleCustomers": "Sample Customers",
+    "author": "Asreonn"
+  },
+  "features": {
+    "tag": "Highlights",
+    "title": "A Powerful Toolkit for Your Data",
+    "subtitle": "Explore, transform, and visualize your CSV data directly in your browser.",
+    "sections": [
+      {
+        "title": "Core Functionality",
+        "color": "teal",
+        "features": [
+          {
+            "title": "Data Processing",
+            "icon": "dataProcessing",
+            "description": "Load CSVs with auto-delimiter detection and smart chunking."
+          },
+          {
+            "title": "In-depth Analysis",
+            "icon": "inDepthAnalysis",
+            "description": "Auto-identify column types and view column-based statistics."
+          },
+          {
+            "title": "Powerful Transformation",
+            "icon": "powerfulTransformation",
+            "description": "Over 30 column operations with full undo/redo history."
+          }
+        ]
+      },
+      {
+        "title": "Interaction & Visualization",
+        "color": "fuschia",
+        "features": [
+          {
+            "title": "Interactive Data Grid",
+            "icon": "interactiveDataGrid",
+            "description": "Sort, filter, and navigate your data with ease."
+          },
+          {
+            "title": "Dynamic Visualizations",
+            "icon": "dynamicVisualizations",
+            "description": "Create histograms, line charts, scatter plots, and more."
+          },
+          {
+            "title": "Flexible Exporting",
+            "icon": "flexibleExporting",
+            "description": "Export your data to CSV, JSON, or Excel-compatible formats."
+          }
+        ]
+      },
+      {
+        "title": "Technical Excellence",
+        "color": "gold",
+        "features": [
+          {
+            "title": "Modern Tech Stack",
+            "icon": "modernTechStack",
+            "description": "Built with React 18, TypeScript, and Vite for a fast experience."
+          },
+          {
+            "title": "Intuitive Interface",
+            "icon": "intuitiveInterface",
+            "description": "Keyboard shortcuts, context menus, and a minimal design."
+          },
+          {
+            "title": "Privacy by Design",
+            "icon": "privacyByDesign",
+            "description": "Your data is processed locally and never uploaded to a server."
+          }
+        ]
+      }
+    ]
+  },
+  "privacy": {
+    "title": "100% Local & Private",
+    "description": "Moonizer runs entirely in your web browser. Your data is never uploaded to a server, ensuring complete privacy and security. It's your data, on your machine, always."
+  },
+  "footer": {
+    "copyright": "&copy; 2025 Moonizer. An open-source project."
+  }
+}

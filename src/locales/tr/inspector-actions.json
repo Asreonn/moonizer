@@ -1,0 +1,854 @@
+{
+  "operation": {
+    "applied": "Uygulandı: {{operation}}"
+  },
+  "warn": {
+    "high_missing_values": "Uyarı: Bu sütunda yüksek oranda eksik değer var"
+  },
+  "placeholders": {
+    "constant": "Sabit değerli işlemler yakında gelecek..."
+  },
+  "actionGroups": {
+    "general": {
+      "title": "Genel Eylemler",
+      "description": "Tüm veri türleri için geçerli olan temel sütun işlemleri",
+      "generalError": "İşlem işlenirken bir hata oluştu",
+      "actionNotImplemented": "Eylem uygulanmadı: {{actionKey}}",
+      "operationFailed": "İşlem {{actionKey}} başarısız oldu: {{error}}",
+      "actions": {
+        "duplicate": {
+          "title": "Sütunu Çoğalt"
+        },
+        "delete": {
+          "title": "Sütunu Sil"
+        },
+        "correctType": {
+          "title": "Sütun Türünü Düzelt"
+        }
+      },
+      "impact": {
+        "duplicate": "Bu sütunun bir kopyasını oluşturur",
+        "delete": "Bu sütunu kalıcı olarak kaldırır",
+        "correctType": "Sütun veri türü algılamasını değiştirir"
+      }
+    },
+    "numeric": {
+      "title": "Sayısal Dönüşümler",
+      "description": "Matematiksel işlemler ve sayısal veri işleme",
+      "round": {
+        "title": "Değerleri Yuvarla",
+        "description": "Sayıları belirtilen ondalık basamaklara yuvarla",
+        "decimals": "Ondalık Basamaklar",
+        "nearest": {
+          "title": "En Yakına Yuvarla",
+          "description": "En yakın ondalık basamağa yuvarla (standart yuvarlama)"
+        },
+        "ceil": {
+          "title": "Yukarı Yuvarla (Tavan)",
+          "description": "Her zaman bir sonraki ondalık basamağa yukarı yuvarla"
+        },
+        "floor": {
+          "title": "Aşağı Yuvarla (Taban)",
+          "description": "Her zaman bir önceki ondalık basamağa aşağı yuvarla"
+        },
+        "banker": {
+          "title": "Bankacı Yuvarlaması",
+          "description": "En yakın çift sayıya yuvarla (yanlılığı azaltır)"
+        }
+      },
+      "scale": {
+        "title": "Değerleri Ölçeklendir",
+        "description": "Sayısal değerleri ölçeklendirmek için matematiksel işlemleri uygula",
+        "operation": "İşlem",
+        "multiply": {
+          "title": "Çarp"
+        },
+        "divide": {
+          "title": "Böl"
+        },
+        "add": {
+          "title": "Ekle"
+        },
+        "subtract": {
+          "title": "Çıkar"
+        },
+        "value": "Değer",
+        "apply": "Ölçeklendirmeyi Uygula"
+      },
+      "normalize": {
+        "title": "Değerleri Normalleştir",
+        "description": "Değerleri standart aralığa (0-1) ölçeklendir",
+        "minmax": {
+          "title": "Min-Maks Normalizasyonu",
+          "description": "Min-maks ölçeklendirme kullanarak değerleri 0-1 aralığına ölçeklendir"
+        },
+        "zscore": {
+          "title": "Z-Skoru Normalizasyonu",
+          "description": "Ortalama ve standart sapma kullanarak değerleri standartlaştır"
+        },
+        "decimal": {
+          "title": "Ondalık Ölçeklendirme",
+          "description": "Değerleri 10'un kuvvetine bölerek ölçeklendir"
+        }
+      },
+      "fillMissing": {
+        "title": "Eksik Değerleri Doldur",
+        "description": "Eksik sayısal değerleri değiştir",
+        "mean": {
+          "title": "Ortalama ile Doldur",
+          "description": "Eksik değerleri sütun ortalamasıyla değiştir"
+        },
+        "median": {
+          "title": "Medyan ile Doldur",
+          "description": "Eksik değerleri sütun medyanıyla değiştir"
+        },
+        "mode": {
+          "title": "Mod ile Doldur",
+          "description": "Eksik değerleri en sık kullanılan değerle değiştir"
+        },
+        "constant": {
+          "title": "Sabit ile Doldur",
+          "description": "Eksik değerleri belirtilen sabitle değiştir"
+        },
+        "forward": {
+          "title": "İleri Doldur",
+          "description": "Eksik değeri doldurmak için önceki değeri kullan"
+        },
+        "backward": {
+          "title": "Geri Doldur",
+          "description": "Eksik değeri doldurmak için sonraki değeri kullan"
+        },
+        "constantValue": "Sabit Değer",
+        "apply": "Doldurmayı Uygula"
+      },
+      "math": {
+        "title": "Matematiksel Fonksiyonlar",
+        "description": "Matematiksel dönüşümleri uygula",
+        "abs": {
+          "title": "Mutlak Değer",
+          "description": "Tüm değerleri pozitife dönüştür"
+        },
+        "log": {
+          "title": "Doğal Logaritma",
+          "description": "Doğal logaritma dönüşümünü uygula"
+        },
+        "log10": {
+          "title": "Log Taban 10",
+          "description": "10 tabanında logaritma uygula"
+        },
+        "log2": {
+          "title": "Log Taban 2",
+          "description": "2 tabanında logaritma uygula"
+        },
+        "exp": {
+          "title": "Üstel",
+          "description": "Üstel fonksiyonu uygula (e^x)"
+        },
+        "sqrt": {
+          "title": "Karekök",
+          "description": "Değerlerin karekökünü hesapla"
+        },
+        "square": {
+          "title": "Değerlerin Karesi",
+          "description": "Değerlerin karesini hesapla (x²)"
+        },
+        "power": {
+          "title": "Kuvvet/Üs",
+          "apply": "Kuvveti Uygula"
+        }
+      },
+      "binning": {
+        "title": "Gruplar Oluştur",
+        "description": "Sayısal değerleri kategorik gruplara ayır",
+        "bins": "Grup Sayısı",
+        "equal_width": {
+          "title": "Eşit Genişlikli Gruplar",
+          "description": "Eşit aralıklara sahip gruplar oluştur"
+        },
+        "equal_freq": {
+          "title": "Eşit Frekanslı Gruplar",
+          "description": "Eşit sayıda değere sahip gruplar oluştur"
+        },
+        "quantile": {
+          "title": "Kantil Grupları",
+          "description": "Kantillere göre gruplar oluştur"
+        }
+      },
+      "validation": {
+        "title": "Veri Doğrulama",
+        "description": "Sayısal verileri temizle ve doğrula",
+        "remove_negatives": {
+          "title": "Negatifleri Kaldır",
+          "description": "Tüm negatif değerleri kaldır"
+        },
+        "positive_only": {
+          "title": "Yalnızca Pozitifler",
+          "description": "Yalnızca pozitif değerleri tut"
+        },
+        "remove_zeros": {
+          "title": "Sıfırları Kaldır",
+          "description": "Tüm sıfır değerlerini kaldır"
+        },
+        "integers_only": {
+          "title": "Yalnızca Tamsayılar",
+          "description": "Yalnızca tamsayı değerlerini tut"
+        },
+        "clampRange": {
+          "title": "Aralığa Sıkıştır",
+          "min": "Minimum değer",
+          "max": "Maksimum değer",
+          "apply": "Sıkıştırmayı Uygula"
+        },
+        "outliers": {
+          "title": "Aykırı Değerleri Kaldır",
+          "zscore": "Z-Skoru Yöntemi",
+          "iqr": "IQR Yöntemi",
+          "custom": "Özel Eşik",
+          "apply": "Aykırı Değerleri Kaldır"
+        }
+      }
+    },
+    "text": {
+      "title": "Metin Dönüşümleri",
+      "description": "Metin temizleme ve dönüştürme işlemleri",
+      "trim": {
+        "title": "Boşluk Kırpma",
+        "description": "Metin değerlerindeki boşlukları kaldır veya normalleştir",
+        "leading": {
+          "title": "Baştaki Boşlukları Kırp",
+          "description": "Metnin başındaki boşlukları ve sekmeleri kaldır"
+        },
+        "trailing": {
+          "title": "Sondaki Boşlukları Kırp",
+          "description": "Metnin sonundaki boşlukları ve sekmeleri kaldır"
+        },
+        "both": {
+          "title": "Her İki Ucu da Kırp",
+          "description": "Hem baştaki hem de sondaki boşlukları kaldır"
+        },
+        "all": {
+          "title": "Tüm Boşlukları Kaldır",
+          "description": "Metindeki tüm boşlukları ve sekmeleri kaldır"
+        },
+        "normalize_inner": {
+          "title": "İç Boşlukları Normalleştir",
+          "description": "Birden çok ardışık boşluğu tek bir boşlukla değiştir"
+        }
+      },
+      "case": {
+        "title": "Büyük/Küçük Harf Dönüşümü",
+        "description": "Metin büyük/küçük harf durumunu değiştir",
+        "upper": {
+          "title": "BÜYÜK HARF",
+          "description": "Tüm karakterleri büyük harfe dönüştür"
+        },
+        "lower": {
+          "title": "küçük harf",
+          "description": "Tüm karakterleri küçük harfe dönüştür"
+        },
+        "capitalize": {
+          "title": "İlk Kelimeyi Büyük Harfle Başlat",
+          "description": "Her metnin yalnızca ilk kelimesini büyük harfle başlat"
+        },
+        "titleCase": {
+          "title": "Her Kelimeyi Büyük Harfle Başlat",
+          "description": "Her kelimenin ilk harfini büyük harfle başlat"
+        }
+      },
+      "findReplace": {
+        "title": "Bul ve Değiştir",
+        "description": "Metni değişmez dizeler veya regex desenleri kullanarak değiştir",
+        "findText": "Metni Bul",
+        "findPlaceholder": "Bulunacak metin",
+        "replaceText": "Şununla Değiştir",
+        "replacePlaceholder": "Değiştirilecek metin",
+        "useRegex": "Normal İfade Kullan",
+        "caseSensitive": "Büyük/Küçük Harfe Duyarlı",
+        "apply": "Değiştirmeyi Uygula"
+      },
+      "split": {
+        "title": "Sütunu Böl",
+        "description": "Metni birden çok yeni sütuna böl",
+        "delimiter": "Ayırıcı",
+        "delimiterPlaceholder": "ör. virgül, boşluk, |",
+        "createColumns": "Yeni Sütunlar Oluştur",
+        "maxColumns": "Maks Sütunlar",
+        "apply": "Bölmeyi Uygula"
+      },
+      "concatenate": {
+        "title": "Sütunları Birleştir",
+        "description": "Bu sütunu başka bir sütunla birleştir",
+        "targetColumn": "Hedef Sütun",
+        "selectColumn": "Birleştirilecek sütunu seç",
+        "delimiter": "Ayırıcı",
+        "delimiterPlaceholder": "ör. boşluk, virgül, |",
+        "removeOriginals": "Orijinal sütunları kaldır",
+        "apply": "Birleştirmeyi Uygula"
+      }
+    },
+    "boolean": {
+      "title": "Boolean Dönüşümleri",
+      "description": "Boolean veri değerlerini dönüştür ve işle",
+      "basic": {
+        "title": "Temel Boolean İşlemleri",
+        "description": "Basit boole değeri manipülasyonları"
+      },
+      "convertTo01": {
+        "title": "1/0'a Dönüştür",
+        "description": "Doğru/yanlış'ı sayısal 1/0'a dönüştür"
+      },
+      "invertValues": {
+        "title": "Değerleri Ters Çevir",
+        "description": "Doğru/yanlış değerlerini ters çevir"
+      },
+      "fillMissing": {
+        "title": "Eksik Değerleri Doldur",
+        "description": "Boş hücreleri boole değerleriyle değiştir",
+        "strategy": "Doldurma Stratejisi",
+        "defaultStrategy": "Varsayılan Değer",
+        "majorityStrategy": "Çoğunluk Değeri",
+        "defaultValue": "Varsayılan Değer",
+        "defaultTrue": "Doğru",
+        "defaultFalse": "Yanlış",
+        "apply": "Doldurmayı Uygula"
+      },
+      "convertToCustomLabels": {
+        "title": "Özel Etiketler",
+        "description": "Boole değerlerini özel metin etiketlerine dönüştür",
+        "trueLabel": "Doğru Etiketi",
+        "truePlaceholder": "ör. Evet, Aktif, Açık",
+        "falseLabel": "Yanlış Etiketi",
+        "falsePlaceholder": "ör. Hayır, Pasif, Kapalı",
+        "example": "Örnek: {{trueLabel}}/{{falseLabel}}",
+        "apply": "Etiketleri Uygula"
+      },
+      "customRuleMapping": {
+        "title": "Kural Tabanlı Eşleme",
+        "description": "Diğer sütunlardaki koşullara göre boole değerlerini eşle",
+        "columnName": "Referans Sütunu",
+        "selectColumn": "Referans sütununu seç",
+        "condition": "Koşul",
+        "conditionPlaceholder": "ör. Yaş > 25",
+        "example": "Örnek koşul biçimleri",
+        "apply": "Kuralı Uygula"
+      },
+      "logicalOperators": {
+        "and": "VE",
+        "or": "VEYA",
+        "not": "DEĞİL"
+      },
+      "placeholders": {
+        "activeLabel": "Aktif",
+        "inactiveLabel": "Pasif"
+      }
+    },
+    "category": {
+      "title": "Kategori Dönüşümleri",
+      "description": "Kategorik veri değerlerini dönüştür ve işle"
+    },
+    "datetime": {
+      "title": "Tarih Saat Dönüşümleri",
+      "description": "Tarih ve saat işleme işlemleri",
+      "format": {
+        "title": "Biçim Dönüşümü",
+        "description": "Farklı tarih ve saat biçimleri arasında dönüştür",
+        "convert": {
+          "title": "Biçimi Dönüştür",
+          "description": "Tarihleri farklı biçim desenleri arasında dönüştür",
+          "targetFormat": "Hedef Biçim",
+          "sourceFormat": "Kaynak Biçim (isteğe bağlı)",
+          "formatPlaceholder": "ör. YYYY-AA-GG, GG/AA/YYYY, AA/GG/YYYY",
+          "autoDetect": "Kaynak biçimini otomatik algıla",
+          "examples": "Yaygın biçimler: YYYY-AA-GG, GG/AA/YYYY, AA/GG/YYYY, GG-AA-YYYY, YYYY/AA/GG, AA-GG-YYYY, GG.AA.YYYY",
+          "apply": "Biçimi Dönüştür"
+        },
+        "presets": {
+          "iso": "ISO (YYYY-AA-GG)",
+          "european": "Avrupa (GG/AA/YYYY)",
+          "american": "Amerikan (AA/GG/YYYY)",
+          "german": "Alman (GG.AA.YYYY)",
+          "compact": "Kompakt (YYYYAAGG)"
+        }
+      },
+      "extract": {
+        "title": "Bileşenleri Çıkar",
+        "description": "Belirli tarih ve saat bölümlerini yeni sütunlara çıkar",
+        "components": {
+          "year": {
+            "title": "Yılı Çıkar",
+            "description": "Yıl değerleriyle yeni sütun oluştur (ör. 2025)"
+          },
+          "month": {
+            "title": "Ayı Çıkar",
+            "description": "Ay numaralarıyla yeni sütun oluştur (1-12)"
+          },
+          "day": {
+            "title": "Günü Çıkar",
+            "description": "Ayın günüyle yeni sütun oluştur (1-31)"
+          },
+          "weekday": {
+            "title": "Haftanın Gününü Çıkar",
+            "description": "Gün adlarıyla yeni sütun oluştur (Pazartesi, Salı, vb.)"
+          },
+          "quarter": {
+            "title": "Çeyreği Çıkar",
+            "description": "Çeyrek değerleriyle yeni sütun oluştur (Q1, Q2, Q3, Q4)"
+          },
+          "hour": {
+            "title": "Saati Çıkar",
+            "description": "Saat değerleriyle yeni sütun oluştur (0-23)"
+          },
+          "minute": {
+            "title": "Dakikayı Çıkar",
+            "description": "Dakika değerleriyle yeni sütun oluştur (0-59)"
+          },
+          "second": {
+            "title": "Saniyeyi Çıkar",
+            "description": "Saniye değerleriyle yeni sütun oluştur (0-59)"
+          },
+          "time": {
+            "title": "Zamanı Çıkar",
+            "description": "Zaman bölümüyle yeni sütun oluştur (SS:DD:SS)"
+          },
+          "date": {
+            "title": "Tarihi Çıkar",
+            "description": "Tarih bölümüyle yeni sütun oluştur (YYYY-AA-GG)"
+          }
+        },
+        "newColumnName": "Yeni Sütun Adı",
+        "newColumnPlaceholder": "Otomatik oluşturmak için boş bırakın",
+        "apply": "Bileşeni Çıkar"
+      },
+      "arithmetic": {
+        "title": "Tarih Aritmetiği",
+        "description": "Tarihlerden zaman dilimleri ekle veya çıkar",
+        "operation": "İşlem",
+        "amount": "Miktar",
+        "unit": "Zaman Birimi",
+        "add": "Zaman Ekle",
+        "subtract": "Zaman Çıkar",
+        "units": {
+          "years": "Yıl",
+          "months": "Ay",
+          "days": "Gün",
+          "hours": "Saat",
+          "minutes": "Dakika",
+          "seconds": "Saniye"
+        },
+        "examples": {
+          "addDays": "7 gün ekle → 2025-08-23, 2025-08-30 olur",
+          "subtractMonths": "2 ay çıkar → 2025-08-23, 2025-06-23 olur",
+          "addYears": "1 yıl ekle → 2025-08-23, 2026-08-23 olur"
+        },
+        "apply": "Aritmetiği Uygula"
+      },
+      "truncate": {
+        "title": "Kırp / Taban",
+        "description": "Tarihleri zaman diliminin başlangıcına yuvarla",
+        "unit": "Şuna Kırp",
+        "units": {
+          "year": {
+            "title": "Yıl Başı",
+            "description": "1 Ocak, 00:00:00 olarak ayarla"
+          },
+          "month": {
+            "title": "Ay Başı",
+            "description": "Ayın 1. günü, 00:00:00 olarak ayarla"
+          },
+          "day": {
+            "title": "Gün Başı",
+            "description": "00:00:00 olarak ayarla (zaman bölümünü kaldır)"
+          },
+          "hour": {
+            "title": "Saat Başı",
+            "description": "Dakika ve saniyeyi 00:00 olarak ayarla"
+          },
+          "minute": {
+            "title": "Dakika Başı",
+            "description": "Saniyeyi 00 olarak ayarla"
+          }
+        },
+        "examples": {
+          "toYear": "2025-08-23 14:35:21 → 2025-01-01 00:00:00",
+          "toMonth": "2025-08-23 14:35:21 → 2025-08-01 00:00:00",
+          "toDay": "2025-08-23 14:35:21 → 2025-08-23 00:00:00"
+        },
+        "apply": "Kırpmayı Uygula"
+      },
+      "timezone": {
+        "title": "Saat Dilimi Dönüşümü",
+        "description": "Tarihleri farklı saat dilimleri arasında dönüştür",
+        "convert": {
+          "title": "Saat Dilimini Dönüştür",
+          "description": "Tarih saat değerlerini farklı saat dilimine dönüştür",
+          "fromTimezone": "Kaynak Saat Dilimi",
+          "toTimezone": "Hedef Saat Dilimi",
+          "autoDetect": "Kaynak saat dilimini otomatik algıla"
+        },
+        "presets": {
+          "utc": "UTC (Eşgüdümlü Evrensel Zaman)",
+          "local": "Yerel Sistem Saat Dilimi",
+          "est": "Doğu Saati (EST/EDT)",
+          "pst": "Pasifik Saati (PST/PDT)",
+          "gmt": "Greenwich Ortalama Saati (GMT)"
+        },
+        "examples": {
+          "toUTC": "Yerel saati UTC'ye dönüştür",
+          "toLocal": "UTC'yi yerel saat dilimine dönüştür"
+        },
+        "apply": "Saat Dilimini Dönüştür"
+      },
+      "combine": {
+        "title": "Tarih ve Saati Birleştir",
+        "description": "Ayrı tarih ve saat sütunlarını tarih saate birleştir",
+        "dateColumn": "Tarih Sütunu",
+        "timeColumn": "Saat Sütunu",
+        "targetColumn": "Yeni Birleştirilmiş Sütun",
+        "selectDateColumn": "Tarih sütununu seç",
+        "selectTimeColumn": "Saat sütununu seç",
+        "targetColumnPlaceholder": "Birleştirilmiş sütun adını girin",
+        "example": "'2025-08-23' + '14:35:21' → '2025-08-23T14:35:21' birleştir",
+        "apply": "Sütunları Birleştir"
+      },
+      "split": {
+        "title": "Tarih Saati Böl",
+        "description": "Tarih saat sütununu ayrı tarih ve saat sütunlarına böl",
+        "dateColumn": "Tarih Sütun Adı",
+        "timeColumn": "Saat Sütun Adı",
+        "dateColumnPlaceholder": "Otomatik oluşturmak için boş bırakın",
+        "timeColumnPlaceholder": "Otomatik oluşturmak için boş bırakın",
+        "example": "'2025-08-23T14:35:21' → '2025-08-23' + '14:35:21' böl",
+        "apply": "Tarih Saati Böl"
+      }
+    },
+    "constant": {
+      "title": "Sabit Değer İşlemleri",
+      "description": "Sabit değerli sütunlar için işlemler",
+      "analysis": {
+        "title": "Sabit Analizi",
+        "description": "Sabit değeri ve kullanımını analiz et"
+      },
+      "conversion": {
+        "title": "Değişkene Dönüştür",
+        "description": "Sabit sütunu değişken sütuna dönüştür",
+        "addRandomNoise": "Rastgele Gürültü Ekle",
+        "createCategories": "Kategori Varyasyonları Oluştur",
+        "useAsDefault": "Varsayılan Değer Olarak Kullan"
+      },
+      "utility": {
+        "title": "Yardımcı İşlemler",
+        "description": "Sabit sütunlar için yardımcı işlemler",
+        "replaceWithNull": "NULL ile Değiştir",
+        "useForFilling": "Diğer Sütunları Doldurmak İçin Kullan"
+      }
+    },
+    "common": {
+      "warnings": {
+        "destructive": "Bu eylem geri alınamaz"
+      },
+      "impact": {
+        "noChanges": "Değişiklik gerekmez"
+      }
+    }
+  },
+  "actions": {
+    "dropColumnConfirm": "'{{columnName}}' sütununu silmek istediğinizden emin misiniz? Bu eylem geri alınamaz.",
+    "destructiveCast": {
+      "confirm": "Bu tür dönüşümü veri kaybına neden olabilir. Devam etmek istediğinizden emin misiniz?"
+    },
+    "chips": {
+      "typeCast": "Tür Dönüşümü",
+      "fillMissing": "Eksik Değerleri Doldur",
+      "duplicate": "Çoğalt",
+      "drop": "Sütunu Sil"
+    },
+    "groups": {
+      "transform": "Dönüştür",
+      "encode": "Kodla"
+    },
+    "typeCast": {
+      "toNumeric": "Sayısal'a Dönüştür",
+      "toString": "Metin'e Dönüştür",
+      "toBoolean": "Boolean'a Dönüştür",
+      "toDatetime": "Tarih Saat'e Dönüştür",
+      "toCategorical": "Kategorik'e Dönüştür"
+    },
+    "fillMissing": {
+      "mean": "Ortalama ile Doldur",
+      "median": "Medyan ile Doldur",
+      "mode": "Mod ile Doldur",
+      "constant": "Sabit ile Doldur",
+      "randomInRange": "Aralıkta Rastgele Doldur",
+      "forwardFill": "İleri Doldur",
+      "backwardFill": "Geri Doldur"
+    },
+    "encode": {
+      "label": {
+        "title": "Etiket Kodlama",
+        "description": "Kategorileri sayısal etiketlere dönüştür"
+      },
+      "oneHot": {
+        "title": "One-Hot Kodlama",
+        "description": "Her kategori için ikili sütunlar oluştur"
+      },
+      "frequency": {
+        "title": "Frekans Kodlama",
+        "description": "Kategori frekansına göre kodla"
+      },
+      "renameCategories": {
+        "title": "Kategorileri Yeniden Adlandır",
+        "description": "Kategori adlarını değiştir"
+      },
+      "mergeRare": {
+        "title": "Nadir Kategorileri Birleştir",
+        "description": "Seyrek kategorileri bir araya getir"
+      },
+      "orderCategories": {
+        "title": "Kategorileri Sırala",
+        "description": "Özel kategori sıralaması ayarla"
+      },
+      "targetMean": {
+        "title": "Hedef Ortalama Kodlama",
+        "description": "Hedef değişken ortalamasını kullanarak kodla"
+      },
+      "binary": {
+        "title": "İkili Kodlama",
+        "description": "İkili gösterime dönüştür"
+      },
+      "mapCategories": {
+        "title": "Kategorileri Eşle",
+        "description": "Kategorileri özel değerlere eşle"
+      },
+      "splitCategory": {
+        "title": "Kategorileri Böl",
+        "description": "Kategorileri ayrı sütunlara böl"
+      }
+    },
+    "transform": {
+      "boolean": {
+        "basic": {
+          "title": "Temel Boolean İşlemleri",
+          "description": "Basit boole değeri manipülasyonları"
+        },
+        "convertTo01": {
+          "title": "1/0'a Dönüştür"
+        },
+        "invertValues": {
+          "title": "Değerleri Ters Çevir"
+        },
+        "fillMissing": {
+          "title": "Eksik Değerleri Doldur",
+          "description": "Boş hücreleri boole değerleriyle değiştir",
+          "strategy": "Doldurma Stratejisi",
+          "defaultStrategy": "Varsayılan Değer",
+          "defaultValue": "Varsayılan Değer",
+          "defaultTrue": "Doğru",
+          "apply": "Doldurmayı Uygula"
+        },
+        "convertToCustomLabels": {
+          "title": "Özel Etiketler",
+          "description": "Boole değerlerini özel metin etiketlerine dönüştür",
+          "trueLabel": "Doğru Etiketi",
+          "truePlaceholder": "ör. Evet, Aktif, Açık",
+          "falseLabel": "Yanlış Etiketi",
+          "falsePlaceholder": "ör. Hayır, Pasif, Kapalı",
+          "example": "Örnek: {{trueLabel}}/{{falseLabel}}",
+          "apply": "Etiketleri Uygula"
+        },
+        "customRuleMapping": {
+          "title": "Kural Tabanlı Eşleme",
+          "description": "Diğer sütunlardaki koşullara göre boole değerlerini eşle",
+          "columnName": "Referans Sütunu",
+          "selectColumn": "Referans sütununu seç",
+          "condition": "Koşul",
+          "conditionPlaceholder": "ör. Yaş > 25",
+          "example": "Örnek koşul biçimleri",
+          "apply": "Kuralı Uygula"
+        }
+      },
+      "text": {
+        "trim": {
+          "title": "Boşluk Kırpma",
+          "description": "Metin değerlerindeki boşlukları kaldır veya normalleştir",
+          "leading": {
+            "title": "Baştaki Boşlukları Kırp"
+          },
+          "trailing": {
+            "title": "Sondaki Boşlukları Kırp"
+          },
+          "both": {
+            "title": "Her İki Ucu da Kırp"
+          },
+          "all": {
+            "title": "Tüm Boşlukları Kaldır"
+          },
+          "normalize_inner": {
+            "title": "İç Boşlukları Normalleştir"
+          }
+        },
+        "case": {
+          "title": "Büyük/Küçük Harf Dönüşümü",
+          "description": "Metin büyük/küçük harf durumunu değiştir",
+          "upper": {
+            "title": "BÜYÜK HARF"
+          },
+          "lower": {
+            "title": "küçük harf"
+          },
+          "capitalize": {
+            "title": "İlk Kelimeyi Büyük Harfle Başlat"
+          },
+          "titleCase": {
+            "title": "Her Kelimeyi Büyük Harfle Başlat"
+          }
+        },
+        "findReplace": {
+          "title": "Bul ve Değiştir",
+          "description": "Metni değişmez dizeler veya regex desenleri kullanarak değiştir",
+          "findText": "Metni Bul",
+          "findPlaceholder": "Bulunacak metin",
+          "replaceText": "Şununla Değiştir",
+          "replacePlaceholder": "Değiştirilecek metin",
+          "useRegex": "Normal İfade Kullan",
+          "caseSensitive": "Büyük/Küçük Harfe Duyarlı",
+          "apply": "Değiştirmeyi Uygula"
+        },
+        "split": {
+          "title": "Sütunu Böl",
+          "description": "Metni birden çok yeni sütuna böl",
+          "delimiter": "Ayırıcı",
+          "maxColumns": "Maks Sütunlar",
+          "apply": "Bölmeyi Uygula"
+        },
+        "concatenate": {
+          "title": "Sütunları Birleştir",
+          "description": "Bu sütunu başka bir sütunla birleştir",
+          "targetColumn": "Hedef Sütun",
+          "selectColumn": "Birleştirilecek sütunu seç",
+          "delimiter": "Ayırıcı",
+          "apply": "Birleştirmeyi Uygula"
+        }
+      },
+      "category": {
+        "rename": {
+          "title": "Kategorileri Yeniden Adlandır",
+          "description": "Doğrudan eşlemeler veya regex desenleri kullanarak kategori adlarını değiştir",
+          "searchLabel": "Kategorileri Ara",
+          "searchPlaceholder": "Kategorileri aramak için yazın...",
+          "selectCategory": "Yeniden adlandırılacak kategoriyi seç",
+          "newCategoryPlaceholder": "Yeni kategori adını girin",
+          "addMapping": "Eşleme Ekle",
+          "regexLabel": "Regex Desen Değiştirme",
+          "regexPatternPlaceholder": "Desen (ör. ^eski.*)",
+          "regexReplacementPlaceholder": "Değiştirme",
+          "applyRegex": "Deseni Uygula",
+          "apply": "Yeniden Adlandırmayı Uygula"
+        },
+        "merge": {
+          "title": "Kategorileri Birleştir",
+          "description": "Birden çok kategoriyi tek bir kategoride birleştir",
+          "searchLabel": "Kategorileri Ara",
+          "searchPlaceholder": "Aramak için yazın...",
+          "sourceCategories": "Kaynak Kategorileri",
+          "targetCategory": "Hedef Kategori Adı",
+          "targetCategoryPlaceholder": "Birleştirilmiş kategori adını girin",
+          "apply": "Birleştirmeyi Uygula"
+        },
+        "split": {
+          "title": "Kategoriyi Böl",
+          "description": "Bir kategoriyi kurallara göre birden çok kategoriye böl",
+          "sourceCategory": "Kaynak Kategorisi",
+          "selectSourceCategory": "Bölünecek kategoriyi seç",
+          "rules": "Bölme Kuralları",
+          "patternPlaceholder": "Eşleşecek desen",
+          "categoryPlaceholder": "Yeni kategori adı",
+          "removeRule": "Kuralı Kaldır",
+          "addRule": "Kural Ekle",
+          "apply": "Bölmeyi Uygula"
+        },
+        "encoding": {
+          "title": "Kategori Kodlama",
+          "description": "Kategorileri sayısal gösterimlere dönüştür",
+          "label": {
+            "title": "Etiket Kodlama",
+            "description": "Kategorilere sayısal etiketler ata"
+          },
+          "onehot": {
+            "title": "One-Hot Kodlama",
+            "description": "Her kategori için ikili gösterge sütunları oluştur",
+            "dropFirst": "İlk kategoriyi bırak (çoklu doğrusallıktan kaçın)"
+          },
+          "binary": {
+            "title": "İkili Kodlama",
+            "description": "Kategorileri ikili kod gösterimine dönüştür"
+          },
+          "matrix": {
+            "title": "Matris Kodlama",
+            "description": "Orijinal sütunu korurken ikili gösterge matrisi oluştur"
+          }
+        },
+        "groupRare": {
+          "title": "Nadir Kategorileri Grupla",
+          "description": "Seyrek kategorileri 'Diğer' grubunda birleştir",
+          "threshold": "Frekans Eşiği",
+          "thresholdCount": "Minimum Sayı",
+          "thresholdPercentage": "Minimum Yüzde",
+          "otherLabel": "Diğer Kategori Etiketi",
+          "otherLabelPlaceholder": "Diğer",
+          "apply": "Gruplamayı Uygula"
+        },
+        "defaultValue": {
+          "title": "Varsayılan Değer Ayarla",
+          "description": "Eksik veya boş kategoriler için bir varsayılan değer ayarla",
+          "strategy": "Doldurma Stratejisi",
+          "constantStrategy": "Sabit Değer",
+          "mostFrequentStrategy": "En Sık Kullanılan Değer",
+          "defaultValue": "Varsayılan Değer",
+          "defaultValuePlaceholder": "Varsayılan değeri girin",
+          "apply": "Varsayılanı Uygula"
+        },
+        "rules": {
+          "title": "Kuralları Uygula",
+          "description": "Diğer sütunlardaki koşullu mantığa göre kategorileri dönüştür"
+        }
+      }
+    }
+  },
+  "ruleBuilder": {
+    "condition": "Koşul",
+    "conditionPlaceholder": "ör. Yaş > 25 veya Ad.contains('John')",
+    "conditionHelp": "Sütun adlarını ve operatörleri kullanın: ==, !=, >, <, >=, <=, .contains(), .startsWith(), .endsWith()",
+    "trueValue": "Doğru Değer",
+    "trueValuePlaceholder": "Koşul doğru olduğunda değer",
+    "falseValue": "Yanlış Değer",
+    "falseValuePlaceholder": "Koşul yanlış olduğunda değer",
+    "targetCategory": "Kategoriye Uygula",
+    "allCategories": "Tüm kategoriler",
+    "targetCategoryHelp": "Tüm kategorilere uygulamak için boş bırakın veya belirli bir kategori seçin",
+    "applyRule": "Kuralı Uygula",
+    "errors": {
+      "invalidSyntax": "Koşulda geçersiz sözdizimi",
+      "conditionRequired": "Koşul gerekli",
+      "ruleApplicationFailed": "Kural uygulanamadı"
+    },
+    "customCondition": {
+      "title": "Özel Koşul Oluşturucu",
+      "description": "Birden çok sütun ve operatör kullanarak karmaşık koşullar oluşturun",
+      "conditionLabel": "Koşul İfadesi",
+      "conditionPlaceholder": "ör. Yaş > 25 VE Durum == 'Aktif'",
+      "applyButton": "Özel Kuralı Uygula",
+      "examples": {
+        "title": "Örnekler",
+        "numeric": "Yaş > 25, Fiyat <= 100, Puan >= 85",
+        "text": "Ad.startsWith('John'), Kategori.contains('Premium')",
+        "combined": "Yaş > 25 VE Durum == 'Aktif' VEYA Öncelik > 3"
+      },
+      "syntax": {
+        "title": "Sözdizimi Kılavuzu",
+        "operators": "Operatörler: ==, !=, >, <, >=, <=",
+        "text": "Metin: .contains(), .startsWith(), .endsWith()",
+        "logical": "Mantıksal: VE, VEYA, DEĞİL"
+      }
+    }
+  }
+}

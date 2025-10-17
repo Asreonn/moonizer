@@ -1,0 +1,7 @@
+{
+  "csv": {
+    "parse": "CSV dosyası ayrıştırılamadı",
+    "fileTooLarge": "Dosya çok büyük (maks 50MB)",
+    "invalidFile": "Lütfen geçerli bir CSV dosyası seçin"
+  }
+}

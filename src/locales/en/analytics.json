@@ -1,0 +1,737 @@
+{
+  "tooltips": {
+    "interpretation": "How to interpret",
+    
+    "totalBars": {
+      "title": "Total Bars",
+      "description": "The number of distinct categories or values represented in the bar chart.",
+      "interpretation": "More bars indicate higher data diversity, while fewer bars suggest data concentration."
+    },
+    
+    "highestValue": {
+      "title": "Highest Value",
+      "description": "The category with the maximum frequency or value in the dataset.",
+      "interpretation": "This represents the most common or dominant element in your data."
+    },
+    
+    "valueRange": {
+      "title": "Value Range",
+      "description": "The span between the minimum and maximum values in the dataset.",
+      "interpretation": "A wider range indicates more variability; a narrow range suggests data clustering."
+    },
+    
+    "distributionType": {
+      "title": "Distribution Type",
+      "description": "Statistical classification of how data values are spread across the range.",
+      "interpretation": "Normal: bell-curved, Moderate: slightly skewed, High Skew: heavily skewed to one side."
+    },
+    
+    "dominanceRatio": {
+      "title": "Dominance Ratio",
+      "description": "The percentage of the dataset occupied by the most frequent value or category.",
+      "interpretation": "High values (>50%) indicate strong concentration; low values suggest balanced distribution."
+    },
+    
+    "diversityIndex": {
+      "title": "Diversity Index",
+      "description": "A measure of how evenly distributed the values are across categories.",
+      "interpretation": "Higher values indicate more balanced distribution; lower values suggest dominance by few categories."
+    },
+    
+    "volatility": {
+      "title": "Volatility (CV)",
+      "description": "Coefficient of Variation - measures relative variability as a percentage of the mean.",
+      "interpretation": "Low (<30%): stable data, Medium (30-60%): moderate variation, High (>60%): highly variable."
+    },
+    
+    "totalRange": {
+      "title": "Total Range",
+      "description": "The absolute difference between the highest and lowest values.",
+      "interpretation": "Larger ranges indicate greater data spread; smaller ranges suggest data clustering."
+    },
+    
+    "rangeEfficiency": {
+      "title": "Range Efficiency",
+      "description": "The ratio of interquartile range to total range, measuring data concentration.",
+      "interpretation": "High values (>60%) indicate most data is concentrated; low values suggest outliers."
+    },
+    
+    "dataPoints": {
+      "title": "Data Points",
+      "description": "The total number of observations or records in the dataset.",
+      "interpretation": "More data points generally provide more reliable statistical insights."
+    },
+    
+    "trendDirection": {
+      "title": "Trend Direction",
+      "description": "The overall directional movement of data values over time or sequence.",
+      "interpretation": "Upward: increasing trend, Downward: decreasing trend, Stable: no clear direction."
+    },
+    
+    "averageValue": {
+      "title": "Average Value",
+      "description": "The arithmetic mean of all values in the dataset.",
+      "interpretation": "Represents the central tendency; useful for comparing with individual data points."
+    },
+    
+    "standardDeviation": {
+      "title": "Standard Deviation",
+      "description": "Measures the average distance of data points from the mean.",
+      "interpretation": "Lower values indicate data clustered around mean; higher values show more spread."
+    },
+    
+    "peakToTrough": {
+      "title": "Peak-to-Trough",
+      "description": "The percentage difference between maximum and minimum values relative to the mean.",
+      "interpretation": "Higher percentages indicate more extreme value variations in the dataset."
+    },
+    
+    "interquartileRange": {
+      "title": "Interquartile Range (IQR)",
+      "description": "The range containing the middle 50% of data values (Q3 - Q1).",
+      "interpretation": "Smaller IQR indicates tightly clustered data; larger IQR shows more spread."
+    },
+    
+    "dataDensity": {
+      "title": "Data Density",
+      "description": "The number of data points available for scatter plot analysis.",
+      "interpretation": "Higher density provides better visualization of patterns and relationships."
+    },
+    
+    "spreadAnalysis": {
+      "title": "Spread Analysis",
+      "description": "Classification of how widely scattered the data points are.",
+      "interpretation": "Low spread: clustered data, Medium: moderate scatter, High: widely distributed points."
+    },
+    
+    "outlierRatio": {
+      "title": "Outlier Ratio",
+      "description": "The percentage of data points that fall outside the expected range (1.5 × IQR).",
+      "interpretation": "Low (<5%): clean data, Moderate (5-15%): some outliers, High (>15%): many extreme values."
+    },
+    
+    "centralTendency": {
+      "title": "Central Tendency",
+      "description": "Statistical measures indicating where the center of the data distribution lies.",
+      "interpretation": "Mean and median close together suggests normal distribution; large differences indicate skewness."
+    },
+    
+    "dispersionIndex": {
+      "title": "Dispersion Index",
+      "description": "The ratio of variance to mean, measuring how spread out the data is relative to its center.",
+      "interpretation": "Values near 1 suggest Poisson-like distribution; much higher values indicate over-dispersion."
+    },
+    
+    "dataQuality": {
+      "title": "Data Quality",
+      "description": "Assessment of data cleanliness based on outlier presence and distribution normality.",
+      "interpretation": "Clean: minimal outliers, Good: acceptable outliers, Poor: many outliers present."
+    },
+    
+    "categoryCount": {
+      "title": "Category Count",
+      "description": "The number of distinct segments or slices in the pie chart.",
+      "interpretation": "Fewer categories are easier to interpret; too many (>7) can make visualization cluttered."
+    },
+    
+    "dominantShare": {
+      "title": "Dominant Share",
+      "description": "The percentage and identity of the largest category in the pie chart.",
+      "interpretation": "High dominance (>50%) indicates strong concentration; balanced shares suggest diversity."
+    },
+    
+    "minorityShare": {
+      "title": "Minority Share",
+      "description": "The percentage and identity of the smallest category in the pie chart.",
+      "interpretation": "Very small minorities (<5%) might be candidates for grouping with 'Other' category."
+    },
+    
+    "informationEntropy": {
+      "title": "Information Entropy",
+      "description": "Measures the amount of information or uncertainty in the categorical distribution.",
+      "interpretation": "Higher entropy indicates more balanced categories; lower entropy suggests concentration."
+    },
+    
+    "simpsonsIndex": {
+      "title": "Simpson's Index",
+      "description": "Measures the probability that two randomly selected items belong to the same category.",
+      "interpretation": "Higher values indicate greater diversity; lower values suggest dominance by few categories."
+    },
+    
+    "evennessScore": {
+      "title": "Evenness Score",
+      "description": "Measures how evenly distributed the categories are relative to maximum possible evenness.",
+      "interpretation": "Score near 1 indicates perfect evenness; lower scores suggest uneven distribution."
+    },
+    
+    "concentration": {
+      "title": "Concentration",
+      "description": "Classification of how concentrated the data is among the largest categories.",
+      "interpretation": "Distributed: balanced across categories, Moderate: some concentration, Concentrated: few dominant categories."
+    },
+    
+    "topDominance": {
+      "title": "Top 3 Dominance",
+      "description": "The combined percentage of the three largest categories.",
+      "interpretation": "High values (>80%) indicate concentration; low values (<60%) suggest balanced distribution."
+    },
+    
+    "fragmentation": {
+      "title": "Fragmentation",
+      "description": "Assessment of how split up the data is across many small categories.",
+      "interpretation": "High fragmentation may require category consolidation for clearer insights."
+    },
+    
+    "totalArea": {
+      "title": "Total Area Under Curve",
+      "description": "The cumulative sum of all values, representing total magnitude or volume.",
+      "interpretation": "Larger areas indicate higher overall values or greater cumulative effect."
+    },
+    
+    "averageHeight": {
+      "title": "Average Height",
+      "description": "The mean value across all data points in the area chart.",
+      "interpretation": "Represents typical magnitude; useful for establishing baseline expectations."
+    },
+    
+    "areaEfficiency": {
+      "title": "Area Efficiency",
+      "description": "The ratio of average height to maximum height, showing utilization of potential.",
+      "interpretation": "High efficiency (>70%) indicates consistent values; low efficiency suggests peaks and valleys."
+    },
+    
+    "growthPattern": {
+      "title": "Growth Pattern",
+      "description": "The overall shape and direction of change in the area chart over time or sequence.",
+      "interpretation": "Accelerating: increasing growth rate, Decelerating: decreasing rate, Linear: steady change."
+    },
+    
+    "volatilityIndex": {
+      "title": "Volatility Index",
+      "description": "Coefficient of variation measuring relative instability in the data series.",
+      "interpretation": "Low volatility (<0.3): stable, Medium (0.3-0.6): moderately variable, High (>0.6): unstable."
+    },
+    
+    "smoothness": {
+      "title": "Smoothness",
+      "description": "Assessment of how consistent and steady the data progression is.",
+      "interpretation": "Smooth data has predictable patterns; volatile data has irregular fluctuations."
+    },
+    
+    "maximumValue": {
+      "title": "Maximum Value",
+      "description": "The highest single value observed in the dataset.",
+      "interpretation": "Represents peak performance or maximum capacity reached in the measured phenomenon."
+    },
+    
+    "peakToAverage": {
+      "title": "Peak-to-Average Ratio",
+      "description": "How many times larger the maximum value is compared to the average.",
+      "interpretation": "High ratios indicate significant peaks; ratios near 1 suggest consistent values."
+    },
+    
+    "q1Percentile": {
+      "title": "Q1 (25th Percentile)",
+      "description": "The value below which 25% of the data points fall.",
+      "interpretation": "Represents the lower quartile boundary; useful for identifying bottom performers."
+    },
+    
+    "medianValue": {
+      "title": "Q2 (Median)",
+      "description": "The middle value when all data points are arranged in order.",
+      "interpretation": "Less affected by outliers than mean; represents typical value in the dataset."
+    },
+    
+    "q3Percentile": {
+      "title": "Q3 (75th Percentile)",
+      "description": "The value below which 75% of the data points fall.",
+      "interpretation": "Represents upper quartile boundary; useful for identifying top performers."
+    },
+    
+    "outlierCount": {
+      "title": "Outlier Count",
+      "description": "Number and percentage of data points falling outside 1.5 × IQR from quartiles.",
+      "interpretation": "Few outliers indicate clean data; many outliers may suggest data quality issues or extreme events."
+    },
+    
+    "fenceBoundaries": {
+      "title": "Fence Boundaries",
+      "description": "The calculated limits beyond which data points are considered statistical outliers.",
+      "interpretation": "Values outside these boundaries warrant investigation as potential anomalies or special cases."
+    },
+    
+    "symmetry": {
+      "title": "Symmetry",
+      "description": "Measures whether the data distribution is balanced around the median.",
+      "interpretation": "Symmetric: balanced distribution, Right-skewed: tail extends right, Left-skewed: tail extends left."
+    },
+    
+    "tailBehavior": {
+      "title": "Tail Behavior",
+      "description": "Describes the thickness of the distribution tails (extremes) relative to normal distribution.",
+      "interpretation": "Heavy tails: more extreme values than expected, Light tails: fewer extreme values."
+    },
+    
+    "spreadRatio": {
+      "title": "Spread Ratio",
+      "description": "The percentage of total range occupied by the middle 50% of data (IQR/Range).",
+      "interpretation": "High ratios indicate concentrated data; low ratios suggest outliers extend the range."
+    },
+    
+    "heatZones": {
+      "title": "Heat Zones",
+      "description": "The number of distinct intensity levels or value ranges in the heatmap.",
+      "interpretation": "More zones provide finer granularity; fewer zones show clearer patterns but less detail."
+    },
+    
+    "intensityRange": {
+      "title": "Intensity Range",
+      "description": "The span from lowest to highest intensity values in the heatmap.",
+      "interpretation": "Wide ranges indicate diverse intensity levels; narrow ranges suggest similar intensities."
+    },
+    
+    "hotSpotRatio": {
+      "title": "Hot Spot Ratio",
+      "description": "The percentage of the heatmap dominated by the highest intensity values.",
+      "interpretation": "High ratios indicate concentrated hot spots; low ratios suggest distributed intensity."
+    },
+    
+    "clustering": {
+      "title": "Clustering",
+      "description": "Assessment of whether high or low intensities group together or are scattered.",
+      "interpretation": "Clustered: similar values group together, Dispersed: values scattered randomly."
+    },
+    
+    "entropyLevel": {
+      "title": "Entropy Level",
+      "description": "Measures the randomness or unpredictability in the intensity distribution.",
+      "interpretation": "High entropy indicates complex patterns; low entropy suggests simple, predictable patterns."
+    },
+    
+    "uniformityScore": {
+      "title": "Uniformity Score",
+      "description": "Measures how evenly the different intensity levels are distributed.",
+      "interpretation": "High scores indicate balanced intensity distribution; low scores suggest concentration."
+    },
+    
+    "averageTemperature": {
+      "title": "Average Temperature",
+      "description": "The mean intensity value across all cells in the heatmap.",
+      "interpretation": "Represents baseline intensity level; useful for comparing individual cells."
+    },
+    
+    "heatVariance": {
+      "title": "Heat Variance",
+      "description": "Measures how much the intensity values vary from the average intensity.",
+      "interpretation": "High variance indicates dramatic intensity differences; low variance suggests consistent intensity."
+    },
+    
+    "coldSpots": {
+      "title": "Cold Spots",
+      "description": "The number of cells with intensity values below the average level.",
+      "interpretation": "Many cold spots indicate diverse intensity; few cold spots suggest generally high intensity."
+    },
+    
+    "leftChartType": {
+      "title": "Left Chart Type",
+      "description": "The visualization method used for the left panel in dual chart mode.",
+      "interpretation": "Different chart types reveal different aspects of the same data for comprehensive analysis."
+    },
+    
+    "rightChartType": {
+      "title": "Right Chart Type", 
+      "description": "The visualization method used for the right panel in dual chart mode.",
+      "interpretation": "Complementary chart types provide multiple perspectives on data patterns and relationships."
+    },
+    
+    "scaleSync": {
+      "title": "Scale Sync",
+      "description": "Whether both charts use the same value scale for direct comparison.",
+      "interpretation": "Enabled: allows direct value comparison, Disabled: each chart optimizes its own scale."
+    },
+    
+    "sharedDataPoints": {
+      "title": "Shared Data Points",
+      "description": "The number of data observations being analyzed across both chart views.",
+      "interpretation": "Same data shown through different visualizations to reveal complementary insights."
+    },
+    
+    "visualizationFocus": {
+      "title": "Visualization Focus",
+      "description": "The analytical approach enabled by viewing data through multiple chart types simultaneously.",
+      "interpretation": "Multi-perspective analysis reveals patterns that single charts might miss."
+    },
+    
+    "insightDepth": {
+      "title": "Insight Depth",
+      "description": "The level of analytical understanding achieved through dual visualization.",
+      "interpretation": "Enhanced depth comes from seeing same data through complementary analytical lenses."
+    },
+    
+    "meanValue": {
+      "title": "Mean Value",
+      "description": "The arithmetic average of all data points in the shared dataset.",
+      "interpretation": "Central reference point that applies to both visualizations for consistent interpretation."
+    },
+    
+    "coefficientVariation": {
+      "title": "Coefficient of Variation",
+      "description": "Standardized measure of variability expressed as percentage of the mean.",
+      "interpretation": "Consistent variability measure that applies to both chart perspectives equally."
+    },
+
+    "trueCount": {
+      "title": "True Count",
+      "description": "The number of records with True/Yes/1 values in the boolean column.",
+      "interpretation": "Higher counts indicate more positive cases in your dataset."
+    },
+    
+    "falseCount": {
+      "title": "False Count", 
+      "description": "The number of records with False/No/0 values in the boolean column.",
+      "interpretation": "Higher counts indicate more negative cases in your dataset."
+    },
+
+    "truePercentage": {
+      "title": "True Percentage",
+      "description": "The percentage of records with True values out of total non-null values.",
+      "interpretation": "Values near 50% indicate balanced data; extreme values suggest data skew."
+    },
+
+    "falsePercentage": {
+      "title": "False Percentage",
+      "description": "The percentage of records with False values out of total non-null values.", 
+      "interpretation": "Values near 50% indicate balanced data; extreme values suggest data skew."
+    },
+
+    "balanceRatio": {
+      "title": "Balance Ratio",
+      "description": "The ratio between True and False counts, indicating data balance.",
+      "interpretation": "Values near 1.0 indicate balanced data; higher values suggest True dominance."
+    },
+
+    "constantValue": {
+      "title": "Constant Value",
+      "description": "The single value that appears in all records of this column.",
+      "interpretation": "All data points have the same value - consider if this column adds analytical value."
+    },
+
+    "recordCount": {
+      "title": "Record Count",
+      "description": "Total number of records containing the constant value.",
+      "interpretation": "Shows data completeness - all records should contain the same value."
+    },
+
+    "uniqueIdCount": {
+      "title": "Unique ID Count", 
+      "description": "Total number of unique identifiers in the dataset.",
+      "interpretation": "Should match total record count for proper unique identification."
+    },
+
+    "duplicateCount": {
+      "title": "Duplicate Count",
+      "description": "Number of duplicate ID values found in the dataset.",
+      "interpretation": "Zero indicates proper unique identification; higher values suggest data quality issues."
+    },
+
+    "idPattern": {
+      "title": "ID Pattern",
+      "description": "The detected pattern or format of the unique identifiers.",
+      "interpretation": "Consistent patterns indicate systematic ID generation; mixed patterns may need investigation."
+    },
+
+    "averageIdLength": {
+      "title": "Average ID Length",
+      "description": "The average character length of the unique identifiers.",
+      "interpretation": "Consistent lengths suggest standardized ID format; high variation may indicate mixed systems."
+    },
+
+    "dateRange": {
+      "title": "Date Range",
+      "description": "The time span from the earliest to the latest date in the dataset.",
+      "interpretation": "Shows temporal coverage - longer ranges indicate more historical data depth."
+    },
+
+    "earliestDate": {
+      "title": "Earliest Date",
+      "description": "The oldest date value found in the dataset.",
+      "interpretation": "Represents the starting point of your time series data."
+    },
+
+    "latestDate": {
+      "title": "Latest Date", 
+      "description": "The most recent date value found in the dataset.",
+      "interpretation": "Represents the end point of your time series data."
+    },
+
+    "dateFormat": {
+      "title": "Date Format",
+      "description": "The detected format pattern of the date values.",
+      "interpretation": "Consistent formats ensure proper date parsing and analysis."
+    },
+
+    "temporalDistribution": {
+      "title": "Temporal Distribution",
+      "description": "How date values are distributed across the time range.",
+      "interpretation": "Even distribution suggests consistent data collection; clusters may indicate specific periods."
+    },
+
+    "yearSpread": {
+      "title": "Year Spread",
+      "description": "The number of different years represented in the date data.",
+      "interpretation": "More years indicate longer historical coverage; single year suggests recent or limited data."
+    },
+
+    "nullCount": {
+      "title": "Null Values",
+      "description": "The number of records with missing, empty, or null values.",
+      "interpretation": "High null counts may indicate data quality issues or incomplete data collection."
+    },
+
+    "mostCommonValue": {
+      "title": "Most Common Value",
+      "description": "The value that appears most frequently in the dataset.",
+      "interpretation": "Indicates the dominant category or most typical value in your data."
+    },
+
+    "minFrequency": {
+      "title": "Minimum Frequency",
+      "description": "The lowest count of occurrences for any category in the dataset.",
+      "interpretation": "Shows the least represented category - may indicate rare cases or outliers."
+    },
+
+    "averageFrequency": {
+      "title": "Average Frequency", 
+      "description": "The mean number of occurrences across all categories.",
+      "interpretation": "Provides baseline expectation for category distribution balance."
+    },
+
+    "diversity": {
+      "title": "Diversity Level",
+      "description": "A measure of how evenly distributed values are across categories.",
+      "interpretation": "High diversity suggests balanced data; low diversity indicates concentration."
+    },
+
+    "recordsPerDay": {
+      "title": "Records Per Day",
+      "description": "Average number of records captured per day within the date range.",
+      "interpretation": "Higher values suggest frequent data collection; lower values indicate sparse temporal data."
+    },
+
+    "avgTimeGap": {
+      "title": "Average Time Gap",
+      "description": "The average time interval between consecutive date records.",
+      "interpretation": "Consistent gaps suggest regular data collection; irregular gaps may indicate missing periods."
+    },
+
+    "timelineDistribution": {
+      "title": "Timeline Distribution",
+      "description": "How date values are spread across different time periods.",
+      "interpretation": "Even distribution indicates consistent data collection over time."
+    },
+
+    "uniqueness": {
+      "title": "Uniqueness Percentage",
+      "description": "The percentage of values that are unique identifiers.",
+      "interpretation": "100% uniqueness is ideal for ID columns; lower values indicate duplicate identifiers."
+    },
+
+    "patternConsistency": {
+      "title": "Pattern Consistency",
+      "description": "How consistently the ID values follow a detected pattern format.",
+      "interpretation": "High consistency suggests systematic ID generation; inconsistency may indicate mixed sources."
+    },
+
+    "completeness": {
+      "title": "Data Completeness",
+      "description": "The percentage of non-null values in the dataset.",
+      "interpretation": "High completeness indicates good data quality; low values suggest missing data issues."
+    },
+
+    "qualityScore": {
+      "title": "Data Quality Score",
+      "description": "Overall assessment of data quality based on multiple factors.",
+      "interpretation": "Higher scores indicate better data quality and reliability for analysis."
+    },
+
+    "skewnessValue": {
+      "title": "Skewness",
+      "description": "Measure of asymmetry in the data distribution.",
+      "interpretation": "Values near 0 indicate symmetric distribution; positive values show right skew; negative values show left skew."
+    },
+
+    "outlierCount": {
+      "title": "Outliers",
+      "description": "Data points that fall significantly outside the normal range of values.",
+      "interpretation": "High outlier counts may indicate data quality issues or extreme cases requiring investigation."
+    },
+
+    "dataBalance": {
+      "title": "Data Balance",
+      "description": "Assessment of how evenly distributed True and False values are in the dataset.",
+      "interpretation": "Well-balanced data has roughly equal True/False counts; imbalanced data may affect analysis results."
+    },
+
+    "leastCommonValue": {
+      "title": "Least Common Value",
+      "description": "The value that appears least frequently in the dataset.",
+      "interpretation": "Shows the minority category - may represent rare cases or underrepresented groups."
+    },
+
+    "duplicateDates": {
+      "title": "Duplicate Dates",
+      "description": "Whether the dataset contains repeated date values.",
+      "interpretation": "Duplicates may indicate multiple events on the same date or data quality issues."
+    },
+
+    "timezone": {
+      "title": "Timezone",
+      "description": "The detected timezone information in the date data.",
+      "interpretation": "Consistent timezone data ensures accurate temporal analysis across different regions."
+    },
+
+    "invalidDates": {
+      "title": "Invalid Dates",
+      "description": "The number of records that could not be parsed as valid dates.",
+      "interpretation": "High invalid counts indicate data quality issues requiring cleanup or format standardization."
+    },
+
+    "minimumValue": {
+      "title": "Minimum Value",
+      "description": "The smallest value found in the dataset.",
+      "interpretation": "Represents the lower bound of your data range - useful for understanding data boundaries."
+    },
+
+    "uniqueValues": {
+      "title": "Unique Values",
+      "description": "The number of distinct values in the dataset.",
+      "interpretation": "Higher counts indicate more diversity; lower counts suggest repeated values or categories."
+    },
+
+    "uniqueRatio": {
+      "title": "Unique Ratio",
+      "description": "The percentage of values that are unique out of total values.",
+      "interpretation": "100% means all values are unique; lower percentages indicate duplicate values."
+    },
+
+    "categoricalDiversity": {
+      "title": "Categorical Diversity",
+      "description": "A measure of how varied the categories are in the dataset.",
+      "interpretation": "High diversity suggests balanced categories; low diversity indicates dominant categories."
+    },
+
+    "maxFrequency": {
+      "title": "Maximum Frequency",
+      "description": "The highest count of any single category in the dataset.",
+      "interpretation": "Shows the popularity of the most common category - indicates concentration level."
+    },
+
+    "totalWords": {
+      "title": "Total Words",
+      "description": "The combined count of all words across all text entries.",
+      "interpretation": "Higher word counts suggest more detailed or comprehensive text content."
+    },
+
+    "vocabularyRichness": {
+      "title": "Vocabulary Richness",
+      "description": "The ratio of unique words to total words, indicating vocabulary diversity.",
+      "interpretation": "Higher values suggest more diverse language use; lower values indicate repetitive text."
+    },
+
+    "entropy": {
+      "title": "Entropy",
+      "description": "Shannon entropy measuring information content and predictability in boolean data.",
+      "interpretation": "Higher entropy (near 1 bit) indicates balanced True/False distribution; lower entropy suggests predictable outcomes."
+    },
+
+    "informationContent": {
+      "title": "Information Content",
+      "description": "Classification of entropy level indicating data predictability.",
+      "interpretation": "Maximum: highly unpredictable, High: good uncertainty, Medium: moderate predictability, Low: very predictable."
+    },
+
+    "biasMagnitude": {
+      "title": "Bias Magnitude",
+      "description": "The percentage deviation from perfect 50-50 balance in boolean data.",
+      "interpretation": "0% indicates perfect balance; higher percentages show increasing bias toward one value."
+    },
+
+    "predictability": {
+      "title": "Predictability",
+      "description": "Classification of how predictable the boolean outcomes are based on distribution.",
+      "interpretation": "Random: unpredictable (near 50-50), Moderately Predictable: slight bias (60-70%), Highly Predictable: strong bias (>70%)."
+    },
+
+    "purity": {
+      "title": "Purity",
+      "description": "Percentage of values that are valid boolean values (excluding nulls/other).",
+      "interpretation": "100% indicates clean boolean data; lower percentages suggest data quality issues or mixed types."
+    },
+
+    "consistency": {
+      "title": "Consistency",
+      "description": "Assessment of how consistent the boolean data format is.",
+      "interpretation": "High: clean boolean values only, Medium: some variants, Low: mixed or inconsistent formats."
+    },
+
+    "dataType": {
+      "title": "Data Type Classification",
+      "description": "Classification of the boolean column based on value patterns.",
+      "interpretation": "Pure Boolean: standard true/false, Boolean Variants: mixed formats, Mixed: includes non-boolean values."
+    },
+
+    "totalCategories": {
+      "title": "Total Categories",
+      "description": "The total number of distinct categories in the categorical column.",
+      "interpretation": "Higher counts indicate more diversity; lower counts suggest concentrated data."
+    },
+
+    "giniIndex": {
+      "title": "Gini Index",
+      "description": "Gini coefficient measuring inequality in category distribution (0-1 scale).",
+      "interpretation": "0 indicates perfect equality, 1 indicates maximum inequality; higher values show concentration."
+    },
+
+    "shannonEntropy": {
+      "title": "Shannon Entropy",
+      "description": "Information entropy measuring uncertainty in categorical distribution (in bits).",
+      "interpretation": "Higher values indicate more balanced categories; lower values suggest dominant categories."
+    },
+
+    "simpsonIndex": {
+      "title": "Simpson's Diversity Index",
+      "description": "Probability-based diversity measure (0-1 scale) for categorical data.",
+      "interpretation": "Values near 1 indicate high diversity; values near 0 suggest dominance by few categories."
+    },
+
+    "evenness": {
+      "title": "Evenness",
+      "description": "Measure of how evenly distributed categories are relative to maximum possible evenness.",
+      "interpretation": "100% indicates perfect evenness; lower percentages show uneven distribution."
+    },
+
+    "dominance": {
+      "title": "Dominance",
+      "description": "The percentage of data occupied by the most frequent category.",
+      "interpretation": "High values (>50%) indicate strong concentration; low values suggest balanced distribution."
+    },
+
+    "singletons": {
+      "title": "Singletons",
+      "description": "The number of categories that appear exactly once in the dataset.",
+      "interpretation": "Many singletons may indicate high diversity or potential data quality issues."
+    },
+
+    "topCategoriesShare": {
+      "title": "Top Categories Share",
+      "description": "Combined percentage of the top 3 most frequent categories.",
+      "interpretation": "High values (>80%) indicate concentration; low values (<60%) suggest balanced distribution."
+    },
+
+    "diversityLevel": {
+      "title": "Diversity Level",
+      "description": "Classification of categorical diversity based on unique ratio.",
+      "interpretation": "Very High: >80% unique, High: 60-80%, Medium: 30-60%, Low: <30%."
+    }
+  }
+}

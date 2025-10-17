@@ -1,0 +1,37 @@
+{
+  "tooltip": {
+    "horizontalScroll": "Hold middle mouse and drag to scroll in both directions"
+  },
+  "sort": {
+    "asc": "Sort ascending",
+    "desc": "Sort descending", 
+    "none": "Remove sorting"
+  },
+  "column": {
+    "resize": "Drag to resize column"
+  },
+  "search": {
+    "placeholder": "Search data...",
+    "clear": "Clear search"
+  },
+  "highlight": {
+    "clear": "Clear highlights"
+  },
+  "status": {
+    "showingPrefix": "Showing",
+    "showingOf": "of"
+  },
+  "headerMenu": {
+    "sendToExplorer": "Send to Explorer",
+    "lockType": "Lock column type",
+    "hide": "Hide column"
+  },
+  "pagination": {
+    "rowsPerPage": "Rows per page",
+    "showAll": "Show All",
+    "firstPage": "Go to first page",
+    "previousPage": "Go to previous page", 
+    "nextPage": "Go to next page",
+    "lastPage": "Go to last page"
+  }
+}

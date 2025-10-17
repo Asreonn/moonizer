@@ -1,0 +1,16 @@
+date,product,category,sales,profit,region
+2023-01-01,Product A,Electronics,1200,240,North
+2023-01-02,Product B,Clothing,850,170,South
+2023-01-03,Product C,Electronics,2100,420,East
+2023-01-04,Product A,Electronics,950,190,West
+2023-01-05,Product D,Home,1400,280,North
+2023-01-06,Product B,Clothing,750,150,South
+2023-01-07,Product E,Electronics,1800,360,East
+2023-01-08,Product A,Electronics,1100,220,West
+2023-01-09,Product C,Electronics,2300,460,North
+2023-01-10,Product D,Home,1600,320,South
+2023-01-11,Product F,Clothing,900,180,East
+2023-01-12,Product E,Electronics,2000,400,West
+2023-01-13,Product A,Electronics,1300,260,North
+2023-01-14,Product B,Clothing,800,160,South
+2023-01-15,Product G,Home,1750,350,East

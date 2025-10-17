@@ -1,0 +1,14 @@
+{
+  "dataset_manager": "Veri Seti Yöneticisi",
+  "data_view": "Veri Görünümü",
+  "column_inspector": "Sütun Denetçisi",
+  "export_panel": "Dışa Aktarma Paneli",
+  "datasetManager": {
+    "summary": {
+      "count": "{{count}} veri seti yüklendi",
+      "count_plural": "{{count}} veri seti yüklendi",
+      "oneActive": "1 aktif",
+      "noneActive": "hiçbiri aktif değil"
+    }
+  }
+}

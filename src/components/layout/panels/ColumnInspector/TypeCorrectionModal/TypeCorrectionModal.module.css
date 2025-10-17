@@ -1,0 +1,289 @@
+/* Type Correction Modal Styling */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal {
+  background: linear-gradient(145deg, var(--color-surface-elevated), var(--color-surface-medium));
+  border: 2px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  max-width: 500px;
+  width: 90vw;
+  max-height: 80vh;
+  overflow: hidden;
+  animation: slideUp 0.3s ease-out;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-lg);
+  background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+  color: white;
+  position: relative;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(138, 43, 226, 0.8) 0%,
+    rgba(0, 191, 255, 0.8) 50%,
+    rgba(255, 165, 0, 0.8) 100%);
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.title {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: var(--font-size-xl);
+  color: white;
+  cursor: pointer;
+  width: var(--space-xl);
+  height: var(--space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.content {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.description {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+
+.currentType,
+.typeSelection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.label {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+}
+
+.typeBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  max-width: fit-content;
+}
+
+/* Type-specific badge colors */
+.typeBadge[data-type="numeric"] {
+  background: var(--type-numeric-bg);
+  color: var(--type-numeric-text);
+}
+
+.typeBadge[data-type="categorical"] {
+  background: var(--type-categorical-bg);
+  color: var(--type-categorical-text);
+}
+
+.typeBadge[data-type="text"] {
+  background: var(--type-text-bg);
+  color: var(--type-text-text);
+}
+
+.typeBadge[data-type="datetime"] {
+  background: var(--type-datetime-bg);
+  color: var(--type-datetime-text);
+}
+
+.typeBadge[data-type="boolean"] {
+  background: var(--type-boolean-bg);
+  color: var(--type-boolean-text);
+}
+
+.typeBadge[data-type="id_unique"] {
+  background: var(--type-idUnique-bg);
+  color: var(--type-idUnique-text);
+}
+
+.select {
+  padding: var(--space-sm) var(--space-md);
+  border: 2px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-elevated);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  transition: all 0.2s ease;
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.2);
+}
+
+.select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.warning {
+  background: linear-gradient(135deg, 
+    rgba(255, 193, 7, 0.1), 
+    rgba(255, 152, 0, 0.05));
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  margin-top: var(--space-sm);
+}
+
+.warningHeader {
+  color: var(--color-warning);
+  margin-bottom: var(--space-xs);
+}
+
+.warningMessage {
+  margin: 0 0 var(--space-sm) 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.consequences {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.consequences ul {
+  margin: var(--space-xs) 0 0 var(--space-md);
+  padding: 0;
+}
+
+.consequences li {
+  margin-bottom: var(--space-xs);
+  line-height: 1.4;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: flex-end;
+  padding: var(--space-lg);
+  background: var(--color-surface-subtle);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.cancelButton,
+.applyButton {
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  min-width: 80px;
+}
+
+.cancelButton {
+  background: var(--color-surface-elevated);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.cancelButton:hover:not(:disabled) {
+  background: var(--color-surface-medium);
+  color: var(--color-text-primary);
+}
+
+.applyButton {
+  background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.applyButton:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 4px 12px rgba(138, 43, 226, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.applyButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.cancelButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "dropzone": {
+    "title": "CSV dosyanızı buraya bırakın veya göz atmak için tıklayın",
+    "dragOver": "CSV dosyanızı yüklemek için bırakın",
+    "hint": "Virgül, noktalı virgül, sekme veya boru sınırlayıcılı CSV dosyalarını destekler",
+    "accepted": ".csv dosyalarını kabul eder"
+  },
+  "columns": "sütunlar",
+  "rows": "satırlar",
+  "actions": {
+    "upload": "CSV dosyası yükle",
+    "select": "Veri setini seç",
+    "rename": "Veri setini yeniden adlandır",
+    "remove": "Veri setini kaldır",
+    "export": "Veri setini dışa aktar"
+  },
+  "card": {
+    "rows": "satır",
+    "columns": "sütun",
+    "size": "boyut",
+    "addedAt": "Eklendi"
+  },
+  "badge": {
+    "active": "Aktif"
+  },
+  "export": {
+    "title": "Veri Setini Dışa Aktar",
+    "format": {
+      "label": "Dışa Aktarma Biçimi",
+      "csv": "CSV",
+      "json": "JSON"
+    },
+    "filename": {
+      "label": "Dosya adı",
+      "placeholder": "Dosya adını girin..."
+    },
+    "options": {
+      "title": "Dışa Aktarma Seçenekleri",
+      "columns": {
+        "title": "Sütunlar",
+        "all": "Tüm Sütunlar",
+        "selected": "Seçili Sütunlar",
+        "selectAll": "Tümünü Seç",
+        "deselectAll": "Tüm Seçimi Kaldır"
+      },
+      "rows": {
+        "title": "Satırlar",
+        "all": "Tüm Satırlar",
+        "range": "Satır Aralığı",
+        "rangeFrom": "Başlangıç satırı",
+        "rangeTo": "Bitiş satırı"
+      }
+    },
+    "actions": {
+      "export": "Dışa Aktar",
+      "cancel": "İptal",
+      "close": "Kapat"
+    },
+    "messages": {
+      "success": "Veri seti başarıyla dışa aktarıldı",
+      "error": "Veri seti dışa aktarılamadı",
+      "noColumns": "Lütfen en az bir sütun seçin",
+      "invalidRange": "Geçersiz satır aralığı"
+    }
+  }
+}

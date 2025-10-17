@@ -1,0 +1,7 @@
+{
+  "csv": {
+    "parse": "Failed to parse CSV file",
+    "fileTooLarge": "File is too large (max 50MB)",
+    "invalidFile": "Please select a valid CSV file"
+  }
+}

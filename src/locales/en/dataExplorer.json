@@ -1,0 +1,876 @@
+{
+  "title": "Data Explorer",
+  "titleWithColumn": "Data Explorer - {{columnName}}",
+  
+  "types": {
+    "numeric": "Numeric",
+    "categorical": "Categorical", 
+    "boolean": "Boolean",
+    "datetime": "DateTime",
+    "text": "Text",
+    "id_unique": "Unique",
+    "constant": "Constant"
+  },
+  
+  "states": {
+    "selectColumn": "Select a column to explore its data",
+    "columnSelected": "Column {{columnName}} selected for exploration",
+    "noData": "No data available for exploration",
+    "loading": "Loading column data..."
+  },
+  
+  "actions": {
+    "toggle": "Toggle Data Explorer",
+    "close": "Close Data Explorer",
+    "expand": "Expand Data Explorer",
+    "collapse": "Collapse Data Explorer",
+    "exportPNG": "Export Chart as PNG",
+    "exporting": "Exporting..."
+  },
+  
+  "tabs": {
+    "overview": "Overview",
+    "distribution": "Distribution",
+    "trends": "Trends",
+    "comparison": "Comparison"
+  },
+  
+  "chart": {
+    "noData": "No data available for charting",
+    "noValidData": "No valid data available",
+    "layout": {
+      "single": "Single Chart",
+      "sideBySide": "Side by Side"
+    },
+    "configure": "Configure Charts"
+  },
+  
+  "chartTypes": {
+    "histogram": "Histogram",
+    "line": "Line",
+    "scatter": "Scatter",
+    "bar": "Bar",
+    "pie": "Pie",
+    "box": "Box Plot",
+    "area": "Area Chart",
+    "heatmap": "Heatmap"
+  },
+  
+  "config": {
+    "chart": "Chart",
+    "leftChart": "Left Chart",
+    "rightChart": "Right Chart",
+    "chartType": "Chart Type",
+    "color": "Color",
+    "options": "Options",
+    "showGrid": "Show Grid",
+    "showLabels": "Show Labels",
+    "leftOption": "Left: {{chart}}",
+    "rightOption": "Right: {{chart}}"
+  },
+
+  "export": {
+    "button": {
+      "label": "Export",
+      "exporting": "Exporting…",
+      "tooltip": {
+        "single": "Export perfect chart as PNG",
+        "dual": "Export dual charts side by side as PNG"
+      }
+    },
+    "menu": {
+      "title": "PNG Export",
+      "appearance": "Appearance",
+      "close": "Close export settings"
+    },
+    "actions": {
+      "download": "Download PNG"
+    },
+    "status": {
+      "preparing": "Preparing…"
+    },
+    "appearance": {
+      "options": {
+        "transparent": "Transparent",
+        "light": "Light",
+        "dark": "Dark"
+      }
+    },
+    "controls": {
+      "grid": "Grid",
+      "values": "Values",
+      "syncScales": "Sync scales",
+      "leftValues": "Left values",
+      "rightValues": "Right values"
+    },
+    "dual": {
+      "title": "{{columnName}} - Dual View ({{leftChart}} | {{rightChart}})",
+      "leftHeading": "Left Chart",
+      "rightHeading": "Right Chart",
+      "panelTitle": "{{heading}} ({{chartType}})"
+    },
+    "barChart": {
+      "title": "{{columnName}} Distribution",
+      "subtitle": "{{categoryCount}} categories · {{formattedTotal}} total records",
+      "legend": {
+        "category": "Category",
+        "distribution": "Distribution",
+        "count": "Count",
+        "percentage": "Percentage"
+      }
+    }
+  },
+
+  "grid": {
+    "title": "Data Grid",
+    "records": "records",
+    "filtered": "filtered",
+    "hideNull": "Hide null values",
+    "perPage": "per page",
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page",
+    "of": "of"
+  },
+
+  
+  "titles": {
+    "overview": "Overview",
+    "distribution": "Distribution",
+    "trends": "Trends",
+    "comparison": "Comparison"
+  },
+  
+  "analysis": {
+    "title": "Analysis",
+    "records": "records",
+    "noData": "No data available for analysis",
+    
+    "constant": {
+      "title": "Constant Value",
+      "description": "This column contains the same value for all records.",
+      "value": "Value",
+      "totalRecords": "Total Records",
+      "nonNullRecords": "Non-null Records",
+      "nullRecords": "Null Records"
+    },
+    
+    "numeric": {
+      "title": "Numeric Analysis",
+      "noValidData": "No valid numeric data found",
+      "descriptive": "Descriptive Statistics",
+      "quartiles": "Quartile Analysis",
+      "composition": "Value Composition",
+      "count": "Count",
+      "mean": "Mean",
+      "median": "Median",
+      "stdDev": "Std Dev",
+      "min": "Min",
+      "max": "Max",
+      "q1": "Q1",
+      "q3": "Q3",
+      "iqr": "IQR",
+      "range": "Range",
+      "skewness": "Skewness",
+      "outliers": "Outliers",
+      "positive": "Positive",
+      "negative": "Negative",
+      "zero": "Zero",
+      "distribution": {
+        "title": "Distribution",
+        "shape": "Shape",
+        "normal": "Normal",
+        "rightSkewed": "Right Skewed",
+        "leftSkewed": "Left Skewed"
+      }
+    },
+    
+    "categorical": {
+      "basic": "Basic Statistics",
+      "frequency": "Frequency Analysis",
+      "topCategories": "Top Categories",
+      "totalRecords": "Total Records",
+      "uniqueValues": "Unique Values",
+      "uniqueRatio": "Unique Ratio",
+      "diversityLevel": "Diversity Level",
+      "mostCommon": "Most Common",
+      "maxFreq": "Max Frequency",
+      "minFreq": "Min Frequency",
+      "avgFreq": "Avg Frequency",
+      "diversity": {
+        "veryHigh": "Very High",
+        "high": "High",
+        "medium": "Medium",
+        "low": "Low"
+      }
+    },
+    
+    "idUnique": {
+      "basic": "ID/Unique Analysis",
+      "noData": "No ID/Unique analysis available",
+      "totalRecords": "Total Records",
+      "uniqueValues": "Unique Values",
+      "uniqueness": "Uniqueness",
+      "fullyUnique": "100% Unique",
+      "unique": "Unique",
+      "duplicates": "Duplicates",
+      "patternAnalysis": "Pattern Analysis",
+      "detectedPattern": "Detected Pattern",
+      "sampleValues": "Sample Values",
+      "more": "more",
+      "dataQuality": "Data Quality",
+      "perfectUniqueness": "Perfect uniqueness - suitable as primary key",
+      "duplicatesDetected": "{{count}} duplicate values detected",
+      "noNulls": "No null values",
+      "nullsPresent": "{{count}} null values present",
+      "pattern": {
+        "numeric": "Sequential Numbers",
+        "uuid": "UUID Format",
+        "alphanumeric": "Alphanumeric Code",
+        "custom": "Custom Pattern"
+      }
+    },
+    
+    "text": {
+      "title": "Text Analysis",
+      "noValidData": "No valid text data found",
+      "length": "Length Statistics",
+      "words": "Word Analysis",
+      "characters": "Character Composition",
+      "topWords": "Most Common Words",
+      "lengthDistribution": "Length Distribution",
+      "totalTexts": "Total Texts",
+      "avgLength": "Avg Length",
+      "minLength": "Min Length",
+      "maxLength": "Max Length",
+      "totalWords": "Total Words",
+      "avgWordsPerText": "Avg Words/Text",
+      "vocabularySize": "Vocabulary Size",
+      "vocabularyRichness": "Vocabulary Richness",
+      "letters": "Letters",
+      "digits": "Digits",
+      "spaces": "Spaces",
+      "punctuation": "Punctuation"
+    },
+    
+    "datetime": {
+      "title": "DateTime Analysis",
+      "noValidData": "No valid datetime data found",
+      "range": "Time Range",
+      "frequency": "Frequency Analysis",
+      "topYears": "Most Active Years",
+      "topDays": "Most Active Days",
+      "timeline": "Timeline Distribution",
+      "formatInfo": "Format Information",
+      "detectedFormat": "Detected Format",
+      "timezone": "Timezone",
+      "invalidDates": "Invalid Dates",
+      "records": "records",
+      "totalRecords": "Total Records",
+      "earliest": "Earliest",
+      "latest": "Latest",
+      "timeSpan": "Time Span",
+      "recordsPerDay": "Records/Day",
+      "avgGap": "Avg Gap",
+      "maxGap": "Max Gap",
+      "duplicates": "Duplicates",
+      "years": "years",
+      "months": "months",
+      "days": "days",
+      "yes": "Yes",
+      "no": "No"
+    },
+    
+    "boolean": {
+      "title": "Boolean Analysis",
+      "noData": "No boolean data found",
+      "basic": "Basic Statistics",
+      "distribution": "Distribution Analysis",
+      "valueDistribution": "Value Distribution",
+      "insights": "Insights",
+      "totalRecords": "Total Records",
+      "trueValues": "True Values",
+      "falseValues": "False Values",
+      "otherValues": "Other Values",
+      "ratio": "True:False Ratio",
+      "balance": "Balance",
+      "dataQuality": "Data Quality",
+      "uniqueValues": "Unique Values",
+      "mostCommon": "Most Common",
+      "leastCommon": "Least Common",
+      "recommendation": "Recommendation",
+      "wellBalanced": "Well Balanced",
+      "moderatelyBalanced": "Moderately Balanced",
+      "imbalanced": "Imbalanced",
+      "clean": "Clean Boolean",
+      "mixed": "Mixed Values",
+      "considerCleaning": "Consider cleaning non-boolean values"
+    }
+  },
+
+  "advanced": {
+    "title": "Advanced Analysis",
+    "tooltip": "Deep column analysis with statistical insights and patterns",
+    "basic": "Basic Statistics",
+    "records": "Records",
+    "uniqueValues": "Unique Values",
+    "nulls": "Nulls",
+    "recordsInfo": "Total number of records in this column",
+    "uniqueInfo": "Number of distinct values found",
+    "nullsInfo": "Count of empty or null values",
+
+    "numeric": {
+      "noValidData": "No valid numeric data found",
+      "enhancedStats": "Enhanced Statistics",
+      "enhancedStatsInfo": "Comprehensive statistical measures including central tendency and variability",
+      "distributionAnalysis": "Distribution Analysis", 
+      "distributionInfo": "Analysis of data distribution shape and characteristics",
+      "outlierDetection": "Outlier Detection",
+      "outlierInfo": "Identification of unusual values using multiple statistical methods",
+      "patternAnalysis": "Pattern Analysis",
+      "patternInfo": "Analysis of trends, volatility, and data patterns over time",
+      "mean": "Mean",
+      "median": "Median", 
+      "mode": "Mode",
+      "stdDev": "Std Dev",
+      "variance": "Variance",
+      "cv": "Coeff. Variation",
+      "skewness": "Skewness",
+      "kurtosis": "Kurtosis",
+      "shape": "Shape",
+      "peakedness": "Peakedness",
+      "iqrOutliers": "IQR Outliers",
+      "zScoreOutliers": "Z-Score Outliers",
+      "outlierPercentage": "Outlier %",
+      "extremeValues": "Extreme Values",
+      "trend": "Trend",
+      "volatility": "Volatility",
+      "clustering": "Clustering",
+      "gaps": "Large Gaps",
+      "yes": "Yes",
+      "no": "No",
+      "shapes": {
+        "normal": "Normal",
+        "rightSkewed": "Right Skewed", 
+        "leftSkewed": "Left Skewed",
+        "moderatelyRightSkewed": "Moderately Right Skewed",
+        "moderatelyLeftSkewed": "Moderately Left Skewed"
+      },
+      "peakedness": {
+        "mesokurtic": "Normal",
+        "leptokurtic": "Heavy-tailed",
+        "platykurtic": "Light-tailed"
+      },
+      "trends": {
+        "stable": "Stable",
+        "increasing": "Increasing", 
+        "decreasing": "Decreasing"
+      },
+      "volatility": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High"
+      }
+    },
+
+    "categorical": {
+      "noValidData": "No valid categorical data found",
+      "distributionAnalysis": "Distribution Analysis",
+      "distributionInfo": "Analysis of category frequency distribution and inequality measures",
+      "diversityAnalysis": "Diversity Analysis", 
+      "diversityInfo": "Measurement of category diversity using information theory",
+      "patternAnalysis": "Pattern Analysis",
+      "patternInfo": "Detection of distribution patterns and power-law characteristics",
+      "dataQualityAssessment": "Data Quality Assessment",
+      "qualityInfo": "Assessment of data consistency and standardization",
+      "totalCategories": "Total Categories",
+      "mostFrequent": "Most Frequent",
+      "maxFrequency": "Max Frequency",
+      "minFrequency": "Min Frequency",
+      "avgFrequency": "Avg Frequency",
+      "giniIndex": "Gini Index",
+      "shannonEntropy": "Shannon Entropy",
+      "simpsonIndex": "Simpson Index",
+      "evenness": "Evenness",
+      "dominance": "Dominance",
+      "diversityLevel": "Diversity Level",
+      "concentration": "Concentration",
+      "singletons": "Singletons",
+      "powerLaw": "Power Law",
+      "topCategoriesShare": "Top Categories Share",
+      "tailLength": "Tail Length",
+      "inconsistencies": "Inconsistencies",
+      "potentialDuplicates": "Potential Duplicates",
+      "averageLength": "Average Length",
+      "standardization": "Standardization",
+      "topCategories": "Top Categories",
+      "yes": "Yes",
+      "no": "No",
+      "diversity": {
+        "veryHigh": "Very High",
+        "high": "High", 
+        "medium": "Medium",
+        "low": "Low"
+      },
+      "concentration": {
+        "high": "High",
+        "medium": "Medium",
+        "low": "Low"
+      },
+      "standardization": {
+        "good": "Good",
+        "fair": "Fair",
+        "poor": "Poor"
+      }
+    },
+
+    "text": {
+      "noValidData": "No valid text data found",
+      "lengthAnalysis": "Length Analysis",
+      "lengthInfo": "Statistical analysis of text length distribution",
+      "wordAnalysis": "Word Analysis",
+      "wordInfo": "Analysis of vocabulary richness and word usage patterns",
+      "characterAnalysis": "Character Analysis", 
+      "characterInfo": "Breakdown of character types and composition",
+      "languageAnalysis": "Language Analysis",
+      "languageInfo": "Assessment of readability, formality, and text structure",
+      "detectedPatterns": "Detected Patterns",
+      "mostCommonWords": "Most Common Words",
+      "avgLength": "Avg Length",
+      "medianLength": "Median Length",
+      "minLength": "Min Length", 
+      "maxLength": "Max Length",
+      "lengthVariability": "Length Variability",
+      "lengthStdDev": "Length Std Dev",
+      "totalWords": "Total Words",
+      "vocabularySize": "Vocabulary Size",
+      "avgWordsPerText": "Avg Words/Text",
+      "avgWordLength": "Avg Word Length",
+      "vocabularyRichness": "Vocabulary Richness",
+      "lexicalDiversity": "Lexical Diversity",
+      "alphabetic": "Alphabetic",
+      "numeric": "Numeric",
+      "whitespace": "Whitespace",
+      "punctuation": "Punctuation",
+      "uppercase": "Uppercase",
+      "special": "Special",
+      "readabilityScore": "Readability Score",
+      "avgSentenceLength": "Avg Sentence Length",
+      "avgSyllablesPerWord": "Avg Syllables/Word",
+      "formality": "Formality",
+      "complexity": "Complexity",
+      "structure": "Structure",
+      "variability": {
+        "low": "Low",
+        "medium": "Medium", 
+        "high": "High"
+      },
+      "diversity": {
+        "veryHigh": "Very High",
+        "high": "High",
+        "medium": "Medium",
+        "low": "Low"
+      },
+      "formality": {
+        "formal": "Formal",
+        "neutral": "Neutral",
+        "informal": "Informal"
+      },
+      "complexity": {
+        "simple": "Simple",
+        "moderate": "Moderate",
+        "complex": "Complex"
+      },
+      "structure": {
+        "unstructured": "Unstructured",
+        "semi_structured": "Semi-structured",
+        "highly_structured": "Highly Structured"
+      }
+    },
+
+    "boolean": {
+      "noValidData": "No valid boolean data found", 
+      "distributionAnalysis": "Distribution Analysis",
+      "distributionInfo": "Analysis of true/false value distribution and balance",
+      "patternAnalysis": "Pattern Analysis",
+      "patternInfo": "Analysis of boolean patterns, streaks, and alternations",
+      "dataQuality": "Data Quality",
+      "qualityInfo": "Assessment of boolean data purity and consistency",
+      "statisticalInsights": "Statistical Insights",
+      "insightsInfo": "Information theory and statistical measures for boolean data",
+      "valueDistribution": "Value Distribution",
+      "trueCount": "True Count",
+      "falseCount": "False Count",
+      "truePercentage": "True Percentage",
+      "falsePercentage": "False Percentage",
+      "ratio": "Ratio",
+      "balance": "Balance",
+      "longestTrueStreak": "Longest True Streak",
+      "longestFalseStreak": "Longest False Streak", 
+      "alternations": "Alternations",
+      "clustering": "Clustering",
+      "randomness": "Randomness",
+      "predictability": "Predictability",
+      "purity": "Purity",
+      "consistency": "Consistency",
+      "uniqueValues": "Unique Values",
+      "nonBooleanValues": "Non-Boolean Values",
+      "dataType": "Data Type",
+      "recommendation": "Recommendation",
+      "entropy": "Entropy",
+      "informationContent": "Information Content",
+      "biasMagnitude": "Bias Magnitude",
+      "biasDirection": "Bias Direction",
+      "variance": "Variance",
+      "expectedValue": "Expected Value",
+      "trueValues": "True Values",
+      "falseValues": "False Values",
+      "balance": {
+        "balanced": "Balanced",
+        "moderatelyImbalanced": "Moderately Imbalanced",
+        "imbalanced": "Imbalanced", 
+        "highlyImbalanced": "Highly Imbalanced"
+      },
+      "clustering": {
+        "none": "None",
+        "low": "Low",
+        "moderate": "Moderate",
+        "high": "High"
+      },
+      "predictability": {
+        "random": "Random",
+        "moderately_predictable": "Moderately Predictable",
+        "highly_predictable": "Highly Predictable"
+      },
+      "consistency": {
+        "high": "High",
+        "medium": "Medium",
+        "low": "Low"
+      },
+      "dataType": {
+        "mixed": "Mixed",
+        "pure_boolean": "Pure Boolean",
+        "constant": "Constant",
+        "boolean_variants": "Boolean Variants"
+      },
+      "recommendation": {
+        "good": "Good",
+        "needs_cleaning": "Needs Cleaning",
+        "consider_constant": "Consider Constant"
+      },
+      "informationContent": {
+        "maximum": "Maximum",
+        "high": "High",
+        "medium": "Medium",
+        "low": "Low"
+      },
+      "biasDirection": {
+        "none": "None",
+        "toward_true": "Toward True",
+        "toward_false": "Toward False"
+      }
+    },
+
+    "datetime": {
+      "noValidData": "No valid datetime data found",
+      "timeRangeAnalysis": "Time Range Analysis",
+      "timeRangeInfo": "Analysis of temporal coverage and span characteristics",
+      "temporalPatterns": "Temporal Patterns",
+      "patternsInfo": "Detection of seasonal patterns and temporal trends",
+      "frequencyDistribution": "Frequency Distribution", 
+      "frequencyInfo": "Analysis of record frequency across different time periods",
+      "gapAnalysis": "Gap Analysis",
+      "gapInfo": "Analysis of time gaps and data continuity",
+      "mostActivePeriods": "Most Active Periods",
+      "earliest": "Earliest",
+      "latest": "Latest",
+      "spanYears": "Span (Years)",
+      "spanDays": "Span (Days)",
+      "timeSpanCategory": "Time Span Category",
+      "coverage": "Coverage",
+      "seasonality": "Seasonality", 
+      "weekdayPattern": "Weekday Pattern",
+      "monthlyTrend": "Monthly Trend",
+      "yearlyTrend": "Yearly Trend",
+      "clustering": "Clustering",
+      "regularity": "Regularity",
+      "recordsPerDay": "Records/Day",
+      "recordsPerWeek": "Records/Week", 
+      "recordsPerMonth": "Records/Month",
+      "uniqueDays": "Unique Days",
+      "peakDay": "Peak Day",
+      "maxDailyRecords": "Max Daily Records",
+      "avgGapDays": "Avg Gap (Days)",
+      "medianGapDays": "Median Gap (Days)",
+      "maxGapDays": "Max Gap (Days)",
+      "significantGaps": "Significant Gaps",
+      "continuity": "Continuity",
+      "gapVariability": "Gap Variability",
+      "topYears": "Top Years",
+      "topMonths": "Top Months",
+      "topWeekdays": "Top Weekdays",
+      "timeSpan": {
+        "days": "Days",
+        "weeks": "Weeks",
+        "months": "Months", 
+        "years": "Years",
+        "decades": "Decades"
+      },
+      "seasonality": {
+        "none": "None",
+        "weak": "Weak",
+        "moderate": "Moderate",
+        "strong": "Strong"
+      },
+      "weekdayPattern": {
+        "uniform": "Uniform",
+        "moderate_weekday_bias": "Moderate Weekday Bias",
+        "strong_weekday_bias": "Strong Weekday Bias"
+      },
+      "trend": {
+        "stable": "Stable",
+        "increasing": "Increasing",
+        "decreasing": "Decreasing"
+      },
+      "clustering": {
+        "scattered": "Scattered",
+        "moderately_clustered": "Moderately Clustered",
+        "highly_clustered": "Highly Clustered"
+      },
+      "regularity": {
+        "irregular": "Irregular",
+        "somewhat_regular": "Somewhat Regular", 
+        "regular": "Regular",
+        "very_regular": "Very Regular"
+      },
+      "continuity": {
+        "continuous": "Continuous",
+        "minor_breaks": "Minor Breaks",
+        "some_breaks": "Some Breaks",
+        "major_breaks": "Major Breaks"
+      },
+      "variability": {
+        "consistent": "Consistent",
+        "somewhat_variable": "Somewhat Variable",
+        "moderately_variable": "Moderately Variable",
+        "highly_variable": "Highly Variable"
+      }
+    },
+
+    "constant": {
+      "noValidData": "No valid constant data found",
+      "valueAnalysis": "Value Analysis", 
+      "valueInfo": "Analysis of the constant value and its characteristics",
+      "dataQuality": "Data Quality",
+      "qualityInfo": "Assessment of data consistency and null handling",
+      "storageImplications": "Storage Implications",
+      "storageInfo": "Analysis of storage efficiency and optimization opportunities",
+      "recommendations": "Recommendations",
+      "recommendationsInfo": "Actionable recommendations for handling constant columns",
+      "usageScenarios": "Usage Scenarios",
+      "constantValue": "Constant Value",
+      "totalRecords": "Total Records",
+      "constantRecords": "Constant Records",
+      "nullRecords": "Null Records",
+      "purity": "Purity",
+      "consistency": "Consistency",
+      "dataIntegrity": "Data Integrity",
+      "redundancyLevel": "Redundancy Level",
+      "compressionPotential": "Compression Potential",
+      "spaceSavings": "Space Savings",
+      "memoryFootprint": "Memory Footprint",
+      "indexingBenefit": "Indexing Benefit",
+      "queryOptimization": "Query Optimization",
+      "applicability": "Applicability",
+      "types": {
+        "null": "Null",
+        "boolean": "Boolean", 
+        "numeric": "Numeric",
+        "empty_string": "Empty String",
+        "date": "Date",
+        "short_string": "Short String",
+        "long_string": "Long String",
+        "unknown": "Unknown"
+      },
+      "consistency": {
+        "perfect": "Perfect",
+        "with_nulls": "With Nulls",
+        "mixed": "Mixed"
+      },
+      "integrity": {
+        "high": "High",
+        "medium": "Medium",
+        "low": "Low"
+      },
+      "redundancy": {
+        "maximum": "Maximum"
+      },
+      "compression": {
+        "excellent": "Excellent"
+      },
+      "indexing": {
+        "high": "High",
+        "low": "Low"
+      },
+      "optimization": {
+        "excellent": "Excellent",
+        "moderate": "Moderate"
+      },
+      "priority": {
+        "high": "High",
+        "medium": "Medium", 
+        "low": "Low"
+      },
+      "recommendationTexts": {
+        "remove_column": "Consider removing this redundant column",
+        "move_to_metadata": "Move constant value to table metadata",
+        "handle_nulls": "Address null values for better consistency", 
+        "clarify_empty_string": "Clarify if empty string is intentional",
+        "compression_opportunity": "High compression potential for storage optimization",
+        "document_purpose": "Document the purpose of this constant column"
+      },
+      "scenarios": {
+        "configuration_flag": {
+          "title": "Configuration Flag",
+          "description": "Used as a system configuration setting or feature flag"
+        },
+        "version_identifier": {
+          "title": "Version Identifier",
+          "description": "Identifies data version or schema version for this dataset"
+        },
+        "default_value": {
+          "title": "Default Value", 
+          "description": "Placeholder for future use or default system setting"
+        },
+        "placeholder_column": {
+          "title": "Placeholder Column",
+          "description": "Reserved column for future functionality expansion"
+        },
+        "regulatory_requirement": {
+          "title": "Regulatory Requirement",
+          "description": "Required field for compliance but currently has single value"
+        }
+      },
+      "applicabilityLevels": {
+        "high": "High",
+        "medium": "Medium",
+        "low": "Low"
+      }
+    },
+
+    "idUnique": {
+      "noValidData": "No valid ID/unique data found",
+      "uniquenessAnalysis": "Uniqueness Analysis",
+      "uniquenessInfo": "Analysis of ID uniqueness and duplicate detection",
+      "patternAnalysis": "Pattern Analysis", 
+      "patternInfo": "Detection of ID formatting patterns and consistency",
+      "structureAnalysis": "Structure Analysis",
+      "structureInfo": "Analysis of ID length, character types, and complexity",
+      "qualityAssessment": "Quality Assessment",
+      "qualityInfo": "Assessment of ID security, predictability, and collision risk",
+      "detectedPatterns": "Detected Patterns",
+      "sampleIds": "Sample IDs",
+      "totalRecords": "Total Records",
+      "uniqueRecords": "Unique Records",
+      "duplicates": "Duplicates",
+      "uniquenessRatio": "Uniqueness Ratio",
+      "idQuality": "ID Quality",
+      "cardinality": "Cardinality", 
+      "detectedFormat": "Detected Format",
+      "consistency": "Consistency",
+      "hasSequence": "Has Sequence",
+      "hasPrefixSuffix": "Has Prefix/Suffix",
+      "formatVariations": "Format Variations",
+      "standardization": "Standardization",
+      "avgLength": "Avg Length",
+      "minLength": "Min Length",
+      "maxLength": "Max Length",
+      "lengthVariability": "Length Variability",
+      "characterTypes": "Character Types",
+      "complexity": "Complexity",
+      "collisionRisk": "Collision Risk",
+      "entropy": "Entropy",
+      "predictability": "Predictability", 
+      "security": "Security",
+      "scalability": "Scalability",
+      "recommendation": "Recommendation",
+      "yes": "Yes",
+      "no": "No",
+      "quality": {
+        "perfect": "Perfect",
+        "excellent": "Excellent",
+        "good": "Good",
+        "fair": "Fair",
+        "poor": "Poor"
+      },
+      "cardinality": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High",
+        "very_high": "Very High"
+      },
+      "formats": {
+        "uuid_v4": "UUID v4",
+        "uuid__any_version_": "UUID (Any Version)",
+        "mongodb_objectid": "MongoDB ObjectId",
+        "sequential_number": "Sequential Number",
+        "prefixed_sequential": "Prefixed Sequential", 
+        "hash_like": "Hash-like",
+        "base64_like": "Base64-like",
+        "alphanumeric": "Alphanumeric",
+        "custom_format": "Custom Format",
+        "mixed": "Mixed"
+      },
+      "consistency": {
+        "excellent": "Excellent",
+        "good": "Good",
+        "fair": "Fair",
+        "poor": "Poor"
+      },
+      "standardization": {
+        "excellent": "Excellent", 
+        "good": "Good",
+        "fair": "Fair",
+        "poor": "Poor"
+      },
+      "variability": {
+        "consistent": "Consistent",
+        "slightly_variable": "Slightly Variable",
+        "moderately_variable": "Moderately Variable",
+        "highly_variable": "Highly Variable"
+      },
+      "complexity": {
+        "simple": "Simple",
+        "medium": "Medium",
+        "high": "High"
+      },
+      "risk": {
+        "very_low": "Very Low",
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High"
+      },
+      "predictability": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High"
+      },
+      "security": {
+        "poor": "Poor",
+        "fair": "Fair", 
+        "good": "Good"
+      },
+      "scalability": {
+        "poor": "Poor",
+        "good": "Good",
+        "excellent": "Excellent"
+      },
+      "recommendations": {
+        "excellent_ids": "Excellent IDs",
+        "increase_entropy": "Increase Entropy",
+        "reduce_predictability": "Reduce Predictability",
+        "review_format": "Review Format"
+      }
+    }
+  }
+}

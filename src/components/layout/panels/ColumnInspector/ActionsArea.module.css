@@ -1,0 +1,580 @@
+/* Actions Area - Live Apply with Compact Spacing */
+.actionsArea {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: 0;
+}
+
+/* Core Chip Bar */
+.chipBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.chipsContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  flex: 1;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.chipsContainer::-webkit-scrollbar {
+  display: none;
+}
+
+/* Core Action Chips - Compact with solid accent colors */
+.chip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--color-bg-surface);
+  border: 2px solid var(--color-border);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--transition-medium);
+  font-family: var(--font-family);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  flex-shrink: 0;
+  min-width: 80px;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.chip:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.chip:focus {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+/* Chip Variants with solid accent colors (no gradients) */
+.chipTypeCast:hover {
+  border-color: var(--color-accent-primary);
+  background: var(--color-bg-tertiary);
+}
+
+.chipFillMissing:hover {
+  border-color: var(--color-accent-secondary);
+  background: var(--color-bg-tertiary);
+}
+
+.chipDuplicate:hover {
+  border-color: var(--color-accent-auxiliary);
+  background: var(--color-bg-tertiary);
+}
+
+.chipDrop {
+  border-color: var(--color-error);
+}
+
+.chipDrop:hover {
+  border-color: var(--color-error);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.chipIcon {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2;
+  color: var(--icon-color-normal);
+  flex-shrink: 0;
+}
+
+.chipLabel {
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.chipChevron {
+  width: 12px;
+  height: 12px;
+  stroke-width: 2;
+  color: var(--icon-color-weak);
+  flex-shrink: 0;
+  transition: transform var(--transition-medium);
+}
+
+.chip:hover .chipChevron {
+  transform: rotate(180deg);
+}
+
+/* Undo/Redo Controls */
+.undoRedoControls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  flex-shrink: 0;
+}
+
+.undoRedoButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--color-bg-surface);
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition-medium);
+  position: relative;
+  overflow: hidden;
+}
+
+.undoRedoButton:hover {
+  transform: translateY(-1px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-color: var(--color-border-hover);
+  background: var(--color-bg-tertiary);
+}
+
+.undoRedoButton:focus {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+.undoRedoButtonDisabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.undoRedoButton svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2;
+  color: var(--icon-color-normal);
+}
+
+/* Overflow-safe Menu Portal */
+.menuPortal {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.menuPortal.menuPortalOpen {
+  pointer-events: auto;
+}
+
+.menu {
+  background: var(--color-bg-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+  max-width: 280px;
+  max-height: 400px;
+  overflow: hidden;
+  transform: scale(0.95) translateY(-4px);
+  opacity: 0;
+  transition: all var(--transition-medium);
+}
+
+.menuOpen {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.menuContent {
+  display: flex;
+  flex-direction: column;
+  max-height: 350px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+.menuContent::-webkit-scrollbar {
+  width: 6px;
+}
+
+.menuContent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.menuContent::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 3px;
+}
+
+.menuTitle {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.menuOption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  background: transparent;
+  border: none;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  border-radius: 0;
+  margin: 0;
+}
+
+.menuOption:hover {
+  background: var(--color-bg-secondary);
+  transform: translateX(2px);
+}
+
+.menuOption:focus {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: -2px;
+}
+
+.menuOptionDestructive {
+  color: var(--color-error);
+}
+
+.menuOptionDestructive:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--color-error);
+}
+
+.optionLabel {
+  flex: 1;
+}
+
+.destructiveWarning {
+  color: var(--color-warning);
+  font-size: var(--font-size-sm);
+  margin-left: var(--space-xs);
+}
+
+.inputIndicator {
+  color: var(--color-accent-auxiliary);
+  font-size: var(--font-size-xs);
+  margin-left: var(--space-xs);
+}
+
+/* Action Groups - Collapsible */
+.actionGroups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.actionGroup {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  position: relative;
+}
+
+.groupHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-medium);
+  font-family: var(--font-family);
+}
+
+.groupHeader:hover {
+  background: var(--color-bg-surface);
+}
+
+.groupHeader:focus {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: -2px;
+}
+
+.groupHeaderExpanded {
+  background: var(--color-bg-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.groupTitle {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.groupChevron {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2;
+  color: var(--icon-color-weak);
+  transition: transform var(--transition-medium);
+}
+
+.groupHeaderExpanded .groupChevron {
+  transform: rotate(180deg);
+}
+
+/* Group Content */
+.groupContent {
+  padding: var(--space-sm) var(--space-md) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  animation: groupContentSlideIn var(--transition-medium);
+}
+
+@keyframes groupContentSlideIn {
+  from {
+    opacity: 0;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+    padding-top: var(--space-sm);
+    padding-bottom: var(--space-md);
+  }
+}
+
+/* Group Action Buttons - Full-width uniform with role colors */
+.groupActionButton {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition-medium);
+  text-align: left;
+  width: 100%;
+  min-height: 60px;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.groupActionButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-border-hover);
+  background: var(--color-bg-secondary);
+}
+
+.groupActionButton:focus {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+/* Role-based colors for action buttons */
+.groupActionButtonTransform:hover {
+  border-color: var(--color-accent-primary);
+}
+
+.groupActionButtonEncode:hover {
+  border-color: var(--color-accent-secondary);
+}
+
+.groupActionButtonDanger:hover {
+  border-color: var(--color-error);
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.actionTitle {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+}
+
+.actionDescription {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  line-height: 1.3;
+  margin-top: 2px;
+}
+
+.actionIcon {
+  width: 14px;
+  height: 14px;
+  color: var(--icon-color-weak);
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+}
+
+/* Loading state */
+.actionsAreaLoading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.actionsAreaLoading .chip,
+.actionsAreaLoading .groupActionButton {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Responsive Design - Mobile optimizations */
+@media (max-width: 768px) {
+  .chipBar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-xs);
+  }
+  
+  .chipsContainer {
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+  
+  .undoRedoControls {
+    justify-content: center;
+  }
+  
+  .chip {
+    min-width: 70px;
+    padding: 5px 8px;
+  }
+  
+  .chipLabel {
+    font-size: var(--font-size-xs);
+  }
+  
+  .chipIcon {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .groupActionButton {
+    min-height: 50px;
+    padding: 10px 12px;
+  }
+  
+  .actionTitle {
+    font-size: var(--font-size-sm);
+  }
+  
+  .actionDescription {
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .chip {
+    min-width: 60px;
+    padding: 4px 6px;
+  }
+  
+  .chipLabel {
+    font-size: var(--font-size-2xs);
+    letter-spacing: 0.2px;
+  }
+  
+  .chipIcon {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .undoRedoButton {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .undoRedoButton svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .groupActionButton {
+    min-height: 45px;
+    padding: 8px 10px;
+  }
+  
+  .actionTitle {
+    font-size: var(--font-size-xs);
+  }
+  
+  .actionDescription {
+    font-size: var(--font-size-2xs);
+  }
+  
+  .groupTitle {
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* Accessibility */
+@media (prefers-contrast: high) {
+  .chip,
+  .undoRedoButton,
+  .groupActionButton {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .chip,
+  .undoRedoButton,
+  .groupActionButton,
+  .groupChevron,
+  .menu {
+    transition: none;
+  }
+  
+  .chip:hover,
+  .undoRedoButton:hover,
+  .groupActionButton:hover {
+    transform: none;
+  }
+  
+  @keyframes groupContentSlideIn {
+    from, to {
+      opacity: 1;
+      max-height: none;
+      padding-top: var(--space-sm);
+      padding-bottom: var(--space-md);
+    }
+  }
+}

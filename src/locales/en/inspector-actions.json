@@ -1,0 +1,866 @@
+{
+  "operation": {
+    "applied": "Applied: {{operation}}"
+  },
+
+  "warn": {
+    "high_missing_values": "Warning: This column has a high percentage of missing values"
+  },
+
+  "placeholders": {
+    "constant": "Constant value operations coming soon..."
+  },
+  "actionGroups": {
+    "general": {
+      "title": "General Actions",
+      "description": "Basic column operations that apply to all data types",
+      "generalError": "An error occurred while processing the operation",
+      "actionNotImplemented": "Action not implemented: {{actionKey}}",
+      "operationFailed": "Operation {{actionKey}} failed: {{error}}",
+      "actions": {
+        "duplicate": {
+          "title": "Duplicate Column"
+        },
+        "delete": {
+          "title": "Delete Column"
+        },
+        "correctType": {
+          "title": "Correct Column Type"
+        }
+      },
+      "impact": {
+        "duplicate": "Creates a copy of this column",
+        "delete": "Permanently removes this column",
+        "correctType": "Changes column data type detection"
+      }
+    },
+
+    "numeric": {
+      "title": "Numeric Transformations",
+      "description": "Mathematical operations and numeric data processing",
+      "round": {
+        "title": "Round Values",
+        "description": "Round numbers to specified decimal places",
+        "decimals": "Decimal Places",
+        "nearest": {
+          "title": "Round to Nearest",
+          "description": "Round to nearest decimal place (standard rounding)"
+        },
+        "ceil": {
+          "title": "Round Up (Ceiling)",
+          "description": "Always round up to next decimal place"
+        },
+        "floor": {
+          "title": "Round Down (Floor)",
+          "description": "Always round down to previous decimal place"
+        },
+        "banker": {
+          "title": "Banker's Rounding",
+          "description": "Round to nearest even number (reduces bias)"
+        }
+      },
+      "scale": {
+        "title": "Scale Values",
+        "description": "Apply mathematical operations to scale numeric values",
+        "operation": "Operation",
+        "multiply": {
+          "title": "Multiply"
+        },
+        "divide": {
+          "title": "Divide"
+        },
+        "add": {
+          "title": "Add"
+        },
+        "subtract": {
+          "title": "Subtract"
+        },
+        "value": "Value",
+        "apply": "Apply Scaling"
+      },
+      "normalize": {
+        "title": "Normalize Values",
+        "description": "Scale values to standard range (0-1)",
+        "minmax": {
+          "title": "Min-Max Normalization",
+          "description": "Scale values to 0-1 range using min-max scaling"
+        },
+        "zscore": {
+          "title": "Z-Score Normalization",
+          "description": "Standardize values using mean and standard deviation"
+        },
+        "decimal": {
+          "title": "Decimal Scaling",
+          "description": "Scale values by dividing by power of 10"
+        }
+      },
+      "fillMissing": {
+        "title": "Fill Missing Values",
+        "description": "Replace missing numeric values",
+        "mean": {
+          "title": "Fill with Mean",
+          "description": "Replace missing values with column mean"
+        },
+        "median": {
+          "title": "Fill with Median",
+          "description": "Replace missing values with column median"
+        },
+        "mode": {
+          "title": "Fill with Mode",
+          "description": "Replace missing values with most frequent value"
+        },
+        "constant": {
+          "title": "Fill with Constant",
+          "description": "Replace missing values with specified constant"
+        },
+        "forward": {
+          "title": "Forward Fill",
+          "description": "Use previous value to fill missing"
+        },
+        "backward": {
+          "title": "Backward Fill",
+          "description": "Use next value to fill missing"
+        },
+        "constantValue": "Constant Value",
+        "apply": "Apply Fill"
+      },
+      "math": {
+        "title": "Mathematical Functions",
+        "description": "Apply mathematical transformations",
+        "abs": {
+          "title": "Absolute Value",
+          "description": "Convert all values to positive"
+        },
+        "log": {
+          "title": "Natural Logarithm",
+          "description": "Apply natural log transformation"
+        },
+        "log10": {
+          "title": "Log Base 10",
+          "description": "Apply base-10 logarithm"
+        },
+        "log2": {
+          "title": "Log Base 2",
+          "description": "Apply base-2 logarithm"
+        },
+        "exp": {
+          "title": "Exponential",
+          "description": "Apply exponential function (e^x)"
+        },
+        "sqrt": {
+          "title": "Square Root",
+          "description": "Calculate square root of values"
+        },
+        "square": {
+          "title": "Square Values",
+          "description": "Calculate square of values (x²)"
+        },
+        "power": {
+          "title": "Power/Exponent",
+          "apply": "Apply Power"
+        }
+      },
+      "binning": {
+        "title": "Create Bins",
+        "description": "Group numeric values into categorical bins",
+        "bins": "Number of Bins",
+        "equal_width": {
+          "title": "Equal Width Bins",
+          "description": "Create bins with equal ranges"
+        },
+        "equal_freq": {
+          "title": "Equal Frequency Bins",
+          "description": "Create bins with equal number of values"
+        },
+        "quantile": {
+          "title": "Quantile Bins",
+          "description": "Create bins based on quantiles"
+        }
+      },
+      "validation": {
+        "title": "Data Validation",
+        "description": "Clean and validate numeric data",
+        "remove_negatives": {
+          "title": "Remove Negatives",
+          "description": "Remove all negative values"
+        },
+        "positive_only": {
+          "title": "Positive Only",
+          "description": "Keep only positive values"
+        },
+        "remove_zeros": {
+          "title": "Remove Zeros",
+          "description": "Remove all zero values"
+        },
+        "integers_only": {
+          "title": "Integers Only",
+          "description": "Keep only integer values"
+        },
+        "clampRange": {
+          "title": "Clamp to Range",
+          "min": "Minimum value",
+          "max": "Maximum value",
+          "apply": "Apply Clamp"
+        },
+        "outliers": {
+          "title": "Remove Outliers",
+          "zscore": "Z-Score Method",
+          "iqr": "IQR Method",
+          "custom": "Custom Threshold",
+          "apply": "Remove Outliers"
+        }
+      }
+    },
+
+    "text": {
+      "title": "Text Transformations",
+      "description": "Text cleaning and transformation operations",
+      "trim": {
+        "title": "Whitespace Trimming",
+        "description": "Remove or normalize whitespace in text values",
+        "leading": {
+          "title": "Trim Leading Whitespace",
+          "description": "Remove spaces and tabs from the beginning of text"
+        },
+        "trailing": {
+          "title": "Trim Trailing Whitespace",
+          "description": "Remove spaces and tabs from the end of text"
+        },
+        "both": {
+          "title": "Trim Both Ends",
+          "description": "Remove whitespace from both beginning and end"
+        },
+        "all": {
+          "title": "Remove All Whitespace",
+          "description": "Remove all spaces and tabs from text"
+        },
+        "normalize_inner": {
+          "title": "Normalize Inner Spaces",
+          "description": "Replace multiple consecutive spaces with single space"
+        }
+      },
+      "case": {
+        "title": "Case Conversion",
+        "description": "Change text capitalization",
+        "upper": {
+          "title": "UPPERCASE",
+          "description": "Convert all characters to uppercase"
+        },
+        "lower": {
+          "title": "lowercase",
+          "description": "Convert all characters to lowercase"
+        },
+        "capitalize": {
+          "title": "Capitalize First Word",
+          "description": "Capitalize only the first word of each text"
+        },
+        "titleCase": {
+          "title": "Title Case Each Word",
+          "description": "Capitalize the first letter of each word"
+        }
+      },
+      "findReplace": {
+        "title": "Find & Replace",
+        "description": "Replace text using literal strings or regex patterns",
+        "findText": "Find Text",
+        "findPlaceholder": "Text to find",
+        "replaceText": "Replace With",
+        "replacePlaceholder": "Replacement text",
+        "useRegex": "Use Regular Expression",
+        "caseSensitive": "Case Sensitive",
+        "apply": "Apply Replace"
+      },
+      "split": {
+        "title": "Split Column",
+        "description": "Split text into multiple new columns",
+        "delimiter": "Delimiter",
+        "delimiterPlaceholder": "e.g., comma, space, |",
+        "createColumns": "Create New Columns",
+        "maxColumns": "Max Columns",
+        "apply": "Apply Split"
+      },
+      "concatenate": {
+        "title": "Concatenate Columns",
+        "description": "Join this column with another column",
+        "targetColumn": "Target Column",
+        "selectColumn": "Select column to join with",
+        "delimiter": "Separator",
+        "delimiterPlaceholder": "e.g., space, comma, |",
+        "removeOriginals": "Remove original columns",
+        "apply": "Apply Concatenate"
+      }
+    },
+
+    "boolean": {
+      "title": "Boolean Transformations",
+      "description": "Transform and manipulate boolean data values",
+      "basic": {
+        "title": "Basic Boolean Operations",
+        "description": "Simple boolean value manipulations"
+      },
+      "convertTo01": {
+        "title": "Convert to 1/0",
+        "description": "Convert true/false to numeric 1/0"
+      },
+      "invertValues": {
+        "title": "Invert Values",
+        "description": "Flip true/false values"
+      },
+      "fillMissing": {
+        "title": "Fill Missing Values",
+        "description": "Replace empty cells with boolean values",
+        "strategy": "Fill Strategy",
+        "defaultStrategy": "Default Value",
+        "majorityStrategy": "Majority Value",
+        "defaultValue": "Default Value",
+        "defaultTrue": "True",
+        "defaultFalse": "False",
+        "apply": "Apply Fill"
+      },
+      "convertToCustomLabels": {
+        "title": "Custom Labels",
+        "description": "Convert boolean values to custom text labels",
+        "trueLabel": "True Label",
+        "truePlaceholder": "e.g., Yes, Active, On",
+        "falseLabel": "False Label",
+        "falsePlaceholder": "e.g., No, Inactive, Off",
+        "example": "Example: {{trueLabel}}/{{falseLabel}}",
+        "apply": "Apply Labels"
+      },
+      "customRuleMapping": {
+        "title": "Rule-Based Mapping",
+        "description": "Map boolean values based on conditions from other columns",
+        "columnName": "Reference Column",
+        "selectColumn": "Select reference column",
+        "condition": "Condition",
+        "conditionPlaceholder": "e.g., Age > 25",
+        "example": "Example condition formats",
+        "apply": "Apply Rule"
+      },
+      "logicalOperators": {
+        "and": "AND",
+        "or": "OR", 
+        "not": "NOT"
+      },
+      "placeholders": {
+        "activeLabel": "Active",
+        "inactiveLabel": "Inactive"
+      }
+    },
+
+    "category": {
+      "title": "Category Transformations",
+      "description": "Transform and manipulate categorical data values"
+    },
+
+    "datetime": {
+      "title": "DateTime Transformations",
+      "description": "Date and time manipulation operations",
+      "format": {
+        "title": "Format Conversion",
+        "description": "Convert between different date and time formats",
+        "convert": {
+          "title": "Convert Format",
+          "description": "Transform dates between different format patterns",
+          "targetFormat": "Target Format",
+          "sourceFormat": "Source Format (optional)",
+          "formatPlaceholder": "e.g., YYYY-MM-DD, DD/MM/YYYY, MM/DD/YYYY",
+          "autoDetect": "Auto-detect source format",
+          "examples": "Common formats: YYYY-MM-DD, DD/MM/YYYY, MM/DD/YYYY, DD-MM-YYYY, YYYY/MM/DD, MM-DD-YYYY, DD.MM.YYYY",
+          "apply": "Convert Format"
+        },
+        "presets": {
+          "iso": "ISO (YYYY-MM-DD)",
+          "european": "European (DD/MM/YYYY)", 
+          "american": "American (MM/DD/YYYY)",
+          "german": "German (DD.MM.YYYY)",
+          "compact": "Compact (YYYYMMDD)"
+        }
+      },
+      "extract": {
+        "title": "Extract Components",
+        "description": "Extract specific date and time parts into new columns",
+        "components": {
+          "year": {
+            "title": "Extract Year",
+            "description": "Create new column with year values (e.g., 2025)"
+          },
+          "month": {
+            "title": "Extract Month",
+            "description": "Create new column with month numbers (1-12)"
+          },
+          "day": {
+            "title": "Extract Day",
+            "description": "Create new column with day of month (1-31)"
+          },
+          "weekday": {
+            "title": "Extract Weekday",
+            "description": "Create new column with day names (Monday, Tuesday, etc.)"
+          },
+          "quarter": {
+            "title": "Extract Quarter",
+            "description": "Create new column with quarter values (Q1, Q2, Q3, Q4)"
+          },
+          "hour": {
+            "title": "Extract Hour",
+            "description": "Create new column with hour values (0-23)"
+          },
+          "minute": {
+            "title": "Extract Minute",
+            "description": "Create new column with minute values (0-59)"
+          },
+          "second": {
+            "title": "Extract Second",
+            "description": "Create new column with second values (0-59)"
+          },
+          "time": {
+            "title": "Extract Time",
+            "description": "Create new column with time portion (HH:MM:SS)"
+          },
+          "date": {
+            "title": "Extract Date",
+            "description": "Create new column with date portion (YYYY-MM-DD)"
+          }
+        },
+        "newColumnName": "New Column Name",
+        "newColumnPlaceholder": "Leave empty to auto-generate",
+        "apply": "Extract Component"
+      },
+      "arithmetic": {
+        "title": "Date Arithmetic",
+        "description": "Add or subtract time periods from dates",
+        "operation": "Operation",
+        "amount": "Amount",
+        "unit": "Time Unit",
+        "add": "Add Time",
+        "subtract": "Subtract Time", 
+        "units": {
+          "years": "Years",
+          "months": "Months", 
+          "days": "Days",
+          "hours": "Hours",
+          "minutes": "Minutes",
+          "seconds": "Seconds"
+        },
+        "examples": {
+          "addDays": "Add 7 days → 2025-08-23 becomes 2025-08-30",
+          "subtractMonths": "Subtract 2 months → 2025-08-23 becomes 2025-06-23",
+          "addYears": "Add 1 year → 2025-08-23 becomes 2026-08-23"
+        },
+        "apply": "Apply Arithmetic"
+      },
+      "truncate": {
+        "title": "Truncate / Floor",
+        "description": "Round dates down to start of time period",
+        "unit": "Truncate to",
+        "units": {
+          "year": {
+            "title": "Start of Year",
+            "description": "Set to January 1st, 00:00:00"
+          },
+          "month": {
+            "title": "Start of Month", 
+            "description": "Set to 1st day of month, 00:00:00"
+          },
+          "day": {
+            "title": "Start of Day",
+            "description": "Set to 00:00:00 (remove time portion)"
+          },
+          "hour": {
+            "title": "Start of Hour",
+            "description": "Set minutes and seconds to 00:00"
+          },
+          "minute": {
+            "title": "Start of Minute",
+            "description": "Set seconds to 00"
+          }
+        },
+        "examples": {
+          "toYear": "2025-08-23 14:35:21 → 2025-01-01 00:00:00",
+          "toMonth": "2025-08-23 14:35:21 → 2025-08-01 00:00:00", 
+          "toDay": "2025-08-23 14:35:21 → 2025-08-23 00:00:00"
+        },
+        "apply": "Apply Truncation"
+      },
+      "timezone": {
+        "title": "Timezone Conversion",
+        "description": "Convert dates between different timezones",
+        "convert": {
+          "title": "Convert Timezone",
+          "description": "Transform datetime values to different timezone",
+          "fromTimezone": "From Timezone",
+          "toTimezone": "Target Timezone",
+          "autoDetect": "Auto-detect source timezone"
+        },
+        "presets": {
+          "utc": "UTC (Coordinated Universal Time)",
+          "local": "Local System Timezone",
+          "est": "Eastern Time (EST/EDT)",
+          "pst": "Pacific Time (PST/PDT)",
+          "gmt": "Greenwich Mean Time (GMT)"
+        },
+        "examples": {
+          "toUTC": "Convert local time to UTC",
+          "toLocal": "Convert UTC to local timezone"
+        },
+        "apply": "Convert Timezone"
+      },
+      "combine": {
+        "title": "Combine Date & Time",
+        "description": "Merge separate date and time columns into datetime",
+        "dateColumn": "Date Column",
+        "timeColumn": "Time Column",
+        "targetColumn": "New Combined Column",
+        "selectDateColumn": "Select date column",
+        "selectTimeColumn": "Select time column",
+        "targetColumnPlaceholder": "Enter combined column name",
+        "example": "Combine '2025-08-23' + '14:35:21' → '2025-08-23T14:35:21'",
+        "apply": "Combine Columns"
+      },
+      "split": {
+        "title": "Split DateTime",
+        "description": "Split datetime column into separate date and time columns",
+        "dateColumn": "Date Column Name",
+        "timeColumn": "Time Column Name",
+        "dateColumnPlaceholder": "Leave empty to auto-generate",
+        "timeColumnPlaceholder": "Leave empty to auto-generate",
+        "example": "Split '2025-08-23T14:35:21' → '2025-08-23' + '14:35:21'",
+        "apply": "Split DateTime"
+      }
+    },
+
+
+    "constant": {
+      "title": "Constant Value Operations",
+      "description": "Operations for columns with constant values",
+      "analysis": {
+        "title": "Constant Analysis",
+        "description": "Analyze the constant value and its usage"
+      },
+      "conversion": {
+        "title": "Convert to Variable",
+        "description": "Convert constant column to variable column",
+        "addRandomNoise": "Add Random Noise",
+        "createCategories": "Create Category Variations",
+        "useAsDefault": "Use as Default Value"
+      },
+      "utility": {
+        "title": "Utility Operations",
+        "description": "Utility operations for constant columns",
+        "replaceWithNull": "Replace with NULL",
+        "useForFilling": "Use for Filling Other Columns"
+      }
+    },
+
+    "common": {
+      "warnings": {
+        "destructive": "This action cannot be undone"
+      },
+      "impact": {
+        "noChanges": "No changes needed"
+      }
+    }
+  },
+
+  "actions": {
+    "dropColumnConfirm": "Are you sure you want to delete column '{{columnName}}'? This action cannot be undone.",
+    "destructiveCast": {
+      "confirm": "This type conversion may cause data loss. Are you sure you want to continue?"
+    },
+    "chips": {
+      "typeCast": "Type Cast",
+      "fillMissing": "Fill Missing",
+      "duplicate": "Duplicate",
+      "drop": "Drop Column"
+    },
+    "groups": {
+      "transform": "Transform",
+      "encode": "Encode"
+    },
+    "typeCast": {
+      "toNumeric": "Convert to Numeric",
+      "toString": "Convert to Text",
+      "toBoolean": "Convert to Boolean",
+      "toDatetime": "Convert to Datetime",
+      "toCategorical": "Convert to Categorical"
+    },
+    "fillMissing": {
+      "mean": "Fill with Mean",
+      "median": "Fill with Median",
+      "mode": "Fill with Mode",
+      "constant": "Fill with Constant",
+      "randomInRange": "Fill with Random in Range",
+      "forwardFill": "Forward Fill",
+      "backwardFill": "Backward Fill"
+    },
+    "encode": {
+      "label": {
+        "title": "Label Encoding",
+        "description": "Convert categories to numeric labels"
+      },
+      "oneHot": {
+        "title": "One-Hot Encoding",
+        "description": "Create binary columns for each category"
+      },
+      "frequency": {
+        "title": "Frequency Encoding",
+        "description": "Encode by category frequency"
+      },
+      "renameCategories": {
+        "title": "Rename Categories",
+        "description": "Change category names"
+      },
+      "mergeRare": {
+        "title": "Merge Rare Categories",
+        "description": "Group infrequent categories together"
+      },
+      "orderCategories": {
+        "title": "Order Categories",
+        "description": "Set custom category ordering"
+      },
+      "targetMean": {
+        "title": "Target Mean Encoding",
+        "description": "Encode using target variable mean"
+      },
+      "binary": {
+        "title": "Binary Encoding",
+        "description": "Convert to binary representation"
+      },
+      "mapCategories": {
+        "title": "Map Categories",
+        "description": "Map categories to custom values"
+      },
+      "splitCategory": {
+        "title": "Split Categories",
+        "description": "Split categories into separate columns"
+      }
+    },
+    "transform": {
+      "boolean": {
+        "basic": {
+          "title": "Basic Boolean Operations",
+          "description": "Simple boolean value manipulations"
+        },
+        "convertTo01": {
+          "title": "Convert to 1/0"
+        },
+        "invertValues": {
+          "title": "Invert Values"
+        },
+        "fillMissing": {
+          "title": "Fill Missing Values",
+          "description": "Replace empty cells with boolean values",
+          "strategy": "Fill Strategy",
+          "defaultStrategy": "Default Value",
+          "defaultValue": "Default Value",
+          "defaultTrue": "True",
+          "apply": "Apply Fill"
+        },
+        "convertToCustomLabels": {
+          "title": "Custom Labels",
+          "description": "Convert boolean values to custom text labels",
+          "trueLabel": "True Label",
+          "truePlaceholder": "e.g., Yes, Active, On",
+          "falseLabel": "False Label",
+          "falsePlaceholder": "e.g., No, Inactive, Off",
+          "example": "Example: {{trueLabel}}/{{falseLabel}}",
+          "apply": "Apply Labels"
+        },
+        "customRuleMapping": {
+          "title": "Rule-Based Mapping",
+          "description": "Map boolean values based on conditions from other columns",
+          "columnName": "Reference Column",
+          "selectColumn": "Select reference column",
+          "condition": "Condition",
+          "conditionPlaceholder": "e.g., Age > 25",
+          "example": "Example condition formats",
+          "apply": "Apply Rule"
+        }
+      },
+      "text": {
+        "trim": {
+          "title": "Whitespace Trimming",
+          "description": "Remove or normalize whitespace in text values",
+          "leading": {
+            "title": "Trim Leading Whitespace"
+          },
+          "trailing": {
+            "title": "Trim Trailing Whitespace"
+          },
+          "both": {
+            "title": "Trim Both Ends"
+          },
+          "all": {
+            "title": "Remove All Whitespace"
+          },
+          "normalize_inner": {
+            "title": "Normalize Inner Spaces"
+          }
+        },
+        "case": {
+          "title": "Case Conversion",
+          "description": "Change text capitalization",
+          "upper": {
+            "title": "UPPERCASE"
+          },
+          "lower": {
+            "title": "lowercase"
+          },
+          "capitalize": {
+            "title": "Capitalize First Word"
+          },
+          "titleCase": {
+            "title": "Title Case Each Word"
+          }
+        },
+        "findReplace": {
+          "title": "Find & Replace",
+          "description": "Replace text using literal strings or regex patterns",
+          "findText": "Find Text",
+          "findPlaceholder": "Text to find",
+          "replaceText": "Replace With",
+          "replacePlaceholder": "Replacement text",
+          "useRegex": "Use Regular Expression",
+          "caseSensitive": "Case Sensitive",
+          "apply": "Apply Replace"
+        },
+        "split": {
+          "title": "Split Column",
+          "description": "Split text into multiple new columns",
+          "delimiter": "Delimiter",
+          "maxColumns": "Max Columns",
+          "apply": "Apply Split"
+        },
+        "concatenate": {
+          "title": "Concatenate Columns",
+          "description": "Join this column with another column",
+          "targetColumn": "Target Column",
+          "selectColumn": "Select column to join with",
+          "delimiter": "Separator",
+          "apply": "Apply Concatenate"
+        }
+      },
+      "category": {
+        "rename": {
+          "title": "Rename Categories",
+          "description": "Change category names using direct mappings or regex patterns",
+          "searchLabel": "Search Categories",
+          "searchPlaceholder": "Type to search categories...",
+          "selectCategory": "Select category to rename",
+          "newCategoryPlaceholder": "Enter new category name",
+          "addMapping": "Add Mapping",
+          "regexLabel": "Regex Pattern Replacement",
+          "regexPatternPlaceholder": "Pattern (e.g., ^old.*)",
+          "regexReplacementPlaceholder": "Replacement",
+          "applyRegex": "Apply Pattern",
+          "apply": "Apply Rename"
+        },
+        "merge": {
+          "title": "Merge Categories",
+          "description": "Combine multiple categories into one",
+          "searchLabel": "Search Categories",
+          "searchPlaceholder": "Type to search...",
+          "sourceCategories": "Source Categories",
+          "targetCategory": "Target Category Name",
+          "targetCategoryPlaceholder": "Enter merged category name",
+          "apply": "Apply Merge"
+        },
+        "split": {
+          "title": "Split Category",
+          "description": "Split one category into multiple based on rules",
+          "sourceCategory": "Source Category",
+          "selectSourceCategory": "Select category to split",
+          "rules": "Split Rules",
+          "patternPlaceholder": "Pattern to match",
+          "categoryPlaceholder": "New category name",
+          "removeRule": "Remove",
+          "addRule": "Add Rule",
+          "apply": "Apply Split"
+        },
+        "encoding": {
+          "title": "Category Encoding",
+          "description": "Convert categories to numeric representations",
+          "label": {
+            "title": "Label Encoding",
+            "description": "Assign numeric labels to categories"
+          },
+          "onehot": {
+            "title": "One-Hot Encoding",
+            "description": "Create binary indicator columns for each category",
+            "dropFirst": "Drop first category (avoid multicollinearity)"
+          },
+          "binary": {
+            "title": "Binary Encoding",
+            "description": "Convert categories to binary code representation"
+          },
+          "matrix": {
+            "title": "Matrix Encoding",
+            "description": "Create binary indicator matrix while preserving original column"
+          }
+        },
+        "groupRare": {
+          "title": "Group Rare Categories",
+          "description": "Combine infrequent categories into 'Other' group",
+          "threshold": "Frequency Threshold",
+          "thresholdCount": "Minimum Count",
+          "thresholdPercentage": "Minimum Percentage",
+          "otherLabel": "Other Category Label",
+          "otherLabelPlaceholder": "Other",
+          "apply": "Apply Grouping"
+        },
+        "defaultValue": {
+          "title": "Set Default Value",
+          "description": "Set a default value for missing or empty categories",
+          "strategy": "Fill Strategy",
+          "constantStrategy": "Constant Value",
+          "mostFrequentStrategy": "Most Frequent Value",
+          "defaultValue": "Default Value",
+          "defaultValuePlaceholder": "Enter default value",
+          "apply": "Apply Default"
+        },
+        "rules": {
+          "title": "Apply Rules",
+          "description": "Transform categories based on conditional logic from other columns"
+        }
+      }
+    }
+  },
+
+  "ruleBuilder": {
+    "condition": "Condition",
+    "conditionPlaceholder": "e.g., Age > 25 or Name.contains('John')",
+    "conditionHelp": "Use column names and operators: ==, !=, >, <, >=, <=, .contains(), .startsWith(), .endsWith()",
+    "trueValue": "True Value",
+    "trueValuePlaceholder": "Value when condition is true",
+    "falseValue": "False Value",
+    "falseValuePlaceholder": "Value when condition is false",
+    "targetCategory": "Apply to Category",
+    "allCategories": "All categories",
+    "targetCategoryHelp": "Leave blank to apply to all categories, or select specific category",
+    "applyRule": "Apply Rule",
+    "errors": {
+      "invalidSyntax": "Invalid syntax in condition",
+      "conditionRequired": "Condition is required",
+      "ruleApplicationFailed": "Failed to apply rule"
+    },
+    "customCondition": {
+      "title": "Custom Condition Builder",
+      "description": "Build complex conditions using multiple columns and operators",
+      "conditionLabel": "Condition Expression",
+      "conditionPlaceholder": "e.g., Age > 25 AND Status == 'Active'",
+      "applyButton": "Apply Custom Rule",
+      "examples": {
+        "title": "Examples",
+        "numeric": "Age > 25, Price <= 100, Score >= 85",
+        "text": "Name.startsWith('John'), Category.contains('Premium')",
+        "combined": "Age > 25 AND Status == 'Active' OR Priority > 3"
+      },
+      "syntax": {
+        "title": "Syntax Guide",
+        "operators": "Operators: ==, !=, >, <, >=, <=",
+        "text": "Text: .contains(), .startsWith(), .endsWith()",
+        "logical": "Logical: AND, OR, NOT"
+      }
+    }
+  }
+}

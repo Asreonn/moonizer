@@ -1,0 +1,326 @@
+/* Chart Renderer Styling */
+.chartRenderer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+
+.noDataState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--color-text-muted);
+  gap: var(--space-sm);
+}
+
+.noDataState svg {
+  width: 48px;
+  height: 48px;
+  opacity: 0.5;
+}
+
+/* Chart Canvas */
+.chartCanvas {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  position: relative;
+}
+
+.chartInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.totalCount {
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Grid for charts */
+.grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Histogram Chart */
+.histogram {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-sm);
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+  width: 100%;
+  height: 100%;
+}
+
+.histogramBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+  max-width: 40px;
+}
+
+.bar {
+  width: 100%;
+  min-height: 2px;
+  border-radius: 2px 2px 0 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.bar:hover {
+  opacity: 0.8;
+  transform: scaleX(1.1);
+}
+
+.barLabel {
+  color: var(--color-text-muted);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+  margin-top: var(--space-xs);
+  text-align: center;
+  writing-mode: horizontal-tb;
+  transform: rotate(-45deg);
+  transform-origin: center;
+  white-space: nowrap;
+}
+
+/* Bar Chart */
+.barChart {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-sm);
+  gap: var(--space-xs);
+}
+
+.barRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.barRow .barLabel {
+  min-width: 80px;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs);
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.barContainer {
+  flex: 1;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.barContainer .bar {
+  height: 100%;
+  border-radius: var(--border-radius-sm);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.barContainer .bar:hover {
+  opacity: 0.8;
+}
+
+.barValue {
+  min-width: 40px;
+  color: var(--color-text-muted);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+  text-align: left;
+  flex-shrink: 0;
+}
+
+/* Pie Chart */
+.pieChart {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm);
+  gap: var(--space-md);
+}
+
+.pieSvg {
+  width: 200px;
+  height: 200px;
+  transform: rotate(-90deg);
+}
+
+.pieSlice {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pieSlice:hover {
+  opacity: 0.8;
+  transform-origin: center;
+}
+
+.pieLegend {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.legendColor {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.legendLabel {
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs);
+}
+
+/* Line Chart */
+.lineChart {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: var(--space-sm);
+}
+
+.lineSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.line {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.point {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.point:hover {
+  transform: scale(1.5);
+}
+
+/* Scatter Chart */
+.scatterChart {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: var(--space-sm);
+}
+
+.scatterSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.scatterPoint {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.scatterPoint:hover {
+  transform: scale(1.3);
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .chartCanvas {
+    padding: var(--space-sm);
+  }
+  
+  .pieSvg {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .barRow .barLabel {
+    min-width: 60px;
+    font-size: var(--font-size-xs);
+  }
+  
+  .barValue {
+    min-width: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .histogram {
+    padding: var(--space-xs);
+  }
+  
+  .barChart {
+    padding: var(--space-xs);
+  }
+  
+  .pieChart {
+    padding: var(--space-xs);
+  }
+  
+  .pieSvg {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .barRow .barLabel {
+    min-width: 50px;
+  }
+}

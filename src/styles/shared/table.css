@@ -1,0 +1,126 @@
+/* Shared Table Styles */
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: var(--font-size-sm);
+  position: relative;
+}
+
+.tableHeader {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-table-header);
+  background: var(--table-header-bg);
+}
+
+.headerCell {
+  background: var(--table-header-bg);
+  border-bottom: 1px solid var(--table-header-border);
+  height: var(--table-header-height);
+  padding: 0;
+  text-align: left;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  position: relative;
+  min-width: 60px;
+  max-width: 300px;
+  transition: all var(--transition-fast);
+}
+
+.headerCell:not(:last-child) {
+  border-right: 1px solid var(--table-header-border);
+}
+
+.headerCellSorted {
+  background: rgba(139, 92, 246, 0.12);
+  box-shadow: inset 0 -3px 0 0 var(--color-accent-primary);
+  transform: translateY(-1px);
+}
+
+.headerCellHighlighted {
+  background: var(--table-highlight-col);
+}
+
+.headerCellSorted.headerCellHighlighted {
+  background: rgba(139, 92, 246, 0.15);
+}
+
+.tableBody {
+  background: var(--table-row-bg);
+}
+
+.tableRow {
+  transition: all var(--transition-fast);
+  border-left: 3px solid transparent;
+}
+
+.tableRow:hover {
+  background: var(--table-row-hover);
+  border-left-color: var(--table-row-active-border);
+  animation: activeRowBorder var(--transition-medium) ease-out;
+}
+
+.tableRow:nth-child(even) {
+  background: var(--table-row-zebra);
+}
+
+.tableRow:nth-child(even):hover {
+  background: var(--table-row-hover);
+}
+
+.tableRowHighlighted {
+  background: var(--table-highlight-row) !important;
+  border-left-color: var(--color-accent-primary);
+}
+
+.tableCell {
+  padding: var(--table-cell-padding);
+  height: var(--table-row-height);
+  border-bottom: 1px solid var(--table-border);
+  color: var(--color-text-primary);
+  min-width: 60px;
+  max-width: 300px;
+  position: relative;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.tableCell:not(:last-child) {
+  border-right: 1px solid var(--table-border);
+}
+
+.tableCell:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.tableCellColumnHighlighted {
+  background: var(--table-highlight-col);
+}
+
+.tableCellIntersection {
+  background: var(--table-highlight-cell) !important;
+  box-shadow: inset 0 0 0 2px var(--color-accent-primary);
+  position: relative;
+}
+
+.tableCellIntersection::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  box-shadow: 0 0 0 2px var(--color-accent-primary);
+  border-radius: 3px;
+  pointer-events: none;
+  animation: focusRingPulse 1.5s ease-in-out infinite alternate;
+}
+
+.cellContent {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}

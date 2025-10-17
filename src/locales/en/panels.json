@@ -1,0 +1,14 @@
+{
+  "dataset_manager": "Dataset Manager",
+  "data_view": "Data View",
+  "column_inspector": "Column Inspector",
+  "export_panel": "Export Panel",
+  "datasetManager": {
+    "summary": {
+      "count": "{{count}} dataset loaded",
+      "count_plural": "{{count}} datasets loaded",
+      "oneActive": "1 active",
+      "noneActive": "none active"
+    }
+  }
+}

@@ -1,0 +1,289 @@
+/* Categorical Analysis Styling */
+.categoricalAnalysis {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.noData {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+  color: var(--color-text-muted);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-md);
+}
+
+.analysisGroup {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-md);
+  padding: var(--space-md);
+  transition: all 0.3s ease;
+}
+
+.analysisGroup:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+.groupTitle {
+  color: var(--color-text-primary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  margin: 0 0 var(--space-md) 0;
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-sm);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-sm);
+  transition: all 0.2s ease;
+}
+
+.stat:hover {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+.statLabel {
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.statValue {
+  color: var(--color-text-primary);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Diversity levels */
+.statValue.veryHigh {
+  color: #10b981;
+}
+
+.statValue.high {
+  color: #f59e0b;
+}
+
+.statValue.medium {
+  color: #f97316;
+}
+
+.statValue.low {
+  color: #ef4444;
+}
+
+/* Frequency Stats */
+.frequencyStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-sm);
+}
+
+/* Categories Table */
+.categoriesTable {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+}
+
+.categoryRow {
+  display: grid;
+  grid-template-columns: auto 1fr 2fr auto auto;
+  gap: var(--space-sm);
+  align-items: center;
+  padding: var(--space-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-sm);
+  transition: all 0.2s ease;
+}
+
+.categoryRow:hover {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+.categoryRank {
+  color: var(--color-text-muted);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  width: 20px;
+  text-align: center;
+  background: rgba(139, 92, 246, 0.2);
+  border-radius: 50%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.categoryValue {
+  color: var(--color-text-primary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.categoryBar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+}
+
+.categoryBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, 
+    var(--color-accent-primary) 0%,
+    rgba(139, 92, 246, 0.7) 100%);
+  border-radius: var(--border-radius-sm);
+  transition: all 0.3s ease;
+}
+
+.categoryCount {
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-align: right;
+  min-width: 40px;
+}
+
+.categoryPercent {
+  color: var(--color-accent-primary);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-align: right;
+  min-width: 50px;
+}
+
+/* Distribution Chart */
+.distributionChart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+  padding: var(--space-md);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--border-radius-sm);
+  min-height: 150px;
+}
+
+.distributionBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  flex: 1;
+  max-width: 80px;
+}
+
+.barLabel {
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs);
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.barContainer {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  min-height: 100px;
+}
+
+.bar {
+  width: 100%;
+  min-height: 4px;
+  border-radius: var(--border-radius-xs) var(--border-radius-xs) 0 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.bar:hover {
+  opacity: 0.8;
+  transform: scaleX(1.05);
+}
+
+.barValue {
+  color: var(--color-text-muted);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .statGrid,
+  .frequencyStats {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--space-xs);
+  }
+  
+  .categoryRow {
+    grid-template-columns: auto 1fr auto auto;
+    gap: var(--space-xs);
+  }
+  
+  .categoryBar {
+    display: none;
+  }
+  
+  .distributionChart {
+    flex-wrap: wrap;
+    min-height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .statGrid,
+  .frequencyStats {
+    grid-template-columns: 1fr;
+  }
+  
+  .categoryRow {
+    grid-template-columns: 1fr auto auto;
+  }
+  
+  .categoryRank {
+    display: none;
+  }
+  
+  .distributionChart {
+    gap: var(--space-xs);
+    padding: var(--space-sm);
+  }
+}

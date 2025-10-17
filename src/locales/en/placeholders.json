@@ -1,0 +1,6 @@
+{
+  "dataset": {
+    "none": "No dataset loaded. Please load a dataset from the left panel.",
+    "loading": "Loading dataset..."
+  }
+}

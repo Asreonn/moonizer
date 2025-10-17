@@ -1,0 +1,537 @@
+/* Simple Chart Renderer Styling */
+.chartRenderer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  container-type: inline-size;
+}
+
+/* Smaller fonts for Data Explorer display */
+.chartRenderer svg text {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 7px;
+  fill: #ffffff;
+  paint-order: stroke fill;
+  stroke: rgba(26, 26, 46, 0.8);
+  stroke-width: 0.5px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 500;
+  dominant-baseline: middle;
+  text-anchor: middle;
+}
+
+.noDataState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--color-text-muted);
+  gap: var(--space-sm);
+}
+
+.noDataState svg {
+  width: 48px;
+  height: 48px;
+  opacity: 0.5;
+}
+
+.simpleChart {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-md);
+  gap: var(--space-sm);
+}
+
+.barRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-xs);
+  border-radius: var(--border-radius-sm);
+  transition: background-color 0.2s ease;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.barRow:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.barLabel {
+  width: 25%;
+  min-width: 60px;
+  max-width: 120px;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm);
+  text-align: right;
+  flex-shrink: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.barContainer {
+  flex: 1;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius-sm);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-width: 0;
+}
+
+.bar {
+  height: 100%;
+  border-radius: calc(var(--border-radius-sm) - 1px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  min-width: 2px;
+}
+
+.bar:hover {
+  transform: scaleY(1.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.chartInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.totalCount {
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Grid Lines for Charts */
+
+.barChartContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-md);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--border-radius-md);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.barChartGrid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.verticalGridLine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  opacity: 0.6;
+}
+
+/* Value text styling for charts */
+.pieValueText {
+  font-family: var(--font-family-mono);
+  font-weight: var(--font-weight-medium);
+  font-size: 8px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+.areaValueText,
+.areaPoint {
+  font-family: var(--font-family-mono);
+  font-weight: var(--font-weight-medium);
+  font-size: 8px;
+}
+
+.boxValueText {
+  font-family: var(--font-family-mono);
+  font-weight: var(--font-weight-medium);
+  font-size: 8px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+
+.heatmapValueText {
+  font-family: var(--font-family-mono);
+  font-weight: var(--font-weight-medium);
+  font-size: 8px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+.barValueOnTop {
+  position: absolute;
+  right: var(--space-xs);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 8px;
+  font-weight: var(--font-weight-bold);
+  color: white;
+  font-family: var(--font-family-mono);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.9);
+  z-index: 10;
+  line-height: 1;
+  white-space: nowrap;
+  max-width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.valueText {
+  font-family: var(--font-family-mono);
+  font-weight: var(--font-weight-medium);
+  font-size: 8px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+  pointer-events: none;
+}
+
+/* Line Chart */
+.lineChart {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: var(--space-md);
+}
+
+.lineSvg {
+  width: 100%;
+  height: 300px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-md);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.linePath {
+  transition: stroke-dasharray 0.3s ease;
+}
+
+.linePoint {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.linePoint:hover {
+  r: 4;
+  fill: hsl(260, 70%, 80%);
+}
+
+.lineLabels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+}
+
+.lineLabel {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  background: rgba(255, 255, 255, 0.05);
+  padding: var(--space-xs);
+  border-radius: var(--border-radius-sm);
+}
+
+/* Scatter Plot */
+.scatterPlot {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: var(--space-md);
+}
+
+.scatterSvg {
+  width: 100%;
+  height: 300px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-md);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.scatterPoint {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.scatterPoint:hover {
+  transform: scale(1.2);
+  opacity: 1 !important;
+}
+
+.scatterLabels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+}
+
+.scatterLabel {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  background: rgba(255, 255, 255, 0.05);
+  padding: var(--space-xs);
+  border-radius: var(--border-radius-sm);
+}
+
+/* Pie Chart */
+.pieChart {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: var(--space-md);
+}
+
+.pieSvg {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.pieSlice {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.pieSlice:hover {
+  transform: scale(1.05);
+  transform-origin: center;
+}
+
+.pieLabels {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.pieLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.pieLegend {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* Area Chart */
+.areaChart {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: var(--space-md);
+}
+
+.areaSvg {
+  width: 100%;
+  height: 300px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-md);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.areaPath {
+  transition: all 0.3s ease;
+}
+
+.areaLabels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+}
+
+.areaLabel {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  background: rgba(255, 255, 255, 0.05);
+  padding: var(--space-xs);
+  border-radius: var(--border-radius-sm);
+}
+
+/* Box Plot */
+.boxPlot {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: var(--space-md);
+}
+
+.boxSvg {
+  width: 100%;
+  height: 300px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-md);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.boxLabels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: center;
+}
+
+.boxLabels div {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  background: rgba(255, 255, 255, 0.05);
+  padding: var(--space-xs);
+  border-radius: var(--border-radius-sm);
+}
+
+/* Heatmap */
+.heatmap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: var(--space-md);
+}
+
+.heatmapSvg {
+  width: 100%;
+  height: 300px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-md);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.heatmapCell {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.heatmapCell:hover {
+  stroke: hsl(260, 70%, 80%);
+  stroke-width: 1;
+}
+
+.heatmapLabels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+}
+
+.heatmapLabel {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  background: rgba(255, 255, 255, 0.05);
+  padding: var(--space-xs);
+  border-radius: var(--border-radius-sm);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .simpleChart {
+    padding: var(--space-sm);
+  }
+  
+  .barLabel {
+    width: 80px;
+    min-width: 60px;
+    max-width: 80px;
+    font-size: var(--font-size-xs);
+  }
+
+  .lineSvg,
+  .scatterSvg,
+  .areaSvg,
+  .boxSvg,
+  .heatmapSvg {
+    height: 150px;
+  }
+
+  .pieSvg {
+    width: 150px;
+    height: 150px;
+  }
+
+  .lineLabels,
+  .scatterLabels,
+  .areaLabels,
+  .heatmapLabels {
+    font-size: var(--font-size-2xs);
+  }
+}
+
+/* Container-based responsive design for dual charts */
+@container (max-width: 500px) {
+  .barLabel {
+    width: 30%;
+    min-width: 50px;
+    max-width: 80px;
+    font-size: var(--font-size-xs);
+  }
+  
+  .barChartContainer {
+    padding: var(--space-sm);
+    gap: 2px;
+  }
+  
+  .barContainer {
+    height: 28px;
+  }
+  
+  .barValueOnTop {
+    font-size: 7px;
+    right: 2px;
+  }
+}
+
+@container (max-width: 300px) {
+  .barLabel {
+    width: 35%;
+    min-width: 40px;
+    max-width: 60px;
+    font-size: var(--font-size-xs);
+  }
+  
+  .barRow {
+    gap: var(--space-xs);
+  }
+  
+  .barContainer {
+    height: 24px;
+  }
+  
+  .barValueOnTop {
+    font-size: 6px;
+    right: 1px;
+  }
+}

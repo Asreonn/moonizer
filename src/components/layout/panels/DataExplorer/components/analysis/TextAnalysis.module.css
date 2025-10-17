@@ -1,0 +1,316 @@
+/* Text Analysis Styling */
+.textAnalysis {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.noData {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+  color: var(--color-text-muted);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-md);
+}
+
+.analysisGroup {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-md);
+  padding: var(--space-md);
+  transition: all 0.3s ease;
+}
+
+.analysisGroup:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+.groupTitle {
+  color: var(--color-text-primary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  margin: 0 0 var(--space-md) 0;
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-sm);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-sm);
+  transition: all 0.2s ease;
+}
+
+.stat:hover {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+.statLabel {
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.statValue {
+  color: var(--color-text-primary);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Character Composition */
+.compositionChart {
+  margin-top: var(--space-md);
+}
+
+.compositionBar {
+  display: flex;
+  height: 20px;
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  margin-bottom: var(--space-md);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.segment {
+  height: 100%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.segment:hover {
+  opacity: 0.8;
+}
+
+.letters {
+  background: #10b981;
+}
+
+.digits {
+  background: #f59e0b;
+}
+
+.spaces {
+  background: #6366f1;
+}
+
+.punctuation {
+  background: #ec4899;
+}
+
+.compositionLegend {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-xs);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius-sm);
+}
+
+.legendColor {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.legendColor.letters {
+  background: #10b981;
+}
+
+.legendColor.digits {
+  background: #f59e0b;
+}
+
+.legendColor.spaces {
+  background: #6366f1;
+}
+
+.legendColor.punctuation {
+  background: #ec4899;
+}
+
+.legendItem span {
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs);
+}
+
+/* Word Cloud */
+.wordCloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--space-md);
+  padding: var(--space-md);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--border-radius-md);
+  min-height: 120px;
+}
+
+.wordItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: var(--border-radius-sm);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.wordItem:hover {
+  background: rgba(139, 92, 246, 0.2);
+  transform: scale(1.05);
+}
+
+.wordText {
+  color: var(--color-text-primary);
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.wordCount {
+  color: var(--color-text-muted);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+}
+
+/* Length Distribution */
+.lengthDistribution {
+  margin-top: var(--space-md);
+}
+
+.distributionBars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--border-radius-sm);
+  min-height: 120px;
+}
+
+.distributionBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  flex: 1;
+  max-width: 60px;
+}
+
+.bucketLabel {
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+  text-align: center;
+  margin-bottom: var(--space-xs);
+}
+
+.barContainer {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  min-height: 80px;
+}
+
+.bar {
+  width: 100%;
+  min-height: 4px;
+  background: linear-gradient(
+    to top,
+    var(--color-accent-primary),
+    rgba(139, 92, 246, 0.7)
+  );
+  border-radius: var(--border-radius-xs) var(--border-radius-xs) 0 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.bar:hover {
+  opacity: 0.8;
+  transform: scaleX(1.1);
+}
+
+.bucketCount {
+  color: var(--color-text-muted);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+  text-align: center;
+  margin-top: var(--space-xs);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .statGrid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--space-xs);
+  }
+  
+  .compositionLegend {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+  
+  .wordCloud {
+    padding: var(--space-sm);
+    min-height: 100px;
+  }
+  
+  .distributionBars {
+    padding: var(--space-sm);
+    min-height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .statGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .compositionLegend {
+    grid-template-columns: 1fr;
+  }
+  
+  .wordCloud {
+    gap: var(--space-xs);
+  }
+  
+  .distributionBars {
+    gap: var(--space-xs);
+  }
+  
+  .distributionBar {
+    max-width: 40px;
+  }
+}

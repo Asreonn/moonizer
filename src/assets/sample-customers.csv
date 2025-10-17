@@ -1,0 +1,16 @@
+customer_id,name,age,city,subscription_type,monthly_spend,join_date,is_active,gender
+1,Alice Johnson,28,New York,Premium,120.50,2022-03-15,true,Female
+2,Bob Smith,34,Los Angeles,Basic,45.00,2022-01-20,false,Male
+3,Carol Davis,22,Chicago,Premium,95.75,2022-05-10,true,Female
+4,David Wilson,41,Houston,Standard,67.25,2021-12-05,true,Male
+5,Emma Brown,29,Phoenix,Premium,145.00,2022-02-28,true,Female
+6,Frank Miller,35,Philadelphia,Basic,38.50,2022-04-12,false,Male
+7,Grace Lee,26,San Antonio,Standard,78.90,2022-01-08,true,Female
+8,Henry Taylor,31,San Diego,Premium,132.25,2021-11-22,true,Male
+9,Isabella Garcia,27,Dallas,Basic,42.00,2022-06-03,false,Female
+10,Jack Anderson,39,San Jose,Standard,89.75,2022-03-07,true,Male
+11,Kate Martinez,25,Austin,Premium,156.80,2022-02-14,true,Female
+12,Liam Thompson,33,Jacksonville,Basic,51.25,2022-05-20,false,Male
+13,Mia Rodriguez,30,Fort Worth,Standard,73.40,2021-10-15,true,Female
+14,Noah Clark,36,Columbus,Premium,128.60,2022-01-25,true,Male
+15,Olivia Lewis,24,Charlotte,Basic,47.30,2022-04-08,false,Female

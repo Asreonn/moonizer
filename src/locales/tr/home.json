@@ -1,0 +1,96 @@
+{
+  "brand": {
+    "name": "Moonizer",
+    "tagline": "Veri çalışma alanı"
+  },
+  "hero": {
+    "title": "MOONIZER",
+    "subtitle": "CSV Verilerinizi Analiz Edin ve Dönüştürün.",
+    "highlight": "Anında. Yerel olarak."
+  },
+  "dropzone": {
+    "dragAndDrop": "Bir CSV dosyasını buraya sürükleyip bırakın",
+    "clickToSelect": "veya seçmek için tıklayın",
+    "noFile": "Dosyanız yok mu? Örnek verilerle deneyin:",
+    "sampleSales": "Örnek Satışlar",
+    "sampleCustomers": "Örnek Müşteriler",
+    "author": "Asreonn"
+  },
+  "features": {
+    "tag": "Öne Çıkanlar",
+    "title": "Verileriniz İçin Güçlü Bir Araç Seti",
+    "subtitle": "CSV verilerinizi doğrudan tarayıcınızda keşfedin, dönüştürün ve görselleştirin.",
+    "sections": [
+      {
+        "title": "Temel İşlevsellik",
+        "color": "teal",
+        "features": [
+          {
+            "title": "Veri İşleme",
+            "icon": "dataProcessing",
+            "description": "Otomatik sınırlayıcı tespiti ve akıllı parçalama ile CSV'leri yükleyin."
+          },
+          {
+            "title": "Derinlemesine Analiz",
+            "icon": "inDepthAnalysis",
+            "description": "Sütun türlerini otomatik olarak tanımlayın ve sütun tabanlı istatistikleri görüntüleyin."
+          },
+          {
+            "title": "Güçlü Dönüşüm",
+            "icon": "powerfulTransformation",
+            "description": "Tam geri alma/yineleme geçmişi ile 30'dan fazla sütun işlemi."
+          }
+        ]
+      },
+      {
+        "title": "Etkileşim ve Görselleştirme",
+        "color": "fuschia",
+        "features": [
+          {
+            "title": "İnteraktif Veri Izgarası",
+            "icon": "interactiveDataGrid",
+            "description": "Verilerinizi kolaylıkla sıralayın, filtreleyin ve gezinin."
+          },
+          {
+            "title": "Dinamik Görselleştirmeler",
+            "icon": "dynamicVisualizations",
+            "description": "Histogramlar, çizgi grafikler, dağılım grafikleri ve daha fazlasını oluşturun."
+          },
+          {
+            "title": "Esnek Dışa Aktarma",
+            "icon": "flexibleExporting",
+            "description": "Verilerinizi CSV, JSON veya Excel uyumlu formatlarda dışa aktarın."
+          }
+        ]
+      },
+      {
+        "title": "Teknik Mükemmellik",
+        "color": "gold",
+        "features": [
+          {
+            "title": "Modern Teknoloji Yığını",
+            "icon": "modernTechStack",
+            "description": "Hızlı bir deneyim için React 18, TypeScript ve Vite ile oluşturulmuştur."
+          },
+          {
+            "title": "Sezgisel Arayüz",
+            "icon": "intuitiveInterface",
+            "description": "Klavye kısayolları, bağlam menüleri ve minimal bir tasarım."
+          },
+          {
+            "title": "Tasarım Odaklı Gizlilik",
+            "icon": "privacyByDesign",
+            "description": "Verileriniz yerel olarak işlenir ve asla bir sunucuya yüklenmez."
+          }
+        ]
+      }
+    ]
+  },
+  "privacy": {
+    "title": "%100 Yerel ve Özel",
+    "description": "Moonizer tamamen web tarayıcınızda çalışır. Verileriniz asla bir sunucuya yüklenmez, bu da tam bir gizlilik ve güvenlik sağlar. Bu sizin verileriniz, sizin makinenizde, her zaman."
+  },
+  "footer": {
+    "copyright": "&copy; 2025 Moonizer. Bir açık kaynak projesi."
+  }
+}

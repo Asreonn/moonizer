@@ -1,0 +1,113 @@
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-sm);
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--space-sm);
+  background: var(--color-bg-tertiary);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-border-secondary);
+  transition: all 0.2s ease;
+}
+
+.statItem:hover {
+  background: var(--color-bg-hover);
+  border-color: var(--color-accent-primary);
+  transform: translateY(-2px);
+}
+
+.statLabel {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.statValue {
+  font-size: var(--font-size-md);
+  color: var(--color-text-primary);
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+
+.statValue.highlight {
+  color: var(--color-accent-primary);
+}
+
+.statValue.success {
+  color: var(--color-success);
+}
+
+.statValue.warning {
+  color: var(--color-warning);
+}
+
+.statValue.error {
+  color: var(--color-error);
+}
+
+/* Category List */
+.categoryList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.categoryItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--space-xs);
+  background: var(--color-bg-tertiary);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--color-border-secondary);
+}
+
+.categoryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.categoryValue {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  font-weight: 500;
+  max-width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.categoryCount {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+.categoryBar {
+  height: 4px;
+  background: var(--color-bg-primary);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.categoryBarFill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.categoryPercent {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono);
+  align-self: flex-end;
+}

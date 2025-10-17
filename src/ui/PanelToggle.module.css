@@ -1,0 +1,142 @@
+.panelToggle {
+  background: linear-gradient(135deg, var(--color-bg-surface), var(--color-bg-tertiary));
+  border: var(--border-width-thick) solid var(--color-border);
+  border-radius: var(--border-radius);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--icon-color-normal);
+  transition: all var(--transition-medium);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.panelToggle::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.panelToggle:hover {
+  background: linear-gradient(135deg, var(--color-bg-primary), var(--color-bg-surface));
+  border-color: var(--color-accent-primary);
+  color: var(--icon-color-strong);
+  transform: translateY(-1px);
+  box-shadow: var(--glow-primary);
+}
+
+.panelToggle:hover::before {
+  opacity: 0.3;
+}
+
+.panelToggle:focus {
+  outline: none;
+  border-color: var(--color-accent-primary);
+  color: var(--icon-color-strong);
+  box-shadow: var(--glow-primary-intense);
+}
+
+.panelToggle:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.panelToggle--headerToggle {
+  position: static;
+  transform: none;
+}
+
+.panelToggle--topEdge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-bg-tertiary);
+}
+
+.panelToggle--bottomEdge {
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-bg-tertiary);
+}
+
+.panelToggle--dataExplorerEdge {
+  position: static;
+  background: linear-gradient(135deg, var(--color-bg-tertiary), var(--color-bg-secondary));
+  border-color: var(--color-accent-secondary);
+  box-shadow: var(--glow-secondary);
+}
+
+.panelToggle--dataExplorerEdge:hover {
+  background: linear-gradient(135deg, var(--color-bg-surface), var(--color-bg-primary));
+  border-color: var(--color-accent-secondary-hover);
+  box-shadow: var(--glow-secondary-intense);
+  transform: translateY(-2px) scale(1.05);
+}
+
+.panelToggle--dataExplorerEdge::before {
+  background: linear-gradient(135deg, var(--color-accent-secondary), var(--color-accent-primary));
+}
+
+.panelToggle__icon {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.panelToggle--closed {
+  border-color: var(--color-accent-auxiliary);
+  background: linear-gradient(135deg, var(--color-bg-tertiary), var(--color-bg-secondary));
+}
+
+.panelToggle--closed:hover {
+  border-color: var(--color-accent-auxiliary-hover);
+  box-shadow: var(--glow-auxiliary);
+}
+
+.panelToggle--closed::before {
+  background: linear-gradient(135deg, var(--color-accent-auxiliary), var(--color-accent-primary));
+}
+
+.panelToggle--gutter {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-accent-secondary);
+  box-shadow: var(--glow-secondary);
+}
+
+.panelToggle--gutter:hover {
+  background: var(--color-bg-surface);
+  border-color: var(--color-accent-secondary-hover);
+  box-shadow: var(--glow-secondary);
+  transform: scale(1.1);
+}
+
+.panelToggle--open {
+  border-color: var(--color-accent-primary);
+  background: linear-gradient(135deg, var(--color-bg-surface), var(--color-bg-primary));
+  box-shadow: var(--glow-primary);
+}
+
+.panelToggle--open:hover {
+  border-color: var(--color-error);
+  color: var(--color-error);
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+}
+
+.panelToggle--open::before {
+  background: linear-gradient(135deg, var(--color-error), var(--color-accent-primary));
+}

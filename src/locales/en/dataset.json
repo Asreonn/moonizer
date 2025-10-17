@@ -1,0 +1,66 @@
+{
+  "dropzone": {
+    "title": "Drop your CSV file here or click to browse",
+    "dragOver": "Release to upload your CSV file",
+    "hint": "Supports CSV files with comma, semicolon, tab, or pipe delimiters",
+    "accepted": "Accepts .csv files"
+  },
+  "columns": "columns",
+  "rows": "rows",
+  "actions": {
+    "upload": "Upload CSV file",
+    "select": "Select dataset",
+    "rename": "Rename dataset",
+    "remove": "Remove dataset",
+    "export": "Export dataset"
+  },
+  "card": {
+    "rows": "rows",
+    "columns": "cols", 
+    "size": "size",
+    "addedAt": "Added"
+  },
+  "badge": {
+    "active": "Active"
+  },
+  "export": {
+    "title": "Export Dataset",
+    "format": {
+      "label": "Export Format",
+      "csv": "CSV",
+      "json": "JSON"
+    },
+    "filename": {
+      "label": "Filename",
+      "placeholder": "Enter filename..."
+    },
+    "options": {
+      "title": "Export Options",
+      "columns": {
+        "title": "Columns",
+        "all": "All Columns",
+        "selected": "Selected Columns",
+        "selectAll": "Select All",
+        "deselectAll": "Deselect All"
+      },
+      "rows": {
+        "title": "Rows",
+        "all": "All Rows",
+        "range": "Row Range",
+        "rangeFrom": "From row",
+        "rangeTo": "To row"
+      }
+    },
+    "actions": {
+      "export": "Export",
+      "cancel": "Cancel",
+      "close": "Close"
+    },
+    "messages": {
+      "success": "Dataset exported successfully",
+      "error": "Failed to export dataset",
+      "noColumns": "Please select at least one column",
+      "invalidRange": "Invalid row range"
+    }
+  }
+}

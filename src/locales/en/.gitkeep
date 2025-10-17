@@ -1,0 +1,11 @@
+# This directory will contain JSON translation modules
+# Expected files:
+# - app.json (application-wide strings)
+# - nav.json (navigation)
+# - errors.json (error messages)  
+# - panels.json (panel-specific content)
+# - inspector-core.json (core inspector functionality)
+# - inspector-actions.json (inspector actions)
+#
+# Each JSON file corresponds to a translation module that will be
+# automatically loaded by the LanguageProvider

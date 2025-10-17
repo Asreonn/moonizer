@@ -1,0 +1,84 @@
+.workspace {
+  height: 100%;
+  display: grid;
+  grid-template-columns: var(--panel-width-left) 1fr var(--panel-width-right);
+  grid-template-rows: 1fr;
+  position: relative;
+  min-height: 0;
+  min-width: 0;
+}
+
+.workspace--leftCollapsed {
+  grid-template-columns: var(--panel-gutter) 1fr var(--panel-width-right);
+}
+
+.workspace--rightCollapsed {
+  grid-template-columns: var(--panel-width-left) 1fr var(--panel-gutter);
+}
+
+.workspace--leftCollapsed.workspace--rightCollapsed {
+  grid-template-columns: var(--panel-gutter) 1fr var(--panel-gutter);
+}
+
+.workspace--exportPanelOpen .panel--left {
+  min-width: var(--panel-width-left);
+}
+
+.workspace--exportPanelOpen.workspace--leftCollapsed {
+  grid-template-columns: var(--panel-width-left) 1fr var(--panel-width-right);
+}
+
+.workspace--exportPanelOpen.workspace--leftCollapsed.workspace--rightCollapsed {
+  grid-template-columns: var(--panel-width-left) 1fr var(--panel-gutter);
+}
+
+.workspace__center {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  overflow: hidden;
+  background-color: var(--color-bg-primary);
+  min-height: 0;
+  min-width: 0;
+  transition: grid-template-rows 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.workspace__center--dataExplorerExpanded {
+  grid-template-rows: 1fr 1fr;
+}
+
+.workspace__dataView {
+  overflow: hidden;
+  background-color: var(--color-bg-secondary);
+  border: var(--border-width) solid var(--color-border);
+  margin: var(--space-xs);
+  border-radius: var(--border-radius);
+  min-height: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.workspace__dataExplorer {
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: var(--color-bg-secondary);
+  border: var(--border-width) solid var(--color-border);
+  margin: var(--space-xs);
+  margin-top: 0;
+  border-radius: var(--border-radius);
+  position: relative;
+  min-height: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.workspace__dataExplorer--expanded {
+  max-height: 100vh;
+  opacity: 1;
+  transform: translateY(0);
+}

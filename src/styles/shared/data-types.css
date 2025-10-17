@@ -1,0 +1,174 @@
+/* Shared Data Type Cell Styles */
+
+.cellContentEmpty {
+  color: rgba(139, 92, 246, 0.7);
+  font-style: italic;
+  font-weight: var(--font-weight-medium);
+  background: linear-gradient(135deg, 
+    rgba(30, 30, 50, 0.4) 0%, 
+    rgba(20, 20, 40, 0.6) 100%);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  padding: 4px 8px;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  text-align: center;
+  min-width: 32px;
+  transition: all var(--transition-fast);
+  position: relative;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.cellContentEmpty:hover {
+  background: linear-gradient(135deg, 
+    rgba(139, 92, 246, 0.15) 0%, 
+    rgba(59, 130, 246, 0.1) 100%);
+  border-color: rgba(139, 92, 246, 0.5);
+  transform: scale(1.05) translateY(-1px);
+  box-shadow: 
+    0 4px 12px rgba(139, 92, 246, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.cellContentEmpty::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(135deg, 
+    rgba(139, 92, 246, 0.6) 0%, 
+    rgba(59, 130, 246, 0.4) 100%);
+  border-radius: 50%;
+  opacity: 0.8;
+  z-index: -1;
+  animation: nullValuePulse 2s ease-in-out infinite;
+}
+
+.cellContentNumber {
+  color: #059669;
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family-mono);
+  background: rgba(16, 185, 129, 0.08);
+  border-radius: 3px;
+  padding: 2px 4px;
+  border-left: 2px solid #10b981;
+  transition: all var(--transition-fast);
+}
+
+.cellContentNumber:hover {
+  background: rgba(16, 185, 129, 0.15);
+  transform: translateY(-1px);
+}
+
+.cellContentText {
+  color: var(--color-text-primary);
+  background: rgba(99, 102, 241, 0.05);
+  border-radius: 3px;
+  padding: 2px 4px;
+  border-left: 2px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.cellContentText:hover {
+  background: rgba(99, 102, 241, 0.1);
+  border-left-color: #6366f1;
+}
+
+.cellContentBoolean {
+  color: #7c3aed;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  font-size: var(--font-size-sm);
+  background: rgba(124, 58, 237, 0.1);
+  border-radius: 3px;
+  padding: 2px 6px;
+  border-left: 2px solid #7c3aed;
+  transition: all var(--transition-fast);
+}
+
+.cellContentBoolean:hover {
+  background: rgba(124, 58, 237, 0.2);
+  transform: scale(1.05);
+}
+
+.cellContentDate {
+  color: #dc2626;
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-mono);
+  background: rgba(220, 38, 38, 0.08);
+  border-radius: 3px;
+  padding: 2px 4px;
+  border-left: 2px solid #dc2626;
+  transition: all var(--transition-fast);
+}
+
+.cellContentDate:hover {
+  background: rgba(220, 38, 38, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Type Color Mode Classes */
+.cell--type-numeric { color: var(--type-numeric) !important; }
+.cell--type-categorical { color: var(--type-categorical) !important; }
+.cell--type-boolean { color: var(--type-boolean) !important; }
+.cell--type-datetime { color: var(--type-datetime) !important; }
+.cell--type-text { color: var(--type-text) !important; }
+.cell--type-idUnique { color: var(--type-idUnique) !important; }
+
+/* Sign Color Mode Classes */
+.cell--sign-positive { color: var(--sign-positive) !important; }
+.cell--sign-negative { color: var(--sign-negative) !important; }
+.cell--sign-zero { color: var(--sign-zero) !important; }
+
+/* General Color Mode Classes */
+.cell--general-positive {
+  color: var(--general-positive) !important;
+  font-weight: var(--font-weight-semibold);
+}
+
+.cell--general-negative {
+  color: var(--general-negative) !important;
+  font-weight: var(--font-weight-semibold);
+}
+
+.cell--general-zero {
+  color: var(--general-zero) !important;
+}
+
+.cell--general-above-avg {
+  color: var(--general-above-avg) !important;
+  font-weight: var(--font-weight-semibold);
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 3px;
+}
+
+.cell--general-below-avg {
+  color: var(--general-below-avg) !important;
+  font-weight: var(--font-weight-semibold);
+  background: rgba(245, 158, 11, 0.1);
+  border-radius: 3px;
+}
+
+.cell--muted { color: var(--muted-500) !important; }
+
+.cell--selected {
+  background: rgba(139, 92, 246, 0.15) !important;
+  box-shadow: inset 0 0 0 2px var(--color-accent-primary);
+  position: relative;
+}
+
+.cell--selected::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  box-shadow: 0 0 0 1px var(--color-accent-primary);
+  border-radius: 2px;
+  pointer-events: none;
+}

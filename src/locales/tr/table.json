@@ -1,0 +1,37 @@
+{
+  "tooltip": {
+    "horizontalScroll": "Her iki yönde de kaydırmak için orta fare tuşunu basılı tutun ve sürükleyin"
+  },
+  "sort": {
+    "asc": "Artan sırala",
+    "desc": "Azalan sırala",
+    "none": "Sıralamayı kaldır"
+  },
+  "column": {
+    "resize": "Sütunu yeniden boyutlandırmak için sürükleyin"
+  },
+  "search": {
+    "placeholder": "Veri ara...",
+    "clear": "Aramayı temizle"
+  },
+  "highlight": {
+    "clear": "Vurguları temizle"
+  },
+  "status": {
+    "showingPrefix": "Gösteriliyor",
+    "showingOf": "/"
+  },
+  "headerMenu": {
+    "sendToExplorer": "Gezgine Gönder",
+    "lockType": "Sütun türünü kilitle",
+    "hide": "Sütunu gizle"
+  },
+  "pagination": {
+    "rowsPerPage": "Sayfa başına satır",
+    "showAll": "Tümünü Göster",
+    "firstPage": "İlk sayfaya git",
+    "previousPage": "Önceki sayfaya git",
+    "nextPage": "Sonraki sayfaya git",
+    "lastPage": "Son sayfaya git"
+  }
+}

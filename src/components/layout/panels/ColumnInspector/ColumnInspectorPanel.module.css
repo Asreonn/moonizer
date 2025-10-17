@@ -1,0 +1,206 @@
+.columnInspectorPanel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-secondary);
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.emptyState {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+}
+
+.emptyState__icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--space-md);
+  opacity: 0.5;
+}
+
+.emptyState__text {
+  font-size: var(--font-size-lg);
+  text-align: center;
+}
+
+
+
+
+
+
+.typeChipGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 4px;
+  padding: var(--space-xs);
+  margin: 0 var(--space-xs);
+  background: var(--color-bg-tertiary);
+  border-radius: 6px;
+  border: var(--border-width) solid var(--color-border);
+  overflow: hidden;
+}
+
+.datasetSummary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-xs) 0;
+  margin-top: var(--space-sm);
+}
+
+.datasetSummary__item {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.datasetSummary__separator {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  opacity: 0.6;
+}
+
+/* Quick Filter Controls */
+.filterControls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  border-bottom: var(--border-width) solid var(--color-border);
+  background: transparent;
+  flex-shrink: 0;
+  z-index: 5;
+  position: relative;
+  min-height: 40px;
+}
+
+.quickFilter {
+  flex: 1;
+  padding: 6px var(--space-sm);
+  background: var(--color-bg-tertiary);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 4px;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  transition: all var(--transition-fast);
+  height: 32px;
+}
+
+.quickFilter:focus {
+  outline: none;
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.3);
+}
+
+.quickFilter::placeholder {
+  color: var(--color-text-muted);
+}
+
+.filterActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+
+
+.clearFiltersBtn {
+  padding: 6px;
+  background: var(--color-bg-tertiary);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 3px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  height: 28px;
+  width: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clearFiltersBtn svg {
+  width: 12px;
+  height: 12px;
+  stroke-width: 2.5;
+}
+
+.clearFiltersBtn:hover {
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  border-color: var(--color-border-hover);
+}
+
+
+
+
+/* Column List - Scrollable with shadows */
+.columnList {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: var(--space-sm);
+  position: relative;
+  min-width: 0;
+  background: transparent;
+}
+
+.scrollShadowTop {
+  position: sticky;
+  top: calc(-1 * var(--space-md));
+  height: 8px;
+  background: var(--inspector-scroll-shadow-top);
+  pointer-events: none;
+  z-index: 1;
+  margin: calc(-1 * var(--space-md)) calc(-1 * var(--space-md)) var(--space-sm);
+}
+
+.scrollShadowBottom {
+  position: sticky;
+  bottom: calc(-1 * var(--space-md));
+  height: 8px;
+  background: var(--inspector-scroll-shadow-bottom);
+  pointer-events: none;
+  z-index: 1;
+  margin: var(--space-sm) calc(-1 * var(--space-md)) calc(-1 * var(--space-md));
+}
+
+/* Minimal Custom scrollbar styling */
+.columnList::-webkit-scrollbar {
+  width: 4px;
+}
+
+.columnList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.columnList::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb);
+  border-radius: 2px;
+  transition: var(--transition-fast);
+}
+
+.columnList::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-thumb-hover);
+}
+
+/* Screen reader only class */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

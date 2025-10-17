@@ -1,0 +1,615 @@
+{
+  "tooltips": {
+    "interpretation": "Nasıl yorumlanır",
+    "totalBars": {
+      "title": "Toplam Çubuklar",
+      "description": "Çubuk grafikte temsil edilen farklı kategori veya değerlerin sayısı.",
+      "interpretation": "Daha fazla çubuk, daha yüksek veri çeşitliliğini gösterirken, daha az çubuk veri yoğunluğunu gösterir."
+    },
+    "highestValue": {
+      "title": "En Yüksek Değer",
+      "description": "Veri setindeki maksimum frekansa veya değere sahip kategori.",
+      "interpretation": "Bu, verilerinizdeki en yaygın veya baskın öğeyi temsil eder."
+    },
+    "valueRange": {
+      "title": "Değer Aralığı",
+      "description": "Veri setindeki minimum ve maksimum değerler arasındaki aralık.",
+      "interpretation": "Daha geniş bir aralık daha fazla değişkenlik gösterir; dar bir aralık veri kümelenmesini önerir."
+    },
+    "distributionType": {
+      "title": "Dağılım Türü",
+      "description": "Veri değerlerinin aralık boyunca nasıl yayıldığının istatistiksel sınıflandırması.",
+      "interpretation": "Normal: çan eğrisi, Orta: hafifçe çarpık, Yüksek Çarpıklık: bir tarafa yoğun şekilde çarpık."
+    },
+    "dominanceRatio": {
+      "title": "Baskınlık Oranı",
+      "description": "Veri setinin en sık kullanılan değer veya kategori tarafından işgal edilen yüzdesi.",
+      "interpretation": "Yüksek değerler (>%50) güçlü bir yoğunlaşmayı gösterir; düşük değerler dengeli bir dağılımı önerir."
+    },
+    "diversityIndex": {
+      "title": "Çeşitlilik Endeksi",
+      "description": "Değerlerin kategoriler arasında ne kadar eşit dağıldığının bir ölçüsü.",
+      "interpretation": "Daha yüksek değerler daha dengeli bir dağılımı gösterir; daha düşük değerler birkaç kategori tarafından baskınlığı önerir."
+    },
+    "volatility": {
+      "title": "Oynaklık (CV)",
+      "description": "Değişim Katsayısı - ortalamanın yüzdesi olarak göreli değişkenliği ölçer.",
+      "interpretation": "Düşük (<%30): kararlı veriler, Orta (%30-60): orta düzeyde varyasyon, Yüksek (>%60): oldukça değişken."
+    },
+    "totalRange": {
+      "title": "Toplam Aralık",
+      "description": "En yüksek ve en düşük değerler arasındaki mutlak fark.",
+      "interpretation": "Daha büyük aralıklar daha fazla veri yayılımını gösterir; daha küçük aralıklar veri kümelenmesini önerir."
+    },
+    "rangeEfficiency": {
+      "title": "Aralık Verimliliği",
+      "description": "Veri yoğunluğunu ölçen, çeyrekler arası aralığın toplam aralığa oranı.",
+      "interpretation": "Yüksek değerler (>%60) verilerin çoğunun yoğunlaştığını gösterir; düşük değerler aykırı değerleri önerir."
+    },
+    "dataPoints": {
+      "title": "Veri Noktaları",
+      "description": "Veri setindeki toplam gözlem veya kayıt sayısı.",
+      "interpretation": "Daha fazla veri noktası genellikle daha güvenilir istatistiksel bilgiler sağlar."
+    },
+    "trendDirection": {
+      "title": "Trend Yönü",
+      "description": "Veri değerlerinin zaman veya sıra boyunca genel yönlü hareketi.",
+      "interpretation": "Yukarı: artan trend, Aşağı: azalan trend, Kararlı: net bir yön yok."
+    },
+    "averageValue": {
+      "title": "Ortalama Değer",
+      "description": "Veri setindeki tüm değerlerin aritmetik ortalaması.",
+      "interpretation": "Merkezi eğilimi temsil eder; bireysel veri noktalarıyla karşılaştırmak için kullanışlıdır."
+    },
+    "standardDeviation": {
+      "title": "Standart Sapma",
+      "description": "Veri noktalarının ortalamadan ortalama uzaklığını ölçer.",
+      "interpretation": "Düşük değerler ortalama etrafında kümelenmiş verileri gösterir; daha yüksek değerler daha fazla yayılım gösterir."
+    },
+    "peakToTrough": {
+      "title": "Zirveden Dibe",
+      "description": "Maksimum ve minimum değerler arasındaki yüzde farkının ortalamaya göre oranı.",
+      "interpretation": "Daha yüksek yüzdeler, veri setinde daha aşırı değer değişimlerini gösterir."
+    },
+    "interquartileRange": {
+      "title": "Çeyrekler Arası Aralık (IQR)",
+      "description": "Veri değerlerinin orta %50'sini içeren aralık (Q3 - Q1).",
+      "interpretation": "Daha küçük IQR, sıkı bir şekilde kümelenmiş verileri gösterir; daha büyük IQR daha fazla yayılım gösterir."
+    },
+    "dataDensity": {
+      "title": "Veri Yoğunluğu",
+      "description": "Dağılım grafiği analizi için mevcut veri noktalarının sayısı.",
+      "interpretation": "Daha yüksek yoğunluk, desenlerin ve ilişkilerin daha iyi görselleştirilmesini sağlar."
+    },
+    "spreadAnalysis": {
+      "title": "Yayılım Analizi",
+      "description": "Veri noktalarının ne kadar geniş bir alana yayıldığının sınıflandırılması.",
+      "interpretation": "Düşük yayılım: kümelenmiş veriler, Orta: orta düzeyde saçılma, Yüksek: geniş çapta dağılmış noktalar."
+    },
+    "outlierRatio": {
+      "title": "Aykırı Değer Oranı",
+      "description": "Beklenen aralığın (1.5 × IQR) dışına düşen veri noktalarının yüzdesi.",
+      "interpretation": "Düşük (<%5): temiz veriler, Orta (%5-15): bazı aykırı değerler, Yüksek (>%15): çok sayıda aşırı değer."
+    },
+    "centralTendency": {
+      "title": "Merkezi Eğilim",
+      "description": "Veri dağılımının merkezinin nerede olduğunu gösteren istatistiksel ölçümler.",
+      "interpretation": "Ortalama ve medyanın birbirine yakın olması normal dağılımı önerir; büyük farklar çarpıklığı gösterir."
+    },
+    "dispersionIndex": {
+      "title": "Dağılım Endeksi",
+      "description": "Varyansın ortalamaya oranı, verilerin merkezine göre ne kadar yayıldığını ölçer.",
+      "interpretation": "1'e yakın değerler Poisson benzeri bir dağılımı önerir; çok daha yüksek değerler aşırı dağılımı gösterir."
+    },
+    "dataQuality": {
+      "title": "Veri Kalitesi",
+      "description": "Aykırı değer varlığına ve dağılım normalliğine dayalı veri temizliğinin değerlendirilmesi.",
+      "interpretation": "Temiz: minimum aykırı değer, İyi: kabul edilebilir aykırı değerler, Zayıf: çok sayıda aykırı değer mevcut."
+    },
+    "categoryCount": {
+      "title": "Kategori Sayısı",
+      "description": "Pasta grafikteki farklı segment veya dilimlerin sayısı.",
+      "interpretation": "Daha az kategori yorumlamak daha kolaydır; çok fazla (>7) görselleştirmeyi karmaşıklaştırabilir."
+    },
+    "dominantShare": {
+      "title": "Baskın Pay",
+      "description": "Pasta grafikteki en büyük kategorinin yüzdesi ve kimliği.",
+      "interpretation": "Yüksek baskınlık (>%50) güçlü bir yoğunlaşmayı gösterir; dengeli paylar çeşitliliği önerir."
+    },
+    "minorityShare": {
+      "title": "Azınlık Payı",
+      "description": "Pasta grafikteki en küçük kategorinin yüzdesi ve kimliği.",
+      "interpretation": "Çok küçük azınlıklar (<%5) 'Diğer' kategorisiyle gruplandırma adayı olabilir."
+    },
+    "informationEntropy": {
+      "title": "Bilgi Entropisi",
+      "description": "Kategorik dağılımdaki bilgi veya belirsizlik miktarını ölçer.",
+      "interpretation": "Daha yüksek entropi daha dengeli kategorileri gösterir; daha düşük entropi yoğunlaşmayı önerir."
+    },
+    "simpsonsIndex": {
+      "title": "Simpson Endeksi",
+      "description": "Rastgele seçilen iki öğenin aynı kategoriye ait olma olasılığını ölçer.",
+      "interpretation": "Daha yüksek değerler daha fazla çeşitlilik gösterir; daha düşük değerler birkaç kategori tarafından baskınlığı önerir."
+    },
+    "evennessScore": {
+      "title": "Düzgünlük Puanı",
+      "description": "Kategorilerin mümkün olan maksimum düzgünlüğe göre ne kadar eşit dağıldığını ölçer.",
+      "interpretation": "1'e yakın puan mükemmel düzgünlüğü gösterir; daha düşük puanlar düzensiz dağılımı önerir."
+    },
+    "concentration": {
+      "title": "Yoğunlaşma",
+      "description": "Verilerin en büyük kategoriler arasında ne kadar yoğunlaştığının sınıflandırılması.",
+      "interpretation": "Dağıtılmış: kategoriler arasında dengeli, Orta: biraz yoğunlaşma, Yoğunlaşmış: birkaç baskın kategori."
+    },
+    "topDominance": {
+      "title": "İlk 3 Baskınlığı",
+      "description": "En büyük üç kategorinin birleşik yüzdesi.",
+      "interpretation": "Yüksek değerler (>%80) yoğunlaşmayı gösterir; düşük değerler (<%60) dengeli bir dağılımı önerir."
+    },
+    "fragmentation": {
+      "title": "Parçalanma",
+      "description": "Verilerin birçok küçük kategoriye ne kadar bölündüğünün değerlendirilmesi.",
+      "interpretation": "Yüksek parçalanma, daha net bilgiler için kategori birleştirmeyi gerektirebilir."
+    },
+    "totalArea": {
+      "title": "Eğri Altındaki Toplam Alan",
+      "description": "Toplam büyüklüğü veya hacmi temsil eden tüm değerlerin kümülatif toplamı.",
+      "interpretation": "Daha büyük alanlar daha yüksek genel değerleri veya daha büyük kümülatif etkiyi gösterir."
+    },
+    "averageHeight": {
+      "title": "Ortalama Yükseklik",
+      "description": "Alan grafikteki tüm veri noktalarındaki ortalama değer.",
+      "interpretation": "Tipik büyüklüğü temsil eder; temel beklentileri oluşturmak için kullanışlıdır."
+    },
+    "areaEfficiency": {
+      "title": "Alan Verimliliği",
+      "description": "Potansiyel kullanımını gösteren, ortalama yüksekliğin maksimum yüksekliğe oranı.",
+      "interpretation": "Yüksek verimlilik (>%70) tutarlı değerleri gösterir; düşük verimlilik zirveleri ve vadileri önerir."
+    },
+    "growthPattern": {
+      "title": "Büyüme Deseni",
+      "description": "Alan grafiğinin zaman veya sıra boyunca genel şekli ve değişim yönü.",
+      "interpretation": "Hızlanan: artan büyüme oranı, Yavaşlayan: azalan oran, Doğrusal: istikrarlı değişim."
+    },
+    "volatilityIndex": {
+      "title": "Oynaklık Endeksi",
+      "description": "Veri serisindeki göreli istikrarsızlığı ölçen değişim katsayısı.",
+      "interpretation": "Düşük oynaklık (<0.3): kararlı, Orta (0.3-0.6): orta derecede değişken, Yüksek (>0.6): istikrarsız."
+    },
+    "smoothness": {
+      "title": "Düzgünlük",
+      "description": "Veri ilerlemesinin ne kadar tutarlı ve istikrarlı olduğunun değerlendirilmesi.",
+      "interpretation": "Düzgün verilerin öngörülebilir kalıpları vardır; değişken verilerin düzensiz dalgalanmaları vardır."
+    },
+    "maximumValue": {
+      "title": "Maksimum Değer",
+      "description": "Veri setinde gözlemlenen en yüksek tek değer.",
+      "interpretation": "Ölçülen olguda ulaşılan en yüksek performansı veya maksimum kapasiteyi temsil eder."
+    },
+    "peakToAverage": {
+      "title": "Zirve-Ortalama Oranı",
+      "description": "Maksimum değerin ortalamaya göre kaç kat daha büyük olduğu.",
+      "interpretation": "Yüksek oranlar önemli zirveleri gösterir; 1'e yakın oranlar tutarlı değerleri önerir."
+    },
+    "q1Percentile": {
+      "title": "Q1 (25. Yüzdelik)",
+      "description": "Veri noktalarının %25'inin altına düştüğü değer.",
+      "interpretation": "Alt çeyrek sınırını temsil eder; en düşük performans gösterenleri belirlemek için kullanışlıdır."
+    },
+    "medianValue": {
+      "title": "Q2 (Medyan)",
+      "description": "Tüm veri noktaları sıraya dizildiğinde ortadaki değer.",
+      "interpretation": "Aykırı değerlerden ortalamadan daha az etkilenir; veri setindeki tipik değeri temsil eder."
+    },
+    "q3Percentile": {
+      "title": "Q3 (75. Yüzdelik)",
+      "description": "Veri noktalarının %75'inin altına düştüğü değer.",
+      "interpretation": "Üst çeyrek sınırını temsil eder; en iyi performans gösterenleri belirlemek için kullanışlıdır."
+    },
+    "outlierCount": {
+      "title": "Aykırı Değer Sayısı",
+      "description": "Çeyreklerden 1.5 × IQR dışına düşen veri noktalarının sayısı ve yüzdesi.",
+      "interpretation": "Az sayıda aykırı değer temiz verileri gösterir; çok sayıda aykırı değer veri kalitesi sorunlarını veya aşırı olayları önerebilir."
+    },
+    "fenceBoundaries": {
+      "title": "Çit Sınırları",
+      "description": "Veri noktalarının istatistiksel aykırı değerler olarak kabul edildiği hesaplanmış sınırlar.",
+      "interpretation": "Bu sınırların dışındaki değerler, potansiyel anormallikler veya özel durumlar olarak araştırılmayı gerektirir."
+    },
+    "symmetry": {
+      "title": "Simetri",
+      "description": "Veri dağılımının medyan etrafında dengeli olup olmadığını ölçer.",
+      "interpretation": "Simetrik: dengeli dağılım, Sağa çarpık: kuyruk sağa uzanır, Sola çarpık: kuyruk sola uzanır."
+    },
+    "tailBehavior": {
+      "title": "Kuyruk Davranışı",
+      "description": "Dağılım kuyruklarının (aşırı uçların) normal dağılıma göre kalınlığını tanımlar.",
+      "interpretation": "Ağır kuyruklar: beklenenden daha fazla aşırı değer, Hafif kuyruklar: daha az aşırı değer."
+    },
+    "spreadRatio": {
+      "title": "Yayılma Oranı",
+      "description": "Toplam aralığın orta %50'si tarafından işgal edilen yüzde (IQR/Aralık).",
+      "interpretation": "Yüksek oranlar yoğunlaşmış verileri gösterir; düşük oranlar aykırı değerlerin aralığı genişlettiğini önerir."
+    },
+    "heatZones": {
+      "title": "Isı Bölgeleri",
+      "description": "Isı haritasındaki farklı yoğunluk seviyelerinin veya değer aralıklarının sayısı.",
+      "interpretation": "Daha fazla bölge daha ince ayrıntı sağlar; daha az bölge daha net desenler ancak daha az ayrıntı gösterir."
+    },
+    "intensityRange": {
+      "title": "Yoğunluk Aralığı",
+      "description": "Isı haritasındaki en düşükten en yüksek yoğunluk değerlerine kadar olan aralık.",
+      "interpretation": "Geniş aralıklar çeşitli yoğunluk seviyelerini gösterir; dar aralıklar benzer yoğunlukları önerir."
+    },
+    "hotSpotRatio": {
+      "title": "Sıcak Nokta Oranı",
+      "description": "Isı haritasının en yüksek yoğunluk değerleri tarafından baskın olan yüzdesi.",
+      "interpretation": "Yüksek oranlar yoğunlaşmış sıcak noktaları gösterir; düşük oranlar dağılmış yoğunluğu önerir."
+    },
+    "clustering": {
+      "title": "Kümeleme",
+      "description": "Yüksek veya düşük yoğunlukların bir araya gelip gelmediğinin veya dağınık olup olmadığının değerlendirilmesi.",
+      "interpretation": "Kümelenmiş: benzer değerler bir araya gelir, Dağınık: değerler rastgele dağılmıştır."
+    },
+    "entropyLevel": {
+      "title": "Entropi Seviyesi",
+      "description": "Yoğunluk dağılımındaki rastgeleliği veya öngörülemezliği ölçer.",
+      "interpretation": "Yüksek entropi karmaşık desenleri gösterir; düşük entropi basit, öngörülebilir desenleri önerir."
+    },
+    "uniformityScore": {
+      "title": "Tekdüzelik Puanı",
+      "description": "Farklı yoğunluk seviyelerinin ne kadar eşit dağıldığını ölçer.",
+      "interpretation": "Yüksek puanlar dengeli yoğunluk dağılımını gösterir; düşük puanlar yoğunlaşmayı önerir."
+    },
+    "averageTemperature": {
+      "title": "Ortalama Sıcaklık",
+      "description": "Isı haritasındaki tüm hücrelerdeki ortalama yoğunluk değeri.",
+      "interpretation": "Temel yoğunluk seviyesini temsil eder; bireysel hücreleri karşılaştırmak için kullanışlıdır."
+    },
+    "heatVariance": {
+      "title": "Isı Varyansı",
+      "description": "Yoğunluk değerlerinin ortalama yoğunluktan ne kadar saptığını ölçer.",
+      "interpretation": "Yüksek varyans dramatik yoğunluk farklılıklarını gösterir; düşük varyans tutarlı yoğunluğu önerir."
+    },
+    "coldSpots": {
+      "title": "Soğuk Noktalar",
+      "description": "Yoğunluk değerleri ortalama seviyenin altında olan hücrelerin sayısı.",
+      "interpretation": "Çok sayıda soğuk nokta çeşitli yoğunluğu gösterir; az sayıda soğuk nokta genellikle yüksek yoğunluğu önerir."
+    },
+    "leftChartType": {
+      "title": "Sol Grafik Türü",
+      "description": "Çift grafik modunda sol panel için kullanılan görselleştirme yöntemi.",
+      "interpretation": "Farklı grafik türleri, kapsamlı analiz için aynı verilerin farklı yönlerini ortaya çıkarır."
+    },
+    "rightChartType": {
+      "title": "Sağ Grafik Türü",
+      "description": "Çift grafik modunda sağ panel için kullanılan görselleştirme yöntemi.",
+      "interpretation": "Tamamlayıcı grafik türleri, veri desenleri ve ilişkileri hakkında çoklu bakış açıları sağlar."
+    },
+    "scaleSync": {
+      "title": "Ölçek Senkronizasyonu",
+      "description": "Her iki grafiğin de doğrudan karşılaştırma için aynı değer ölçeğini kullanıp kullanmadığı.",
+      "interpretation": "Etkin: doğrudan değer karşılaştırmasına izin verir, Devre dışı: her grafik kendi ölçeğini optimize eder."
+    },
+    "sharedDataPoints": {
+      "title": "Paylaşılan Veri Noktaları",
+      "description": "Her iki grafik görünümünde de analiz edilen veri gözlemlerinin sayısı.",
+      "interpretation": "Tamamlayıcı bilgileri ortaya çıkarmak için farklı görselleştirmelerle gösterilen aynı veriler."
+    },
+    "visualizationFocus": {
+      "title": "Görselleştirme Odağı",
+      "description": "Verileri aynı anda birden çok grafik türüyle görüntüleyerek etkinleştirilen analitik yaklaşım.",
+      "interpretation": "Çoklu perspektifli analiz, tek grafiklerin kaçırabileceği kalıpları ortaya çıkarır."
+    },
+    "insightDepth": {
+      "title": "İçgörü Derinliği",
+      "description": "Çift görselleştirme yoluyla elde edilen analitik anlayış düzeyi.",
+      "interpretation": "Gelişmiş derinlik, aynı verileri tamamlayıcı analitik merceklerle görmekten gelir."
+    },
+    "meanValue": {
+      "title": "Ortalama Değer",
+      "description": "Paylaşılan veri setindeki tüm veri noktalarının aritmetik ortalaması.",
+      "interpretation": "Tutarlı yorumlama için her iki görselleştirmeye de uygulanan merkezi referans noktası."
+    },
+    "coefficientVariation": {
+      "title": "Değişim Katsayısı",
+      "description": "Ortalamanın yüzdesi olarak ifade edilen standartlaştırılmış değişkenlik ölçüsü.",
+      "interpretation": "Her iki grafik perspektifine de eşit olarak uygulanan tutarlı değişkenlik ölçüsü."
+    },
+    "trueCount": {
+      "title": "Doğru Sayısı",
+      "description": "Boole sütununda Doğru/Evet/1 değerlerine sahip kayıtların sayısı.",
+      "interpretation": "Daha yüksek sayımlar, veri setinizde daha fazla pozitif vakayı gösterir."
+    },
+    "falseCount": {
+      "title": "Yanlış Sayısı",
+      "description": "Boole sütununda Yanlış/Hayır/0 değerlerine sahip kayıtların sayısı.",
+      "interpretation": "Daha yüksek sayımlar, veri setinizde daha fazla negatif vakayı gösterir."
+    },
+    "truePercentage": {
+      "title": "Doğru Yüzdesi",
+      "description": "Toplam boş olmayan değerler içindeki Doğru değerlere sahip kayıtların yüzdesi.",
+      "interpretation": "%50'ye yakın değerler dengeli verileri gösterir; aşırı değerler veri çarpıklığını önerir."
+    },
+    "falsePercentage": {
+      "title": "Yanlış Yüzdesi",
+      "description": "Toplam boş olmayan değerler içindeki Yanlış değerlere sahip kayıtların yüzdesi.",
+      "interpretation": "%50'ye yakın değerler dengeli verileri gösterir; aşırı değerler veri çarpıklığını önerir."
+    },
+    "balanceRatio": {
+      "title": "Denge Oranı",
+      "description": "Doğru ve Yanlış sayıları arasındaki oran, veri dengesini gösterir.",
+      "interpretation": "1.0'a yakın değerler dengeli verileri gösterir; daha yüksek değerler Doğru baskınlığını önerir."
+    },
+    "constantValue": {
+      "title": "Sabit Değer",
+      "description": "Bu sütunun tüm kayıtlarında görünen tek değer.",
+      "interpretation": "Tüm veri noktaları aynı değere sahiptir - bu sütunun analitik değer katıp katmadığını düşünün."
+    },
+    "recordCount": {
+      "title": "Kayıt Sayısı",
+      "description": "Sabit değeri içeren toplam kayıt sayısı.",
+      "interpretation": "Veri bütünlüğünü gösterir - tüm kayıtlar aynı değeri içermelidir."
+    },
+    "uniqueIdCount": {
+      "title": "Benzersiz ID Sayısı",
+      "description": "Veri setindeki toplam benzersiz tanımlayıcı sayısı.",
+      "interpretation": "Doğru benzersiz tanımlama için toplam kayıt sayısıyla eşleşmelidir."
+    },
+    "duplicateCount": {
+      "title": "Yinelenen Sayısı",
+      "description": "Veri setinde bulunan yinelenen ID değerlerinin sayısı.",
+      "interpretation": "Sıfır, doğru benzersiz tanımlamayı gösterir; daha yüksek değerler veri kalitesi sorunlarını önerir."
+    },
+    "idPattern": {
+      "title": "ID Deseni",
+      "description": "Benzersiz tanımlayıcıların algılanan deseni veya biçimi.",
+      "interpretation": "Tutarlı desenler sistematik ID üretimini gösterir; karışık desenler araştırılması gerekebilir."
+    },
+    "averageIdLength": {
+      "title": "Ortalama ID Uzunluğu",
+      "description": "Benzersiz tanımlayıcıların ortalama karakter uzunluğu.",
+      "interpretation": "Tutarlı uzunluklar standartlaştırılmış ID biçimini önerir; yüksek varyasyon karışık sistemleri gösterebilir."
+    },
+    "dateRange": {
+      "title": "Tarih Aralığı",
+      "description": "Veri setindeki en erken ve en son tarih arasındaki zaman aralığı.",
+      "interpretation": "Zamansal kapsamı gösterir - daha uzun aralıklar daha fazla geçmiş veri derinliğini gösterir."
+    },
+    "earliestDate": {
+      "title": "En Erken Tarih",
+      "description": "Veri setinde bulunan en eski tarih değeri.",
+      "interpretation": "Zaman serisi verilerinizin başlangıç noktasını temsil eder."
+    },
+    "latestDate": {
+      "title": "En Son Tarih",
+      "description": "Veri setinde bulunan en son tarih değeri.",
+      "interpretation": "Zaman serisi verilerinizin bitiş noktasını temsil eder."
+    },
+    "dateFormat": {
+      "title": "Tarih Biçimi",
+      "description": "Tarih değerlerinin algılanan biçim deseni.",
+      "interpretation": "Tutarlı biçimler, doğru tarih ayrıştırma ve analizini sağlar."
+    },
+    "temporalDistribution": {
+      "title": "Zamansal Dağılım",
+      "description": "Tarih değerlerinin zaman aralığı boyunca nasıl dağıldığı.",
+      "interpretation": "Eşit dağılım tutarlı veri toplama olduğunu gösterir; kümeler belirli dönemleri gösterebilir."
+    },
+    "yearSpread": {
+      "title": "Yıl Yayılımı",
+      "description": "Tarih verilerinde temsil edilen farklı yılların sayısı.",
+      "interpretation": "Daha fazla yıl daha uzun geçmiş kapsamını gösterir; tek yıl son veya sınırlı verileri önerir."
+    },
+    "nullCount": {
+      "title": "Boş Değerler",
+      "description": "Eksik, boş veya boş değerlere sahip kayıtların sayısı.",
+      "interpretation": "Yüksek boş değer sayıları veri kalitesi sorunlarını veya eksik veri toplamayı gösterebilir."
+    },
+    "mostCommonValue": {
+      "title": "En Yaygın Değer",
+      "description": "Veri setinde en sık görünen değer.",
+      "interpretation": "Verilerinizdeki baskın kategoriyi veya en tipik değeri gösterir."
+    },
+    "minFrequency": {
+      "title": "Minimum Frekans",
+      "description": "Veri setindeki herhangi bir kategori için en düşük oluşum sayısı.",
+      "interpretation": "En az temsil edilen kategoriyi gösterir - nadir vakaları veya aykırı değerleri gösterebilir."
+    },
+    "averageFrequency": {
+      "title": "Ortalama Frekans",
+      "description": "Tüm kategorilerdeki ortalama oluşum sayısı.",
+      "interpretation": "Kategori dağılım dengesi için temel beklentiyi sağlar."
+    },
+    "diversity": {
+      "title": "Çeşitlilik Seviyesi",
+      "description": "Değerlerin kategoriler arasında ne kadar eşit dağıldığının bir ölçüsü.",
+      "interpretation": "Yüksek çeşitlilik dengeli verileri önerir; düşük çeşitlilik yoğunlaşmayı gösterir."
+    },
+    "recordsPerDay": {
+      "title": "Günlük Kayıtlar",
+      "description": "Tarih aralığı içinde günde yakalanan ortalama kayıt sayısı.",
+      "interpretation": "Daha yüksek değerler sık veri toplama olduğunu gösterir; daha düşük değerler seyrek zamansal verileri gösterir."
+    },
+    "avgTimeGap": {
+      "title": "Ortalama Zaman Aralığı",
+      "description": "Ardışık tarih kayıtları arasındaki ortalama zaman aralığı.",
+      "interpretation": "Tutarlı aralıklar düzenli veri toplama olduğunu gösterir; düzensiz aralıklar eksik dönemleri gösterebilir."
+    },
+    "timelineDistribution": {
+      "title": "Zaman Çizelgesi Dağılımı",
+      "description": "Tarih değerlerinin farklı zaman dilimlerine nasıl yayıldığı.",
+      "interpretation": "Eşit dağılım, zaman içinde tutarlı veri toplama olduğunu gösterir."
+    },
+    "uniqueness": {
+      "title": "Benzersizlik Yüzdesi",
+      "description": "Benzersiz tanımlayıcı olan değerlerin yüzdesi.",
+      "interpretation": "ID sütunları için %100 benzersizlik idealdir; daha düşük değerler yinelenen tanımlayıcıları gösterir."
+    },
+    "patternConsistency": {
+      "title": "Desen Tutarlılığı",
+      "description": "ID değerlerinin algılanan bir desen biçimini ne kadar tutarlı bir şekilde takip ettiği.",
+      "interpretation": "Yüksek tutarlılık sistematik ID üretimini önerir; tutarsızlık karışık kaynakları gösterebilir."
+    },
+    "completeness": {
+      "title": "Veri Bütünlüğü",
+      "description": "Veri setindeki boş olmayan değerlerin yüzdesi.",
+      "interpretation": "Yüksek bütünlük iyi veri kalitesini gösterir; düşük değerler eksik veri sorunlarını önerir."
+    },
+    "qualityScore": {
+      "title": "Veri Kalitesi Puanı",
+      "description": "Birden çok faktöre dayalı veri kalitesinin genel değerlendirmesi.",
+      "interpretation": "Daha yüksek puanlar, analiz için daha iyi veri kalitesini ve güvenilirliğini gösterir."
+    },
+    "skewnessValue": {
+      "title": "Çarpıklık",
+      "description": "Veri dağılımındaki asimetri ölçüsü.",
+      "interpretation": "0'a yakın değerler simetrik dağılımı gösterir; pozitif değerler sağa çarpıklığı gösterir; negatif değerler sola çarpıklığı gösterir."
+    },
+    "outlierCount": {
+      "title": "Aykırı Değerler",
+      "description": "Değerlerin normal aralığının önemli ölçüde dışına düşen veri noktaları.",
+      "interpretation": "Yüksek aykırı değer sayıları veri kalitesi sorunlarını veya araştırılması gereken aşırı vakaları gösterebilir."
+    },
+    "dataBalance": {
+      "title": "Veri Dengesi",
+      "description": "Doğru ve Yanlış değerlerinin veri setinde ne kadar eşit dağıldığının değerlendirilmesi.",
+      "interpretation": "İyi dengelenmiş veriler kabaca eşit Doğru/Yanlış sayılarına sahiptir; dengesiz veriler analiz sonuçlarını etkileyebilir."
+    },
+    "leastCommonValue": {
+      "title": "En Az Yaygın Değer",
+      "description": "Veri setinde en az sıklıkta görünen değer.",
+      "interpretation": "Azınlık kategorisini gösterir - nadir vakaları veya yeterince temsil edilmeyen grupları temsil edebilir."
+    },
+    "duplicateDates": {
+      "title": "Yinelenen Tarihler",
+      "description": "Veri setinin yinelenen tarih değerleri içerip içermediği.",
+      "interpretation": "Yinelenenler aynı tarihte birden çok olayı veya veri kalitesi sorunlarını gösterebilir."
+    },
+    "timezone": {
+      "title": "Saat Dilimi",
+      "description": "Tarih verilerinde algılanan saat dilimi bilgisi.",
+      "interpretation": "Tutarlı saat dilimi verileri, farklı bölgelerde doğru zamansal analiz sağlar."
+    },
+    "invalidDates": {
+      "title": "Geçersiz Tarihler",
+      "description": "Geçerli tarihler olarak ayrıştırılamayan kayıtların sayısı.",
+      "interpretation": "Yüksek geçersiz sayımlar, temizleme veya biçim standardizasyonu gerektiren veri kalitesi sorunlarını gösterir."
+    },
+    "minimumValue": {
+      "title": "Minimum Değer",
+      "description": "Veri setinde bulunan en küçük değer.",
+      "interpretation": "Veri aralığınızın alt sınırını temsil eder - veri sınırlarını anlamak için kullanışlıdır."
+    },
+    "uniqueValues": {
+      "title": "Benzersiz Değerler",
+      "description": "Veri setindeki farklı değerlerin sayısı.",
+      "interpretation": "Daha yüksek sayımlar daha fazla çeşitlilik gösterir; daha düşük sayımlar yinelenen değerleri veya kategorileri önerir."
+    },
+    "uniqueRatio": {
+      "title": "Benzersiz Oranı",
+      "description": "Toplam değerler içindeki benzersiz olan değerlerin yüzdesi.",
+      "interpretation": "%100, tüm değerlerin benzersiz olduğu anlamına gelir; daha düşük yüzdeler yinelenen değerleri gösterir."
+    },
+    "categoricalDiversity": {
+      "title": "Kategorik Çeşitlilik",
+      "description": "Veri setindeki kategorilerin ne kadar çeşitli olduğunun bir ölçüsü.",
+      "interpretation": "Yüksek çeşitlilik dengeli kategorileri önerir; düşük çeşitlilik baskın kategorileri gösterir."
+    },
+    "maxFrequency": {
+      "title": "Maksimum Frekans",
+      "description": "Veri setindeki herhangi bir tek kategorinin en yüksek sayısı.",
+      "interpretation": "En yaygın kategorinin popülaritesini gösterir - yoğunlaşma seviyesini gösterir."
+    },
+    "totalWords": {
+      "title": "Toplam Kelimeler",
+      "description": "Tüm metin girişlerindeki tüm kelimelerin birleşik sayısı.",
+      "interpretation": "Daha yüksek kelime sayıları daha ayrıntılı veya kapsamlı metin içeriğini önerir."
+    },
+    "vocabularyRichness": {
+      "title": "Kelime Zenginliği",
+      "description": "Benzersiz kelimelerin toplam kelimelere oranı, kelime çeşitliliğini gösterir.",
+      "interpretation": "Daha yüksek değerler daha çeşitli dil kullanımını önerir; daha düşük değerler tekrarlayan metni gösterir."
+    },
+    "entropy": {
+      "title": "Entropi",
+      "description": "Boole verilerinde bilgi içeriğini ve öngörülebilirliği ölçen Shannon entropisi.",
+      "interpretation": "Daha yüksek entropi (1 bit'e yakın) dengeli Doğru/Yanlış dağılımını gösterir; daha düşük entropi öngörülebilir sonuçları önerir."
+    },
+    "informationContent": {
+      "title": "Bilgi İçeriği",
+      "description": "Veri öngörülebilirliğini gösteren entropi seviyesinin sınıflandırılması.",
+      "interpretation": "Maksimum: oldukça öngörülemez, Yüksek: iyi belirsizlik, Orta: orta düzeyde öngörülebilirlik, Düşük: çok öngörülebilir."
+    },
+    "biasMagnitude": {
+      "title": "Önyargı Büyüklüğü",
+      "description": "Boole verilerinde mükemmel 50-50 dengesinden yüzde sapma.",
+      "interpretation": "%0 mükemmel dengeyi gösterir; daha yüksek yüzdeler bir değere doğru artan önyargıyı gösterir."
+    },
+    "predictability": {
+      "title": "Öngörülebilirlik",
+      "description": "Boole sonuçlarının dağılıma göre ne kadar öngörülebilir olduğunun sınıflandırılması.",
+      "interpretation": "Rastgele: öngörülemez (50-50'ye yakın), Orta Derecede Öngörülebilir: hafif önyargı (%60-70), Yüksek Derecede Öngörülebilir: güçlü önyargı (>%70)."
+    },
+    "purity": {
+      "title": "Saflık",
+      "description": "Geçerli boole değerleri olan değerlerin yüzdesi (boş/diğer hariç).",
+      "interpretation": "%100 temiz boole verilerini gösterir; daha düşük yüzdeler veri kalitesi sorunlarını veya karışık türleri önerir."
+    },
+    "consistency": {
+      "title": "Tutarlılık",
+      "description": "Boole veri biçiminin ne kadar tutarlı olduğunun değerlendirilmesi.",
+      "interpretation": "Yüksek: yalnızca temiz boole değerleri, Orta: bazı varyantlar, Düşük: karışık veya tutarsız biçimler."
+    },
+    "dataType": {
+      "title": "Veri Türü Sınıflandırması",
+      "description": "Değer desenlerine göre boole sütununun sınıflandırılması.",
+      "interpretation": "Saf Boole: standart doğru/yanlış, Boole Varyantları: karışık biçimler, Karışık: boole olmayan değerler içerir."
+    },
+    "totalCategories": {
+      "title": "Toplam Kategoriler",
+      "description": "Kategorik sütundaki toplam farklı kategori sayısı.",
+      "interpretation": "Daha yüksek sayımlar daha fazla çeşitlilik gösterir; daha düşük sayımlar yoğunlaşmış verileri önerir."
+    },
+    "giniIndex": {
+      "title": "Gini Endeksi",
+      "description": "Kategori dağılımındaki eşitsizliği ölçen Gini katsayısı (0-1 ölçeği).",
+      "interpretation": "0 mükemmel eşitliği gösterir, 1 maksimum eşitsizliği gösterir; daha yüksek değerler yoğunlaşmayı gösterir."
+    },
+    "shannonEntropy": {
+      "title": "Shannon Entropisi",
+      "description": "Kategorik dağılımdaki belirsizliği ölçen bilgi entropisi (bit cinsinden).",
+      "interpretation": "Daha yüksek değerler daha dengeli kategorileri gösterir; daha düşük değerler baskın kategorileri önerir."
+    },
+    "simpsonIndex": {
+      "title": "Simpson Çeşitlilik Endeksi",
+      "description": "Kategorik veriler için olasılığa dayalı çeşitlilik ölçüsü (0-1 ölçeği).",
+      "interpretation": "1'e yakın değerler yüksek çeşitliliği gösterir; 0'a yakın değerler birkaç kategori tarafından baskınlığı önerir."
+    },
+    "evenness": {
+      "title": "Düzgünlük",
+      "description": "Kategorilerin mümkün olan maksimum düzgünlüğe göre ne kadar eşit dağıldığını ölçen ölçü.",
+      "interpretation": "%100 mükemmel düzgünlüğü gösterir; daha düşük yüzdeler düzensiz dağılımı gösterir."
+    },
+    "dominance": {
+      "title": "Baskınlık",
+      "description": "Verilerin en sık kullanılan kategori tarafından işgal edilen yüzdesi.",
+      "interpretation": "Yüksek değerler (>%50) güçlü bir yoğunlaşmayı gösterir; düşük değerler dengeli bir dağılımı önerir."
+    },
+    "singletons": {
+      "title": "Tekiller",
+      "description": "Veri setinde tam olarak bir kez görünen kategorilerin sayısı.",
+      "interpretation": "Çok sayıda tekil, yüksek çeşitliliği veya potansiyel veri kalitesi sorunlarını gösterebilir."
+    },
+    "topCategoriesShare": {
+      "title": "En İyi Kategorilerin Payı",
+      "description": "En sık kullanılan ilk 3 kategorinin birleşik yüzdesi.",
+      "interpretation": "Yüksek değerler (>%80) yoğunlaşmayı gösterir; düşük değerler (<%60) dengeli bir dağılımı önerir."
+    },
+    "diversityLevel": {
+      "title": "Çeşitlilik Seviyesi",
+      "description": "Benzersiz orana dayalı kategorik çeşitliliğin sınıflandırılması.",
+      "interpretation": "Çok Yüksek: >%80 benzersiz, Yüksek: %60-80, Orta: %30-60, Düşük: <%30."
+    }
+  }
+}

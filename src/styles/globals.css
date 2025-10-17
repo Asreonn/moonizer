@@ -1,0 +1,175 @@
+@import "./reset.css";
+@import "./tokens.css";
+@import "./animations/keyframes.css";
+@import "./shared/ultra-modern.css";
+@import "./shared/table.css";
+@import "./shared/chips.css";
+@import "./shared/data-types.css";
+@import "./layout/workspace.css";
+@import "./layout/panels.css";
+
+body {
+  font: var(--typography-body);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  font-display: swap;
+}
+
+/* Typography Utility Classes */
+.h1 { font: var(--typography-h1); }
+.h2 { font: var(--typography-h2); }
+.h3 { font: var(--typography-h3); }
+.h4 { font: var(--typography-h4); }
+.body-lg { font: var(--typography-body-lg); }
+.body { font: var(--typography-body); }
+.body-sm { font: var(--typography-body-sm); }
+.caption { font: var(--typography-caption); }
+.overline { font: var(--typography-overline); }
+.mono { font: var(--typography-mono); }
+.mono-sm { font: var(--typography-mono-sm); }
+.code { font: var(--typography-code); }
+
+/* Minimal Scrollbars */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+}
+
+body, .scrollArea {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+}
+
+/* WebKit Scrollbars */
+::-webkit-scrollbar {
+  width: var(--scroll-width);
+  height: var(--scroll-width);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scroll-track);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb);
+  border-radius: 3px;
+  transition: background-color var(--transition-fast);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-thumb-hover);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--scroll-track);
+}
+
+.app {
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+  min-width: 0;
+}
+
+.topbar {
+  height: var(--panel-header-height);
+  background-color: var(--color-bg-secondary);
+  border-bottom: var(--border-width) solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-md);
+  z-index: var(--z-header);
+}
+
+.topbar__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.topbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.langSelector {
+  padding: var(--space-xs) var(--space-sm);
+  background-color: var(--color-bg-tertiary);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--border-radius);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  transition: all var(--transition-fast);
+}
+
+.langSelector:hover {
+  border-color: var(--color-accent-primary);
+  box-shadow: var(--glow-primary);
+}
+
+.langSelector:focus {
+  outline: none;
+  border-color: var(--color-accent-primary);
+  box-shadow: var(--glow-primary);
+}
+
+.main {
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+  min-width: 0;
+  height: 100%;
+}
+
+/* Undo/Redo Actions in Header */
+.undoRedoActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-right: var(--space-sm);
+}
+
+.undoRedoBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: var(--color-bg-tertiary);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 6px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.undoRedoBtn:hover:not(:disabled) {
+  background: var(--color-bg-surface);
+  border-color: var(--color-border-hover);
+  color: var(--color-text-primary);
+  transform: translateY(-1px);
+}
+
+.undoRedoBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.undoRedoBtn svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2;
+}
