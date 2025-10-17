@@ -60,7 +60,11 @@ async function convertSvgToPng(
   
   try {
     // Get actual SVG dimensions for proper scaling
-    const svgBBox = svgElement.getBBox();
+    if (!('getBBox' in svgElement)) {
+      throw new Error('getBBox is not available on the provided SVG element');
+    }
+
+    const svgBBox = (svgElement as SVGGraphicsElement).getBBox();
     // Always use SVG's natural size, with fallbacks
     actualSvgWidth = svgBBox.width || actualSvgWidth;
     actualSvgHeight = svgBBox.height || actualSvgHeight;
@@ -399,9 +403,6 @@ async function convertHtmlToPng(
  * Inline styles for SVG elements
  */
 function inlineStyles(element: Element): void {
-  // Get computed styles and inline them
-  const computedStyle = window.getComputedStyle(element);
-  
   // Apply essential styles for SVG text rendering
   if (element.tagName === 'text') {
     const textElement = element as SVGTextElement;
