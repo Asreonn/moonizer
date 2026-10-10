@@ -284,3 +284,36 @@ Issues, feature requests, and pull requests are all welcome. If you plan a subst
 
 ## License
 Moonizer is released under the [ISC License](./LICENSE) and is free for commercial and open-source use.
+
+## Project State
+
+Status: PAUSED
+Completion: 55
+Last reviewed: 2026-09-22
+Family: visualization
+Resume cost: medium
+
+### Purpose
+
+Veri görselleştirme. Git 2025-10-17.
+
+### Current state
+
+package.json ve yaklaşık 22 bin satır ölçümü. README çeviri sistemini de anlatıyor olabilir.
+
+### Missing / unfinished
+
+Tek cümlelik ürün durumu yok.
+
+### Next action
+
+Son commit pngExport.ts. Oradan devam et, yeni görselleştirme repo'su açma.
+
+### Important files
+
+Registry id `moonizer`. Source scan: 82 files, about 21936 lines, tests=False.
+
+### Related projects
+
+none
+

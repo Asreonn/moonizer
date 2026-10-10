@@ -94,3 +94,25 @@ jspm_packages/
 
 # DynamoDB Local files
 .dynamodb/
+# --- archive 2026-10-11 ---
+.venv/
+venv/
+node_modules/
+.dart_tool/
+build/
+.godot/
+__pycache__/
+.gradle/
+.pytest_cache/
+.ipynb_checkpoints/
+.agent-cache/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.jks
+*.keystore
+*.p12
+key.properties
+.claude/settings.local.json
