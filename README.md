@@ -1,6 +1,8 @@
 
 # Moonizer
 
+> **Status:** Archived. Finished in 2025 (TypeScript). Live demo: https://moonizer.vercel.app
+
 Moonizer is a local-first CSV exploration, transformation, and visualization studio that runs entirely in your browser. Every byte stays on your machine, enabling teams to inspect sensitive datasets with the speed of a native tool and the simplicity of a web app.
 
 ## Table of Contents
